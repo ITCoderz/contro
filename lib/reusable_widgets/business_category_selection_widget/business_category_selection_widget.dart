@@ -115,6 +115,9 @@ class CategorySelectionTile extends StatelessWidget {
             horizontal: 20,
             vertical: 15,
           ),
+          decoration: const BoxDecoration(
+            color: CColors.whiteColor,
+          ),
           width: context.width,
           child: Center(
             child: Row(
