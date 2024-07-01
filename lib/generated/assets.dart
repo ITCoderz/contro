@@ -6,10 +6,32 @@ class Assets {
       'assets/app_icon/contro_app_icon.png';
   static const String appIconControAppIconChangedColor =
       'assets/app_icon/contro_app_icon_changed_color.png';
+  static const String bottomNavigationIconsActivitiesIconSelected =
+      'assets/bottom_navigation_icons/activities_icon_selected.svg';
+  static const String bottomNavigationIconsActivitiesIconUnselected =
+      'assets/bottom_navigation_icons/activities_icon_unselected.svg';
+  static const String bottomNavigationIconsChatIconSelected =
+      'assets/bottom_navigation_icons/chat_icon_selected.svg';
+  static const String bottomNavigationIconsChatIconUnselected =
+      'assets/bottom_navigation_icons/chat_icon_unselected.svg';
+  static const String bottomNavigationIconsDashBoardSelected =
+      'assets/bottom_navigation_icons/dash_board_selected.svg';
+  static const String bottomNavigationIconsDashBoardUnselected =
+      'assets/bottom_navigation_icons/dash_board_unselected.svg';
+  static const String bottomNavigationIconsSettingsSelected =
+      'assets/bottom_navigation_icons/settings_selected.svg';
+  static const String bottomNavigationIconsSettingsUnselected =
+      'assets/bottom_navigation_icons/settings_unselected.svg';
+  static const String bottomNavigationIconsSquarePlusIconUnselected =
+      'assets/bottom_navigation_icons/square_plus_icon_unselected.svg';
   static const String hindHindBold = 'assets/fonts/hind/Hind-Bold.ttf';
   static const String hindHindLight = 'assets/fonts/hind/Hind-Light.ttf';
   static const String hindHindMedium = 'assets/fonts/hind/Hind-Medium.ttf';
   static const String hindHindRegular = 'assets/fonts/hind/Hind-Regular.ttf';
+  static const String iconsAboutIcon = 'assets/icons/about_icon.svg';
+  static const String iconsAppearanceIcon = 'assets/icons/appearance_icon.svg';
+  static const String iconsArrowDown = 'assets/icons/arrow_down.svg';
+  static const String iconsArrowUp = 'assets/icons/arrow_up.svg';
   static const String iconsArtist = 'assets/icons/artist.svg';
   static const String iconsControAuthIcon = 'assets/icons/contro_auth_icon.png';
   static const String iconsControSplash = 'assets/icons/contro_splash.svg';
@@ -17,11 +39,27 @@ class Assets {
       'assets/icons/contro_splash_two_icon.svg';
   static const String iconsFinancial = 'assets/icons/financial.svg';
   static const String iconsHair = 'assets/icons/hair.svg';
+  static const String iconsLanguagesIcon = 'assets/icons/languages_icon.svg';
+  static const String iconsMovieIcon = 'assets/icons/movie_icon.svg';
+  static const String iconsNewUserDashboardLogo =
+      'assets/icons/new_user_dashboard_logo.png';
+  static const String iconsPaymentAndSubscriptionsIcon =
+      'assets/icons/payment_and_subscriptions_icon.svg';
+  static const String iconsProductAndServicesIcon =
+      'assets/icons/product_and_services_icon.svg';
   static const String iconsProductIcon = 'assets/icons/product_icon.svg';
+  static const String iconsProductTwoIcon = 'assets/icons/product_two_icon.svg';
   static const String iconsProfessional = 'assets/icons/professional.svg';
+  static const String iconsProfileIcon = 'assets/icons/profile_icon.svg';
+  static const String iconsQrcodeIcon = 'assets/icons/qrcode_icon.svg';
   static const String iconsRealEstate = 'assets/icons/real_estate.svg';
   static const String iconsServiceIcon = 'assets/icons/service_icon.svg';
+  static const String iconsSignInAndSecurityIcon =
+      'assets/icons/sign_in_and_security_icon.svg';
   static const String iconsTechnology = 'assets/icons/technology.svg';
+  static const String iconsThemesIcon = 'assets/icons/themes_icon.svg';
+  static const String iconsVerifiedIcon = 'assets/icons/verified_icon.svg';
+  static const String iconsWalletIcon = 'assets/icons/wallet_icon.svg';
   static const String poppinsPoppinsBold =
       'assets/fonts/poppins/Poppins-Bold.ttf';
   static const String poppinsPoppinsLight =

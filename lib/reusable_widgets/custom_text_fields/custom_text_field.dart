@@ -61,7 +61,7 @@ class CustomTextField extends StatelessWidget {
           hintStyle: CustomTextStyles.greyTwoColor412,
           enabled: true,
           filled: true,
-          fillColor: CColors.whiteColor,
+          fillColor: readOnly ? CColors.scaffoldColor : CColors.whiteColor,
           contentPadding: EdgeInsets.symmetric(
             horizontal: horizontalPadding ?? 10,
             vertical: verticalPadding ?? 10,

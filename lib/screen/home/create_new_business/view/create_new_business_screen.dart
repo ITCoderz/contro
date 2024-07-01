@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 
 import '../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
 import '../../../../utils/colors/app_colors.dart';
+import '../../dashboard_new/view/dashboard_new_screen.dart';
 
 class CreateNewBusinessScreen extends StatelessWidget {
   const CreateNewBusinessScreen({super.key});
@@ -146,7 +147,12 @@ class CreateNewBusinessScreen extends StatelessWidget {
         ),
         child: CustomElevatedButton(
           buttonText: "Submit for Review",
-          onPressedFunction: () {},
+          onPressedFunction: () {
+            Get.offAll(
+              () => const DashboardNewScreen(),
+              transition: Transition.fadeIn,
+            );
+          },
           needShadow: false,
           backgroundColor: CColors.lightGreyColor,
           textStyle: CustomTextStyles.greyTwoColor414,
