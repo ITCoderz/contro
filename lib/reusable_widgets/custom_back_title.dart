@@ -6,8 +6,10 @@ import '../utils/text_styles/text_styles.dart';
 
 class CustomBackTitle extends StatelessWidget {
   final String title;
+  final bool hasCrossIcon;
 
-  const CustomBackTitle({super.key, required this.title});
+  const CustomBackTitle(
+      {super.key, required this.title, this.hasCrossIcon = false});
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +19,11 @@ class CustomBackTitle extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: const Icon(
-            Icons.arrow_back_ios_rounded,
-            size: 17,
+          icon: Icon(
+            hasCrossIcon ? Icons.close_rounded : Icons.arrow_back_ios_rounded,
+            size: hasCrossIcon ? 20 : 17,
           ),
         ),
-        2.pw,
         Text(
           title,
           style: CustomTextStyles.darkGreyColor622,

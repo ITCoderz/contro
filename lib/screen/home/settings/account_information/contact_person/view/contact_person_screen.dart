@@ -1,14 +1,14 @@
 import 'package:contro/reusable_widgets/custom_back_title.dart';
 import 'package:contro/reusable_widgets/custom_buttons/custom_elevated_button.dart';
-import 'package:contro/screen/home/settings/contact_person/controller/contact_person_controller.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
-import '../../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
-import '../../../../../utils/colors/app_colors.dart';
-import '../../../../../utils/text_styles/text_styles.dart';
+import '../../../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
+import '../../../../../../utils/colors/app_colors.dart';
+import '../../../../../../utils/text_styles/text_styles.dart';
+import '../controller/contact_person_controller.dart';
 
 class ContactPersonScreen extends StatelessWidget {
   const ContactPersonScreen({super.key});
@@ -19,9 +19,10 @@ class ContactPersonScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 20,
+          padding: const EdgeInsets.only(
+            left: 20,
+            right: 20,
+            bottom: 20,
           ),
           height: context.height,
           width: context.width,

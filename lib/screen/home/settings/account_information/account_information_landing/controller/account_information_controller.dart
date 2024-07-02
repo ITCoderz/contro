@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class AccountInformationController extends GetxController {
+class AccountInformationLandingController extends GetxController {
   TextEditingController companyNameController = TextEditingController();
   TextEditingController businessRegistrationNumberController =
       TextEditingController();

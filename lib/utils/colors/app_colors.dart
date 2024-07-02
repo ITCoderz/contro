@@ -11,6 +11,7 @@ class CColors {
   static const Color darkGreyColor = Color(0xFF27262A);
   static const Color greyColor = Color(0xFFCECECE);
   static const Color greyTwoColor = Color(0xFF919191);
+  static const Color greyThreeColor = Color(0xFFD9D9D9);
   static const Color lightGreyColor = Color(0xFFF4F4F4);
   static const Color borderOneColor = Color(0xFFEBEBEB);
   static const lightGreenColor = Color(0xFF55EF6E);
@@ -19,6 +20,7 @@ class CColors {
   static const blueSecondColor = Color(0xFF4279FA);
   static const greenAccentColor = Color(0xFF0CC67C);
   static const redAccentColor = Color(0xFFFE2B54);
+  static const pinkAccentColor = Color(0xFFF03B77);
   static List<Color> splashGradientColors = [
     const Color(0xFF622CEA).withOpacity(1),
     const Color(0xFF5A27D9).withOpacity(1),
@@ -28,6 +30,7 @@ class CColors {
   ];
   static const Color blueColor = Color(0xFF0711FF);
   static const Color blueTwoColor = Color(0xFF007AFF);
+  static const Color blueThreeColor = Color(0xFF06A0F0);
   static const Color purpleAccentColor = Color(0xFF622CEA);
   static const Color purpleAccentTwoColor = Color(0xFF7367F0);
 

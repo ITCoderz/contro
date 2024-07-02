@@ -22,9 +22,10 @@ class DashboardScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 20,
+          padding: const EdgeInsets.only(
+            left: 20,
+            right: 20,
+            bottom: 20,
           ),
           height: context.height,
           width: context.width,
@@ -68,10 +69,11 @@ class DashboardScreen extends StatelessWidget {
                             SummaryComponent(
                               overviewModel: ConstantLists.summaryModelList[0],
                             ),
-                            10.pw,
+                            5.pw,
                             const VerticalDivider(
                               color: CColors.borderOneColor,
                               thickness: 0.5,
+                              width: 5,
                             ),
                             Expanded(
                               child: SummaryComponent(
@@ -82,8 +84,9 @@ class DashboardScreen extends StatelessWidget {
                             const VerticalDivider(
                               color: CColors.borderOneColor,
                               thickness: 0.5,
+                              width: 5,
                             ),
-                            10.pw,
+                            5.pw,
                             SummaryComponent(
                               overviewModel: ConstantLists.summaryModelList[2],
                             ),

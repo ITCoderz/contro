@@ -1,31 +1,32 @@
 import 'package:contro/reusable_widgets/custom_background_container.dart';
-import 'package:contro/screen/home/settings/account_information/controller/account_information_controller.dart';
-import 'package:contro/screen/home/settings/contact_person/view/contact_person_screen.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../../../../../generated/assets.dart';
-import '../../../../../reusable_widgets/custom_back_title.dart';
-import '../../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
-import '../../../../../utils/colors/app_colors.dart';
-import '../../../../../utils/text_styles/text_styles.dart';
+import '../../../../../../generated/assets.dart';
+import '../../../../../../reusable_widgets/custom_back_title.dart';
+import '../../../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
+import '../../../../../../utils/colors/app_colors.dart';
+import '../../../../../../utils/text_styles/text_styles.dart';
+import '../../contact_person/view/contact_person_screen.dart';
+import '../controller/account_information_controller.dart';
 
-class AccountInformationScreen extends StatelessWidget {
-  const AccountInformationScreen({super.key});
+class AccountInformationLandingScreen extends StatelessWidget {
+  const AccountInformationLandingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final accountInformationController =
-        Get.find<AccountInformationController>();
+        Get.find<AccountInformationLandingController>();
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 20,
+          padding: const EdgeInsets.only(
+            left: 20,
+            right: 20,
+            bottom: 20,
           ),
           height: context.height,
           width: context.width,
@@ -54,6 +55,7 @@ class AccountInformationScreen extends StatelessWidget {
                             accountInformationController.companyNameController,
                         hintText: "Enter Contact Person Name",
                         readOnly: true,
+                        fillColor: CColors.scaffoldColor,
                       ),
                     ),
                     10.ph,
@@ -64,6 +66,7 @@ class AccountInformationScreen extends StatelessWidget {
                             .businessRegistrationNumberController,
                         hintText: "Enter Business Registration Number",
                         readOnly: true,
+                        fillColor: CColors.scaffoldColor,
                       ),
                     ),
                     10.ph,
@@ -74,6 +77,7 @@ class AccountInformationScreen extends StatelessWidget {
                             .businessNatureController,
                         hintText: "Enter Business Nature",
                         readOnly: true,
+                        fillColor: CColors.scaffoldColor,
                       ),
                     ),
                     10.ph,
@@ -101,6 +105,7 @@ class AccountInformationScreen extends StatelessWidget {
                             .contactPersonController,
                         hintText: "Enter Contact Person",
                         readOnly: true,
+                        fillColor: CColors.scaffoldColor,
                       ),
                     ),
                     10.ph,

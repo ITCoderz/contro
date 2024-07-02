@@ -50,6 +50,7 @@ flutter:
     - assets/fonts/hind/
     - assets/fonts/poppins/
     - assets/bottom_navigation_icons/
+    - assets/images/
 
 
   fonts:

@@ -29,17 +29,26 @@ class Assets {
   static const String hindHindMedium = 'assets/fonts/hind/Hind-Medium.ttf';
   static const String hindHindRegular = 'assets/fonts/hind/Hind-Regular.ttf';
   static const String iconsAboutIcon = 'assets/icons/about_icon.svg';
+  static const String iconsAddBankIcon = 'assets/icons/add_bank_icon.svg';
   static const String iconsAppearanceIcon = 'assets/icons/appearance_icon.svg';
   static const String iconsArrowDown = 'assets/icons/arrow_down.svg';
+  static const String iconsArrowDownLeftCircle =
+      'assets/icons/arrow-down-left-circle.svg';
   static const String iconsArrowUp = 'assets/icons/arrow_up.svg';
+  static const String iconsArrowUpRightCircle =
+      'assets/icons/arrow-up-right-circle.svg';
   static const String iconsArtist = 'assets/icons/artist.svg';
+  static const String iconsCartIcon = 'assets/icons/cart_icon.svg';
+  static const String iconsCash = 'assets/icons/cash.svg';
   static const String iconsControAuthIcon = 'assets/icons/contro_auth_icon.png';
   static const String iconsControSplash = 'assets/icons/contro_splash.svg';
   static const String iconsControSplashTwoIcon =
       'assets/icons/contro_splash_two_icon.svg';
   static const String iconsFinancial = 'assets/icons/financial.svg';
   static const String iconsHair = 'assets/icons/hair.svg';
+  static const String iconsInfoCircle = 'assets/icons/info_circle.svg';
   static const String iconsLanguagesIcon = 'assets/icons/languages_icon.svg';
+  static const String iconsMenuIcon = 'assets/icons/menu_icon.svg';
   static const String iconsMovieIcon = 'assets/icons/movie_icon.svg';
   static const String iconsNewUserDashboardLogo =
       'assets/icons/new_user_dashboard_logo.png';
@@ -60,6 +69,13 @@ class Assets {
   static const String iconsThemesIcon = 'assets/icons/themes_icon.svg';
   static const String iconsVerifiedIcon = 'assets/icons/verified_icon.svg';
   static const String iconsWalletIcon = 'assets/icons/wallet_icon.svg';
+  static const String imagesCityBank = 'assets/images/city_bank.png';
+  static const String imagesHsbcBank = 'assets/images/hsbc_bank.png';
+  static const String imagesMaybank = 'assets/images/maybank.png';
+  static const String imagesThemeBackground =
+      'assets/images/theme_background.png';
+  static const String imagesThemeWhiteBackground =
+      'assets/images/theme_white_background.png';
   static const String poppinsPoppinsBold =
       'assets/fonts/poppins/Poppins-Bold.ttf';
   static const String poppinsPoppinsLight =

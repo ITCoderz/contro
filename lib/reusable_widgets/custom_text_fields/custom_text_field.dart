@@ -13,10 +13,14 @@ class CustomTextField extends StatelessWidget {
 
   final TextInputType? keyboardType;
   final int? minLines, maxLines;
-  final double? horizontalPadding, verticalPadding;
+  final double? horizontalPadding, verticalPadding, suffixMinWidth;
   final List<TextInputFormatter>? inputFormatters;
   final TextAlign? textAlign;
   final int? maxLength;
+  final bool needSuffix;
+  final Widget? suffixWidget;
+  final Color? fillColor;
+  final TextStyle? textStyle;
 
   const CustomTextField({
     super.key,
@@ -30,11 +34,16 @@ class CustomTextField extends StatelessWidget {
     this.maxLines = 1,
     this.isEnabled = true,
     this.readOnly = false,
+    this.needSuffix = false,
     this.horizontalPadding,
+    this.fillColor,
     this.verticalPadding,
+    this.suffixMinWidth,
     this.inputFormatters,
+    this.suffixWidget,
     this.textAlign,
     this.maxLength,
+    this.textStyle,
     required this.textEditingController,
   });
 
@@ -46,7 +55,7 @@ class CustomTextField extends StatelessWidget {
       child: TextFormField(
         controller: textEditingController,
         textAlignVertical: TextAlignVertical.center,
-        style: CustomTextStyles.darkGreyColor412,
+        style: textStyle ?? CustomTextStyles.darkGreyColor412,
         textAlign: textAlign ?? TextAlign.start,
         cursorColor: CColors.mainBlack,
         keyboardType: keyboardType ?? TextInputType.text,
@@ -61,7 +70,13 @@ class CustomTextField extends StatelessWidget {
           hintStyle: CustomTextStyles.greyTwoColor412,
           enabled: true,
           filled: true,
-          fillColor: readOnly ? CColors.scaffoldColor : CColors.whiteColor,
+          suffixIcon:
+              needSuffix ? suffixWidget ?? const SizedBox.shrink() : null,
+          suffixIconConstraints: BoxConstraints(
+            maxWidth: suffixMinWidth ?? 40,
+            minWidth: suffixMinWidth ?? 40,
+          ),
+          fillColor: fillColor ?? CColors.whiteColor,
           contentPadding: EdgeInsets.symmetric(
             horizontal: horizontalPadding ?? 10,
             vertical: verticalPadding ?? 10,
