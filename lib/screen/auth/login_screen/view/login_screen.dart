@@ -1,5 +1,3 @@
-import 'package:contro/reusable_widgets/custom_buttons/custom_elevated_button.dart';
-import 'package:contro/reusable_widgets/custom_text_fields/custom_auth_field.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:contro/utils/text_styles/text_styles.dart';
 import 'package:flutter/gestures.dart';
@@ -8,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import '../../../../generated/assets.dart';
+import '../../../../reusable_widgets/custom_buttons/custom_elevated_button.dart';
+import '../../../../reusable_widgets/custom_text_fields/custom_auth_field.dart';
 import '../../../../utils/colors/app_colors.dart';
 import '../controller/login_controller.dart';
 

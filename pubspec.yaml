@@ -25,6 +25,7 @@ dependencies:
   country_code_picker: ^3.0.0
   syncfusion_flutter_charts: ^26.1.39
   data_table_2: ^2.5.15
+  dotted_line: ^3.2.2
 
 dev_dependencies:
   flutter_test:

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../generated/assets.dart';
 import '../../utils/colors/app_colors.dart';
 import '../../utils/text_styles/text_styles.dart';
 
-class CustomTextField extends StatelessWidget {
+class MessageTextField extends StatelessWidget {
   final Function(String)? onChangedFunction;
   final Function()? onTap;
   final TextEditingController textEditingController;
@@ -13,19 +16,14 @@ class CustomTextField extends StatelessWidget {
 
   final TextInputType? keyboardType;
   final int? minLines, maxLines;
-  final double? horizontalPadding,
-      verticalPadding,
-      suffixMinWidth,
-      borderRadius;
+  final double? horizontalPadding, verticalPadding, suffixMinWidth;
   final List<TextInputFormatter>? inputFormatters;
   final TextAlign? textAlign;
   final int? maxLength;
-  final bool needSuffix;
-  final Widget? suffixWidget;
-  final Color? fillColor, borderColor;
+  final Color? fillColor;
   final TextStyle? textStyle;
 
-  const CustomTextField({
+  const MessageTextField({
     super.key,
     this.width,
     this.height,
@@ -37,15 +35,11 @@ class CustomTextField extends StatelessWidget {
     this.maxLines = 1,
     this.isEnabled = true,
     this.readOnly = false,
-    this.needSuffix = false,
     this.horizontalPadding,
     this.fillColor,
-    this.borderColor,
     this.verticalPadding,
     this.suffixMinWidth,
-    this.borderRadius,
     this.inputFormatters,
-    this.suffixWidget,
     this.textAlign,
     this.maxLength,
     this.textStyle,
@@ -60,7 +54,7 @@ class CustomTextField extends StatelessWidget {
       child: TextFormField(
         controller: textEditingController,
         textAlignVertical: TextAlignVertical.center,
-        style: textStyle ?? CustomTextStyles.darkGreyColor412,
+        style: textStyle ?? CustomTextStyles.darkGreyColor414,
         textAlign: textAlign ?? TextAlign.start,
         cursorColor: CColors.mainBlack,
         keyboardType: keyboardType ?? TextInputType.text,
@@ -72,12 +66,13 @@ class CustomTextField extends StatelessWidget {
         maxLength: maxLength,
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: CustomTextStyles.greyTwoColor412,
+          hintStyle: CustomTextStyles.darkGreyColor414,
           enabled: true,
           filled: true,
-          suffixIcon:
-              needSuffix ? suffixWidget ?? const SizedBox.shrink() : null,
-          suffixIconConstraints: BoxConstraints(
+          prefixIcon: SvgPicture.asset(
+            Assets.iconsSearchIcon,
+          ),
+          prefixIconConstraints: BoxConstraints(
             maxWidth: suffixMinWidth ?? 40,
             minWidth: suffixMinWidth ?? 40,
           ),
@@ -86,40 +81,37 @@ class CustomTextField extends StatelessWidget {
             horizontal: horizontalPadding ?? 10,
             vertical: verticalPadding ?? 10,
           ),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: borderColor ?? CColors.borderOneColor, width: 0.5),
+          enabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(
-              Radius.circular(borderRadius ?? 2),
+              Radius.circular(6),
             ),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: borderColor ?? CColors.borderOneColor, width: 0.5),
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(
-              Radius.circular(borderRadius ?? 2),
+              Radius.circular(6),
             ),
           ),
-          border: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: borderColor ?? CColors.borderOneColor, width: 0.5),
+          border: const OutlineInputBorder(
+            borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(
-              Radius.circular(borderRadius ?? 2),
+              Radius.circular(6),
             ),
           ),
-          errorBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: CColors.redColor, width: 0.5),
+          errorBorder: const OutlineInputBorder(
+            borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(
               Radius.circular(
-                borderRadius ?? 2,
+                6,
               ),
             ),
           ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: CColors.redColor, width: 0.5),
+          focusedErrorBorder: const OutlineInputBorder(
+            borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(
               Radius.circular(
-                borderRadius ?? 2,
+                6,
               ),
             ),
           ),

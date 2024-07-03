@@ -1,13 +1,16 @@
 import 'package:contro/models/bank_account_model/bank_account_model.dart';
+import 'package:contro/models/chat_model/messages_model.dart';
 import 'package:get/get.dart';
 import '../../generated/assets.dart';
 import '../../models/activity_model/activity_model.dart';
 import '../../models/bottom_navigation_bar_model/bottom_navigation_bar_model.dart';
 import '../../models/category_selection_model/category_selection_model.dart';
 import '../../models/charts/column_chart_model.dart';
+import '../../models/chat_model/chat_model.dart';
 import '../../models/seller_finance_model/seller_finanace_model.dart';
 import '../../models/summary_model/summary_model.dart';
 import '../../models/wallet_filters_model/wallet_filters_model.dart';
+import '../../screen/home/activities/activity_landing/view/activity_landing_screen.dart';
 import '../../screen/home/chat/chat_landing/view/chat_landing_screen.dart';
 import '../../screen/home/dashboard/view/dashboard_screen.dart';
 import '../../screen/home/settings/settings_landing/view/settings_landing_screen.dart';
@@ -60,7 +63,12 @@ class ConstantLists {
           Assets.bottomNavigationIconsActivitiesIconUnselected,
       selectedIconsString: Assets.bottomNavigationIconsActivitiesIconSelected,
       title: "Activities",
-      onTapFunction: () {},
+      onTapFunction: () {
+        Get.offAll(
+          () => const ActivityLandingScreen(),
+          transition: Transition.fadeIn,
+        );
+      },
     ),
     BottomNavigationBarModel(
       itemIndex: 4,
@@ -129,30 +137,119 @@ class ConstantLists {
       created: "24/03/2024",
       price: "\$ 668.80",
       status: "Open",
+      activityStatus: "Preparing order.",
     ),
     ActivityModel(
       orderId: "3499889",
       created: "24/03/2024",
       price: "\$ 668.80",
       status: "In Transit",
+      activityStatus: "Order is ready for delivery.",
     ),
     ActivityModel(
       orderId: "3499889",
       created: "24/03/2024",
       price: "\$ 668.80",
       status: "Complete",
+      activityStatus: "Order is out for delivery.",
     ),
     ActivityModel(
       orderId: "3499889",
       created: "24/03/2024",
       price: "\$ 668.80",
       status: "Dispute",
+      activityStatus: "Preparing order.",
     ),
     ActivityModel(
       orderId: "3499889",
       created: "24/03/2024",
       price: "\$ 668.80",
       status: "In Transit",
+      activityStatus: "Order is ready for delivery.",
+    ),
+  ];
+  static List<ActivityModel> activityModelListTwo = [
+    ActivityModel(
+      orderId: "3499889",
+      created: "24/03/2024",
+      price: "\$ 668.80",
+      status: "Open",
+      activityStatus: "Preparing order.",
+    ),
+    ActivityModel(
+        orderId: "3499889",
+        created: "24/03/2024",
+        price: "\$ 668.80",
+        status: "In Transit",
+        activityStatus: ""),
+    ActivityModel(
+      orderId: "3499889",
+      created: "24/03/2024",
+      price: "\$ 668.80",
+      status: "Complete",
+      activityStatus: "Order is complete.",
+    ),
+    ActivityModel(
+      orderId: "3499889",
+      created: "24/03/2024",
+      price: "\$ 668.80",
+      status: "Dispute",
+      activityStatus: "Preparing order.",
+    ),
+    ActivityModel(
+      orderId: "3499889",
+      created: "24/03/2024",
+      price: "\$ 668.80",
+      status: "In Transit",
+      activityStatus: "Order is ready for delivery.",
+    ),
+    ActivityModel(
+      orderId: "3499889",
+      created: "24/03/2024",
+      price: "\$ 668.80",
+      status: "Cancelled",
+      activityStatus: "Order is out for delivery.",
+    ),
+    ActivityModel(
+      orderId: "3499889",
+      created: "24/03/2024",
+      price: "\$ 668.80",
+      status: "Open",
+      activityStatus: "Order is delivered.",
+    ),
+    ActivityModel(
+        orderId: "3499889",
+        created: "24/03/2024",
+        price: "\$ 668.80",
+        status: "In Transit",
+        activityStatus: "Order is out for delivery."),
+    ActivityModel(
+      orderId: "3499889",
+      created: "24/03/2024",
+      price: "\$ 668.80",
+      status: "Complete",
+      activityStatus: "Order is complete.",
+    ),
+    ActivityModel(
+      orderId: "3499889",
+      created: "24/03/2024",
+      price: "\$ 668.80",
+      status: "Dispute",
+      activityStatus: "Order is out for delivery.",
+    ),
+    ActivityModel(
+      orderId: "3499889",
+      created: "24/03/2024",
+      price: "\$ 668.80",
+      status: "In Transit",
+      activityStatus: "Order is complete.",
+    ),
+    ActivityModel(
+      orderId: "3499889",
+      created: "24/03/2024",
+      price: "\$ 668.80",
+      status: "Cancelled",
+      activityStatus: "Preparing order.",
     ),
   ];
   static List<SellerFinanceModel> sellerFinanceList = [
@@ -217,6 +314,50 @@ class ConstantLists {
       index: 3,
     ),
   ];
+  static List<WalletFiltersModel> activitiesFilterList = [
+    WalletFiltersModel(
+      filterName: "All (8)",
+      index: 0,
+    ),
+    WalletFiltersModel(
+      filterName: "Open Orders (0)",
+      index: 1,
+    ),
+    WalletFiltersModel(
+      filterName: "In Transit (0)",
+      index: 2,
+    ),
+    WalletFiltersModel(
+      filterName: "Completed (0)",
+      index: 3,
+    ),
+  ];
+  static List<WalletFiltersModel> activitiesFilterListTwo = [
+    WalletFiltersModel(
+      filterName: "All",
+      index: 0,
+    ),
+    WalletFiltersModel(
+      filterName: "Open Orders",
+      index: 1,
+    ),
+    WalletFiltersModel(
+      filterName: "In Transit",
+      index: 2,
+    ),
+    WalletFiltersModel(
+      filterName: "Completed",
+      index: 3,
+    ),
+    WalletFiltersModel(
+      filterName: "Dispute",
+      index: 4,
+    ),
+    WalletFiltersModel(
+      filterName: "Cancelled",
+      index: 5,
+    ),
+  ];
   static List<BankAccountModel> bankAccountModelList = [
     BankAccountModel(
       assetImage: Assets.imagesHsbcBank,
@@ -232,6 +373,78 @@ class ConstantLists {
       assetImage: Assets.imagesMaybank,
       bankName: "Maybank",
       accountNumber: "(Account No: ****** **2098)",
+    ),
+  ];
+  static List<ChatModel> chatList = [
+    ChatModel(
+      image: Assets.iconsControMessageIcon,
+      name: "Contro",
+      time: "12:00 AM",
+      message:
+          "Would you like to upgrade to upgrade the total products and marketing. Please b...",
+    ),
+    ChatModel(
+      image: Assets.imagesChatOne,
+      name: "+6012 777 8888",
+      time: "12:00 AM",
+      message: "Do you have XL and able to customise my size?",
+    ),
+    ChatModel(
+      image: Assets.imagesChatTwo,
+      name: "+6011 600 3333",
+      time: "Yesterday",
+      message: "[Product]",
+    ),
+    ChatModel(
+      image: Assets.iconsServiceAnnouncement,
+      name: "Service Announcement",
+      time: "Yesterday",
+      message: "New Coupons Available for Grab! ",
+    ),
+  ];
+  static List<MessagesModel> messagesList = [
+    MessagesModel(
+      image: Assets.imagesChatOne,
+      isUserMessage: true,
+      messages: '22"',
+      messageType: "isVoice",
+      number: "+6012 777 8888",
+    ),
+    MessagesModel(
+      image: Assets.imagesChatOne,
+      isUserMessage: true,
+      messages: '22"',
+      messageType: "isVoice",
+      number: "+6012 777 8888",
+    ),
+    MessagesModel(
+      image: Assets.imagesChatOne,
+      isUserMessage: true,
+      messages: Assets.imagesMessageContainer,
+      messageType: "isImage",
+      number: "+6012 777 8888",
+    ),
+    MessagesModel(
+      image: Assets.iconsControMessageIcon,
+      isUserMessage: false,
+      messages: "The item is available.",
+      messageType: "isText",
+      number: "",
+    ),
+    MessagesModel(
+      image: Assets.iconsControMessageIcon,
+      isUserMessage: false,
+      messages: "Click here to purchase immediate.",
+      messageType: "isText",
+      number: "",
+    ),
+    MessagesModel(
+      image: Assets.imagesChatOne,
+      isUserMessage: true,
+      messages:
+          "Do you have size XL and be able to customise as my size? what is the minimum quantity?",
+      messageType: "isText",
+      number: "+6012 777 8888",
     ),
   ];
 }

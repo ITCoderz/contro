@@ -8,6 +8,7 @@ import '../../../../../../generated/assets.dart';
 import '../../../../../../models/category_selection_model/category_selection_model.dart';
 import '../../../../../../reusable_widgets/business_category_selection_widget/business_category_selection_widget.dart';
 import '../../../../../../reusable_widgets/custom_back_title.dart';
+import '../../../../../../reusable_widgets/filter_option_container.dart';
 import '../../../../../../utils/colors/app_colors.dart';
 import '../../../../../../utils/constants/constant_lists.dart';
 import '../../../../../../utils/text_styles/text_styles.dart';
@@ -117,7 +118,7 @@ class WalletLandingScreen extends StatelessWidget {
                                   verticalOffset: 50.0,
                                   child: FadeInAnimation(
                                     child: Obx(() {
-                                      return TransactionFilterWidget(
+                                      return FilterOptionContainer(
                                         onTapFunction: () {
                                           walletLandingController.toggleFilter(
                                               index: index);

@@ -11,6 +11,7 @@ import 'package:get/get.dart';
 
 import '../../../../generated/assets.dart';
 import '../../../../reusable_widgets/custom_background_container.dart';
+import '../../../../reusable_widgets/table_component.dart';
 import '../../../../utils/colors/app_colors.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -179,7 +180,7 @@ class DashboardScreen extends StatelessWidget {
                     10.ph,
                     SizedBox(
                       height: 340,
-                      child: PaginatedActiveOrdersTable(
+                      child: TableComponent(
                         paginationController:
                             dashBoardController.paginationActivityController,
                         dataList: ConstantLists.activityModelList,

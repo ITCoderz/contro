@@ -29,6 +29,8 @@ class Assets {
   static const String hindHindMedium = 'assets/fonts/hind/Hind-Medium.ttf';
   static const String hindHindRegular = 'assets/fonts/hind/Hind-Regular.ttf';
   static const String iconsAboutIcon = 'assets/icons/about_icon.svg';
+  static const String iconsActivitySearchIcon =
+      'assets/icons/activity_search_icon.svg';
   static const String iconsAddBankIcon = 'assets/icons/add_bank_icon.svg';
   static const String iconsAppearanceIcon = 'assets/icons/appearance_icon.svg';
   static const String iconsArrowDown = 'assets/icons/arrow_down.svg';
@@ -40,7 +42,11 @@ class Assets {
   static const String iconsArtist = 'assets/icons/artist.svg';
   static const String iconsCartIcon = 'assets/icons/cart_icon.svg';
   static const String iconsCash = 'assets/icons/cash.svg';
+  static const String iconsContactBuyerIcon =
+      'assets/icons/contact_buyer_icon.svg';
   static const String iconsControAuthIcon = 'assets/icons/contro_auth_icon.png';
+  static const String iconsControMessageIcon =
+      'assets/icons/contro_message_icon.svg';
   static const String iconsControSplash = 'assets/icons/contro_splash.svg';
   static const String iconsControSplashTwoIcon =
       'assets/icons/contro_splash_two_icon.svg';
@@ -49,6 +55,14 @@ class Assets {
   static const String iconsInfoCircle = 'assets/icons/info_circle.svg';
   static const String iconsLanguagesIcon = 'assets/icons/languages_icon.svg';
   static const String iconsMenuIcon = 'assets/icons/menu_icon.svg';
+  static const String iconsMessageAddAttachment =
+      'assets/icons/message_add_attachment.svg';
+  static const String iconsMessageCameraIcon =
+      'assets/icons/message_camera_icon.svg';
+  static const String iconsMessageRecordIcon =
+      'assets/icons/message_record_icon.svg';
+  static const String iconsMessagesCirclePlus =
+      'assets/icons/messages_circle_plus.svg';
   static const String iconsMovieIcon = 'assets/icons/movie_icon.svg';
   static const String iconsNewUserDashboardLogo =
       'assets/icons/new_user_dashboard_logo.png';
@@ -62,16 +76,24 @@ class Assets {
   static const String iconsProfileIcon = 'assets/icons/profile_icon.svg';
   static const String iconsQrcodeIcon = 'assets/icons/qrcode_icon.svg';
   static const String iconsRealEstate = 'assets/icons/real_estate.svg';
+  static const String iconsSearchIcon = 'assets/icons/search_icon.svg';
+  static const String iconsServiceAnnouncement =
+      'assets/icons/service_announcement.svg';
   static const String iconsServiceIcon = 'assets/icons/service_icon.svg';
   static const String iconsSignInAndSecurityIcon =
       'assets/icons/sign_in_and_security_icon.svg';
+  static const String iconsSpeakerIcon = 'assets/icons/speaker_icon.svg';
   static const String iconsTechnology = 'assets/icons/technology.svg';
   static const String iconsThemesIcon = 'assets/icons/themes_icon.svg';
   static const String iconsVerifiedIcon = 'assets/icons/verified_icon.svg';
   static const String iconsWalletIcon = 'assets/icons/wallet_icon.svg';
+  static const String imagesChatOne = 'assets/images/chat_one.png';
+  static const String imagesChatTwo = 'assets/images/chat_two.png';
   static const String imagesCityBank = 'assets/images/city_bank.png';
   static const String imagesHsbcBank = 'assets/images/hsbc_bank.png';
   static const String imagesMaybank = 'assets/images/maybank.png';
+  static const String imagesMessageContainer =
+      'assets/images/message_container.png';
   static const String imagesThemeBackground =
       'assets/images/theme_background.png';
   static const String imagesThemeWhiteBackground =

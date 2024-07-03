@@ -4,7 +4,11 @@ import 'package:get/get.dart';
 import '../screen/auth/login_screen/controller/login_controller.dart';
 import '../screen/auth/splash/controller/splash_controller.dart';
 import '../screen/auth/verify_otp/controller/verify_otp_controller.dart';
+import '../screen/home/activities/activity_details/controller/activity_detail_controller.dart';
+import '../screen/home/activities/activity_filter/controller/activity_filter_controller.dart';
+import '../screen/home/activities/activity_landing/controller/activity_landing_controller.dart';
 import '../screen/home/chat/chat_landing/controller/chat_landing_controller.dart';
+import '../screen/home/chat/messages_screen/controller/messages_controller.dart';
 import '../screen/home/create_new_business/controller/create_new_business_controller.dart';
 import '../screen/home/dashboard/controller/dashboard_controller.dart';
 import '../screen/home/dashboard_new/controller/dashboard_new_controller.dart';
@@ -92,6 +96,22 @@ class InitializingDependency implements Bindings {
     );
     Get.lazyPut(
       () => ChatLandingController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => MessagesController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => ActivityLandingController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => ActivityFilterController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => ActivityDetailController(),
       fenix: true,
     );
   }
