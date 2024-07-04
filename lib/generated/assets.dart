@@ -42,9 +42,13 @@ class Assets {
   static const String iconsArtist = 'assets/icons/artist.svg';
   static const String iconsCartIcon = 'assets/icons/cart_icon.svg';
   static const String iconsCash = 'assets/icons/cash.svg';
+  static const String iconsChatConnectIcon =
+      'assets/icons/chat_connect_icon.svg';
   static const String iconsContactBuyerIcon =
       'assets/icons/contact_buyer_icon.svg';
   static const String iconsControAuthIcon = 'assets/icons/contro_auth_icon.png';
+  static const String iconsControConnectIcon =
+      'assets/icons/contro_connect_icon.svg';
   static const String iconsControMessageIcon =
       'assets/icons/contro_message_icon.svg';
   static const String iconsControSplash = 'assets/icons/contro_splash.svg';
@@ -54,6 +58,7 @@ class Assets {
   static const String iconsHair = 'assets/icons/hair.svg';
   static const String iconsInfoCircle = 'assets/icons/info_circle.svg';
   static const String iconsLanguagesIcon = 'assets/icons/languages_icon.svg';
+  static const String iconsMapPinConnect = 'assets/icons/map_pin_connect.svg';
   static const String iconsMenuIcon = 'assets/icons/menu_icon.svg';
   static const String iconsMessageAddAttachment =
       'assets/icons/message_add_attachment.svg';
@@ -70,15 +75,23 @@ class Assets {
       'assets/icons/payment_and_subscriptions_icon.svg';
   static const String iconsProductAndServicesIcon =
       'assets/icons/product_and_services_icon.svg';
+  static const String iconsProductConnectIcon =
+      'assets/icons/product_connect_icon.svg';
   static const String iconsProductIcon = 'assets/icons/product_icon.svg';
   static const String iconsProductTwoIcon = 'assets/icons/product_two_icon.svg';
   static const String iconsProfessional = 'assets/icons/professional.svg';
   static const String iconsProfileIcon = 'assets/icons/profile_icon.svg';
+  static const String iconsQrCodeDelete = 'assets/icons/qr_code_delete.svg';
+  static const String iconsQrCodeDownload = 'assets/icons/qr_code_download.svg';
+  static const String iconsQrCodeEdit = 'assets/icons/qr_code_edit.svg';
+  static const String iconsQrCodeShare = 'assets/icons/qr_code_share.svg';
   static const String iconsQrcodeIcon = 'assets/icons/qrcode_icon.svg';
   static const String iconsRealEstate = 'assets/icons/real_estate.svg';
   static const String iconsSearchIcon = 'assets/icons/search_icon.svg';
   static const String iconsServiceAnnouncement =
       'assets/icons/service_announcement.svg';
+  static const String iconsServiceConnectIcon =
+      'assets/icons/service_connect_icon.svg';
   static const String iconsServiceIcon = 'assets/icons/service_icon.svg';
   static const String iconsSignInAndSecurityIcon =
       'assets/icons/sign_in_and_security_icon.svg';
@@ -93,9 +106,17 @@ class Assets {
   static const String imagesChatTwo = 'assets/images/chat_two.png';
   static const String imagesCityBank = 'assets/images/city_bank.png';
   static const String imagesHsbcBank = 'assets/images/hsbc_bank.png';
+  static const String imagesItemFive = 'assets/images/item_five.png';
+  static const String imagesItemFour = 'assets/images/item_four.png';
+  static const String imagesItemOne = 'assets/images/item_one.png';
+  static const String imagesItemSeven = 'assets/images/item_seven.png';
+  static const String imagesItemSix = 'assets/images/item_six.png';
+  static const String imagesItemThree = 'assets/images/item_three.png';
+  static const String imagesItemTwo = 'assets/images/item_two.png';
   static const String imagesMaybank = 'assets/images/maybank.png';
   static const String imagesMessageContainer =
       'assets/images/message_container.png';
+  static const String imagesQrCodeImage = 'assets/images/qr_code_image.png';
   static const String imagesThemeBackground =
       'assets/images/theme_background.png';
   static const String imagesThemeWhiteBackground =

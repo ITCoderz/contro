@@ -12,8 +12,14 @@ import '../screen/home/chat/messages_screen/controller/messages_controller.dart'
 import '../screen/home/create_new_business/controller/create_new_business_controller.dart';
 import '../screen/home/dashboard/controller/dashboard_controller.dart';
 import '../screen/home/dashboard_new/controller/dashboard_new_controller.dart';
+import '../screen/home/item/item_filters/controller/item_filters_controller.dart';
+import '../screen/home/item/item_landing/controller/item_landing_controller.dart';
 import '../screen/home/settings/account_information/account_information_landing/controller/account_information_controller.dart';
 import '../screen/home/settings/account_information/contact_person/controller/contact_person_controller.dart';
+import '../screen/home/settings/qr_codes/connect_to/controller/connect_to_controller.dart';
+import '../screen/home/settings/qr_codes/create_qr_code/controller/create_qr_code_controller.dart';
+import '../screen/home/settings/qr_codes/qr_codes_landing/controller/qr_codes_landing_controller.dart';
+import '../screen/home/settings/qr_codes/qr_filter/controller/qr_filter_controller.dart';
 import '../screen/home/settings/settings_landing/controller/settings_landing_controller.dart';
 import '../screen/home/settings/signin_and_security/edit_phone_number/controller/edit_phone_number_controller.dart';
 import '../screen/home/settings/signin_and_security/signin_and_security_landing/controller/signin_and_security_landing_controller.dart';
@@ -112,6 +118,30 @@ class InitializingDependency implements Bindings {
     );
     Get.lazyPut(
       () => ActivityDetailController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => QrFilterController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => QrCodesLandingController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => CreateQrCodeController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => ConnectToController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => ItemLandingController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => ItemFilterController(),
       fenix: true,
     );
   }

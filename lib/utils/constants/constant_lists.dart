@@ -1,5 +1,6 @@
 import 'package:contro/models/bank_account_model/bank_account_model.dart';
 import 'package:contro/models/chat_model/messages_model.dart';
+import 'package:contro/models/qr_codes_model/qr_code_model.dart';
 import 'package:get/get.dart';
 import '../../generated/assets.dart';
 import '../../models/activity_model/activity_model.dart';
@@ -7,12 +8,14 @@ import '../../models/bottom_navigation_bar_model/bottom_navigation_bar_model.dar
 import '../../models/category_selection_model/category_selection_model.dart';
 import '../../models/charts/column_chart_model.dart';
 import '../../models/chat_model/chat_model.dart';
-import '../../models/seller_finance_model/seller_finanace_model.dart';
+import '../../models/item_model/item_model.dart';
+import '../../models/seller_finance_model/seller_finance_model.dart';
 import '../../models/summary_model/summary_model.dart';
 import '../../models/wallet_filters_model/wallet_filters_model.dart';
 import '../../screen/home/activities/activity_landing/view/activity_landing_screen.dart';
 import '../../screen/home/chat/chat_landing/view/chat_landing_screen.dart';
 import '../../screen/home/dashboard/view/dashboard_screen.dart';
+import '../../screen/home/item/item_landing/view/item_landing_screen.dart';
 import '../../screen/home/settings/settings_landing/view/settings_landing_screen.dart';
 
 class ConstantLists {
@@ -51,10 +54,10 @@ class ConstantLists {
       selectedIconsString: Assets.bottomNavigationIconsSquarePlusIconUnselected,
       title: "Plus",
       onTapFunction: () {
-        // Get.offAll(
-        //   () => const MyAppointmentsLandingScreen(),
-        //   transition: Transition.fadeIn,
-        // );
+        Get.to(
+          () => const ItemLandingScreen(),
+          transition: Transition.fadeIn,
+        );
       },
     ),
     BottomNavigationBarModel(
@@ -332,6 +335,20 @@ class ConstantLists {
       index: 3,
     ),
   ];
+  static List<WalletFiltersModel> qrCodesFilterList = [
+    WalletFiltersModel(
+      filterName: "Active (0)",
+      index: 0,
+    ),
+    WalletFiltersModel(
+      filterName: "Inactive (0)",
+      index: 1,
+    ),
+    WalletFiltersModel(
+      filterName: "Under Review (0)",
+      index: 2,
+    ),
+  ];
   static List<WalletFiltersModel> activitiesFilterListTwo = [
     WalletFiltersModel(
       filterName: "All",
@@ -356,6 +373,44 @@ class ConstantLists {
     WalletFiltersModel(
       filterName: "Cancelled",
       index: 5,
+    ),
+  ];
+  static List<WalletFiltersModel> activitiesFilterListThree = [
+    WalletFiltersModel(
+      filterName: "Active",
+      index: 0,
+    ),
+    WalletFiltersModel(
+      filterName: "Inactive",
+      index: 1,
+    ),
+    WalletFiltersModel(
+      filterName: "Under Review",
+      index: 2,
+    ),
+  ];
+  static List<WalletFiltersModel> activitiesFilterListFour = [
+    WalletFiltersModel(
+      filterName: "Create Date",
+      index: 0,
+    ),
+    WalletFiltersModel(
+      filterName: "Views",
+      index: 1,
+    ),
+  ];
+  static List<WalletFiltersModel> itemFilterList = [
+    WalletFiltersModel(
+      filterName: "All",
+      index: 0,
+    ),
+    WalletFiltersModel(
+      filterName: "Products",
+      index: 1,
+    ),
+    WalletFiltersModel(
+      filterName: "Services",
+      index: 2,
     ),
   ];
   static List<BankAccountModel> bankAccountModelList = [
@@ -445,6 +500,88 @@ class ConstantLists {
           "Do you have size XL and be able to customise as my size? what is the minimum quantity?",
       messageType: "isText",
       number: "+6012 777 8888",
+    ),
+  ];
+  static List<QrCodesModel> qrCodeModelList = [
+    QrCodesModel(
+      qrCodeImage: Assets.imagesQrCodeImage,
+      title: "Extrabread Instant App",
+      createOn: "20/02/2024",
+      views: "103",
+    ),
+    QrCodesModel(
+      qrCodeImage: Assets.imagesQrCodeImage,
+      title: "Mailer Box Details",
+      createOn: "20/02/2024",
+      views: "103",
+    ),
+    QrCodesModel(
+      qrCodeImage: Assets.imagesQrCodeImage,
+      title: "Paper Sheet Details",
+      createOn: "20/02/2024",
+      views: "103",
+    ),
+    QrCodesModel(
+      qrCodeImage: Assets.imagesQrCodeImage,
+      title: "New Year Bundle",
+      createOn: "20/02/2024",
+      views: "103",
+    ),
+    QrCodesModel(
+      qrCodeImage: Assets.imagesQrCodeImage,
+      title: "Extrabread Customer Service",
+      createOn: "20/02/2024",
+      views: "103",
+    ),
+    QrCodesModel(
+      qrCodeImage: Assets.imagesQrCodeImage,
+      title: "Extrabread Shop",
+      createOn: "20/02/2024",
+      views: "103",
+    ),
+  ];
+  static List<ItemModel> itemModelList = [
+    ItemModel(
+      imageAsset: Assets.imagesItemOne,
+      name: "RSC Cartons",
+      reference: "MB-203998A",
+      amount: "5.80",
+    ),
+    ItemModel(
+      imageAsset: Assets.imagesItemTwo,
+      name: "RSC Cartons",
+      reference: "RSC-6009-4C",
+      amount: "5.80",
+    ),
+    ItemModel(
+      imageAsset: Assets.imagesItemThree,
+      name: "Top-Bottom Carton Box",
+      reference: "TBC-8900-2C",
+      amount: "5.80",
+    ),
+    ItemModel(
+      imageAsset: Assets.imagesItemFour,
+      name: "Paper Sheets",
+      reference: "TBC-8900-2C",
+      amount: "5.80",
+    ),
+    ItemModel(
+      imageAsset: Assets.imagesItemFive,
+      name: "Paper Sheets",
+      reference: "TBC-8900-2C",
+      amount: "5.80",
+    ),
+    ItemModel(
+      imageAsset: Assets.imagesItemSix,
+      name: "Digital Printed Top Bottom Box",
+      reference: "TBC-8900-2C",
+      amount: "5.80",
+    ),
+    ItemModel(
+      imageAsset: Assets.imagesItemSeven,
+      name: "Digital Printed Offset Box",
+      reference: "TBC-8900-2C",
+      amount: "5.80",
     ),
   ];
 }

@@ -1,22 +1,22 @@
-import 'package:contro/reusable_widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:contro/utils/alignment/widget_alignment.dart';
-import 'package:contro/utils/constants/constant_lists.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
+import '../../../../../reusable_widgets/custom_buttons/custom_elevated_button.dart';
 import '../../../../../reusable_widgets/filter_button_component.dart';
 import '../../../../../utils/colors/app_colors.dart';
+import '../../../../../utils/constants/constant_lists.dart';
 import '../../../../../utils/text_styles/text_styles.dart';
-import '../controller/activity_filter_controller.dart';
+import '../controller/item_filters_controller.dart';
 
-class ActivityFilterScreen extends StatelessWidget {
-  const ActivityFilterScreen({super.key});
+class ItemFilterScreen extends StatelessWidget {
+  const ItemFilterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final activityFilterController = Get.find<ActivityFilterController>();
+    final activityFilterController = Get.find<ItemFilterController>();
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -76,7 +76,7 @@ class ActivityFilterScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        "Activity Status",
+                        "Item Type",
                         style: CustomTextStyles.darkGreyColor414,
                       ),
                       10.ph,
@@ -91,16 +91,14 @@ class ActivityFilterScreen extends StatelessWidget {
                               crossAxisCount: 3,
                               mainAxisExtent: 48,
                             ),
-                            itemCount:
-                                ConstantLists.activitiesFilterListTwo.length,
+                            itemCount: ConstantLists.itemFilterList.length,
                             itemBuilder: (BuildContext context, int index) {
                               return Obx(
                                 () => FilterButtonComponent(
                                   title: ConstantLists
-                                      .activitiesFilterListTwo[index]
-                                      .filterName,
-                                  itemIndex: ConstantLists
-                                      .activitiesFilterListTwo[index].index,
+                                      .itemFilterList[index].filterName,
+                                  itemIndex:
+                                      ConstantLists.itemFilterList[index].index,
                                   selectedIndex: activityFilterController
                                       .selectedIndex.value,
                                   onTapFunction: () {

@@ -1,22 +1,22 @@
-import 'package:contro/reusable_widgets/custom_buttons/custom_elevated_button.dart';
+import 'package:contro/screen/home/settings/qr_codes/qr_filter/controller/qr_filter_controller.dart';
 import 'package:contro/utils/alignment/widget_alignment.dart';
-import 'package:contro/utils/constants/constant_lists.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
-import '../../../../../reusable_widgets/filter_button_component.dart';
-import '../../../../../utils/colors/app_colors.dart';
-import '../../../../../utils/text_styles/text_styles.dart';
-import '../controller/activity_filter_controller.dart';
+import '../../../../../../reusable_widgets/custom_buttons/custom_elevated_button.dart';
+import '../../../../../../reusable_widgets/filter_button_component.dart';
+import '../../../../../../utils/colors/app_colors.dart';
+import '../../../../../../utils/constants/constant_lists.dart';
+import '../../../../../../utils/text_styles/text_styles.dart';
 
-class ActivityFilterScreen extends StatelessWidget {
-  const ActivityFilterScreen({super.key});
+class QrFilterScreen extends StatelessWidget {
+  const QrFilterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final activityFilterController = Get.find<ActivityFilterController>();
+    final qrFilterController = Get.find<QrFilterController>();
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -72,18 +72,19 @@ class ActivityFilterScreen extends StatelessWidget {
                   decoration: const BoxDecoration(
                     color: CColors.whiteColor,
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        "Activity Status",
-                        style: CustomTextStyles.darkGreyColor414,
-                      ),
-                      10.ph,
-                      Expanded(
-                        child: AnimationLimiter(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "QR Status",
+                          style: CustomTextStyles.darkGreyColor414,
+                        ),
+                        10.ph,
+                        AnimationLimiter(
                           child: GridView.builder(
                             shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
                             gridDelegate:
                                 const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisSpacing: 10,
@@ -92,19 +93,19 @@ class ActivityFilterScreen extends StatelessWidget {
                               mainAxisExtent: 48,
                             ),
                             itemCount:
-                                ConstantLists.activitiesFilterListTwo.length,
+                                ConstantLists.activitiesFilterListThree.length,
                             itemBuilder: (BuildContext context, int index) {
                               return Obx(
                                 () => FilterButtonComponent(
                                   title: ConstantLists
-                                      .activitiesFilterListTwo[index]
+                                      .activitiesFilterListThree[index]
                                       .filterName,
                                   itemIndex: ConstantLists
-                                      .activitiesFilterListTwo[index].index,
-                                  selectedIndex: activityFilterController
-                                      .selectedIndex.value,
+                                      .activitiesFilterListThree[index].index,
+                                  selectedIndex:
+                                      qrFilterController.selectedQrIndex.value,
                                   onTapFunction: () {
-                                    activityFilterController.toggleFilter(
+                                    qrFilterController.toggleFilter(
                                         index: index);
                                   },
                                 ),
@@ -112,8 +113,46 @@ class ActivityFilterScreen extends StatelessWidget {
                             },
                           ),
                         ),
-                      ),
-                    ],
+                        10.ph,
+                        const Text(
+                          "Sorted by",
+                          style: CustomTextStyles.darkGreyColor414,
+                        ),
+                        10.ph,
+                        AnimationLimiter(
+                          child: GridView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisSpacing: 10,
+                              mainAxisSpacing: 10,
+                              crossAxisCount: 3,
+                              mainAxisExtent: 48,
+                            ),
+                            itemCount:
+                                ConstantLists.activitiesFilterListFour.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return Obx(
+                                () => FilterButtonComponent(
+                                  title: ConstantLists
+                                      .activitiesFilterListFour[index]
+                                      .filterName,
+                                  itemIndex: ConstantLists
+                                      .activitiesFilterListFour[index].index,
+                                  selectedIndex: qrFilterController
+                                      .selectedSortedByIndex.value,
+                                  onTapFunction: () {
+                                    qrFilterController.toggleSortedByFilter(
+                                        index: index);
+                                  },
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

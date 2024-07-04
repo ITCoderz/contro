@@ -9,7 +9,6 @@ import '../../../../../../reusable_widgets/custom_back_title.dart';
 import '../../../../../../reusable_widgets/custom_background_container.dart';
 import '../../../../../../reusable_widgets/custom_buttons/custom_elevated_button.dart';
 import '../../../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
-import '../../../../../../utils/colors/app_colors.dart';
 import '../../../../../../utils/text_styles/text_styles.dart';
 
 class AddBankAccountScreen extends StatelessWidget {

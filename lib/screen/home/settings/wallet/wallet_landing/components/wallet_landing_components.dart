@@ -1,13 +1,10 @@
-import 'package:contro/utils/alignment/widget_alignment.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:contro/utils/text_styles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../../generated/assets.dart';
-import '../../../../../../models/seller_finance_model/seller_finanace_model.dart';
-import '../../../../../../models/wallet_filters_model/wallet_filters_model.dart';
-import '../../../../../../utils/colors/app_colors.dart';
+import '../../../../../../models/seller_finance_model/seller_finance_model.dart';
 
 class TransactionTile extends StatelessWidget {
   final SellerFinanceModel sellerFinanceModel;

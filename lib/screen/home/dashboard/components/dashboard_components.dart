@@ -1,12 +1,7 @@
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:contro/utils/text_styles/text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:data_table_2/data_table_2.dart';
-import '../../../../generated/assets.dart';
-import '../../../../models/activity_model/activity_model.dart';
 import '../../../../models/charts/column_chart_model.dart';
 import '../../../../models/summary_model/summary_model.dart';
 import '../../../../utils/colors/app_colors.dart';

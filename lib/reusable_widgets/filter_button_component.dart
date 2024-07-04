@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 import '../../../../../utils/colors/app_colors.dart';
 
-class ActivityFilterComponent extends StatelessWidget {
+class FilterButtonComponent extends StatelessWidget {
   final String title;
   final int itemIndex, selectedIndex;
   final Function()? onTapFunction;
 
-  const ActivityFilterComponent({
+  const FilterButtonComponent({
     super.key,
     required this.title,
     required this.itemIndex,
