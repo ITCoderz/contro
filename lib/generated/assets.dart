@@ -87,6 +87,8 @@ class Assets {
   static const String iconsThemesIcon = 'assets/icons/themes_icon.svg';
   static const String iconsVerifiedIcon = 'assets/icons/verified_icon.svg';
   static const String iconsWalletIcon = 'assets/icons/wallet_icon.svg';
+  static const String imagesActivityItemImage =
+      'assets/images/activity_item_image.png';
   static const String imagesChatOne = 'assets/images/chat_one.png';
   static const String imagesChatTwo = 'assets/images/chat_two.png';
   static const String imagesCityBank = 'assets/images/city_bank.png';

@@ -2,7 +2,6 @@ import 'package:contro/utils/alignment/widget_alignment.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 import 'package:dotted_line/dotted_line.dart';
 import '../../../../../utils/colors/app_colors.dart';
 import '../../../../../utils/text_styles/text_styles.dart';
@@ -22,85 +21,219 @@ class TimeLineComponent extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         TimeLineCircularWidget(
-          inProgress: activityModel.activityStatus == "Order Confirmed"
+          inProgress: activityModel.activityStatus == "An order is confirmed."
               ? false
-              : activityModel.activityStatus == "Order Processing"
+              : activityModel.activityStatus == "Preparing order."
                   ? false
-                  : activityModel.activityStatus == "On the Way"
+                  : activityModel.activityStatus ==
+                          "Order is ready for delivery."
                       ? false
-                      : activityModel.activityStatus == "Order Delivered"
+                      : activityModel.activityStatus ==
+                              "Order is out for delivery."
                           ? false
-                          : true,
-          status: "Order Confirmed",
+                          : activityModel.activityStatus ==
+                                  "Order is delivered."
+                              ? false
+                              : activityModel.activityStatus ==
+                                      "Order is complete."
+                                  ? false
+                                  : true,
+          status: "An order is confirmed.",
         ),
         CustomDottedLine(
-          inProgress: activityModel.activityStatus == "Order Confirmed"
+          inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Order Processing"
+              : activityModel.activityStatus == "Preparing order."
                   ? false
-                  : activityModel.activityStatus == "On the Way"
+                  : activityModel.activityStatus ==
+                          "Order is ready for delivery."
                       ? false
-                      : activityModel.activityStatus == "Order Delivered"
+                      : activityModel.activityStatus ==
+                              "Order is out for delivery."
                           ? false
-                          : true,
+                          : activityModel.activityStatus ==
+                                  "Order is delivered."
+                              ? false
+                              : activityModel.activityStatus ==
+                                      "Order is complete."
+                                  ? false
+                                  : true,
         ),
         TimeLineCircularWidget(
-          inProgress: activityModel.activityStatus == "Order Confirmed"
+          inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Order Processing"
+              : activityModel.activityStatus == "Preparing order."
                   ? false
-                  : activityModel.activityStatus == "On the Way"
+                  : activityModel.activityStatus ==
+                          "Order is ready for delivery."
                       ? false
-                      : activityModel.activityStatus == "Order Delivered"
+                      : activityModel.activityStatus ==
+                              "Order is out for delivery."
                           ? false
-                          : true,
-          status: "Order Processing",
+                          : activityModel.activityStatus ==
+                                  "Order is delivered."
+                              ? false
+                              : activityModel.activityStatus ==
+                                      "Order is complete."
+                                  ? false
+                                  : true,
+          status: "Preparing order.",
         ),
         CustomDottedLine(
-          inProgress: activityModel.activityStatus == "Order Confirmed"
-              ? true
-              : activityModel.activityStatus == "Order Processing"
+          inProgress: activityModel.activityStatus == "An order is confirmed."
+              ? false
+              : activityModel.activityStatus == "Preparing order."
                   ? true
-                  : activityModel.activityStatus == "On the Way"
+                  : activityModel.activityStatus ==
+                          "Order is ready for delivery."
                       ? false
-                      : activityModel.activityStatus == "Order Delivered"
+                      : activityModel.activityStatus ==
+                              "Order is out for delivery."
                           ? false
-                          : true,
+                          : activityModel.activityStatus ==
+                                  "Order is delivered."
+                              ? false
+                              : activityModel.activityStatus ==
+                                      "Order is complete."
+                                  ? false
+                                  : true,
         ),
         TimeLineCircularWidget(
-          inProgress: activityModel.activityStatus == "Order Confirmed"
+          inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Order Processing"
+              : activityModel.activityStatus == "Preparing order."
                   ? true
-                  : activityModel.activityStatus == "On the Way"
+                  : activityModel.activityStatus ==
+                          "Order is ready for delivery."
                       ? false
-                      : activityModel.activityStatus == "Order Delivered"
+                      : activityModel.activityStatus ==
+                              "Order is out for delivery."
                           ? false
-                          : true,
-          status: "On the Way",
+                          : activityModel.activityStatus ==
+                                  "Order is delivered."
+                              ? false
+                              : activityModel.activityStatus ==
+                                      "Order is complete."
+                                  ? false
+                                  : true,
+          status: "Order is ready for delivery.",
         ),
         CustomDottedLine(
-          inProgress: activityModel.activityStatus == "Order Confirmed"
+          inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Order Processing"
+              : activityModel.activityStatus == "Preparing order."
                   ? true
-                  : activityModel.activityStatus == "On the Way"
+                  : activityModel.activityStatus ==
+                          "Order is ready for delivery."
                       ? true
-                      : activityModel.activityStatus == "Order Delivered"
+                      : activityModel.activityStatus ==
+                              "Order is out for delivery."
                           ? false
-                          : true,
+                          : activityModel.activityStatus ==
+                                  "Order is delivered."
+                              ? false
+                              : activityModel.activityStatus ==
+                                      "Order is complete."
+                                  ? false
+                                  : true,
         ),
         TimeLineCircularWidget(
-          inProgress: activityModel.activityStatus == "Order Confirmed"
+          inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Order Processing"
+              : activityModel.activityStatus == "Preparing order."
                   ? true
-                  : activityModel.activityStatus == "On the Way"
+                  : activityModel.activityStatus ==
+                          "Order is ready for delivery."
                       ? true
-                      : activityModel.activityStatus == "Order Delivered"
+                      : activityModel.activityStatus ==
+                              "Order is out for delivery."
                           ? false
-                          : true,
-          status: "Order Delivered",
+                          : activityModel.activityStatus ==
+                                  "Order is delivered."
+                              ? false
+                              : activityModel.activityStatus ==
+                                      "Order is complete."
+                                  ? false
+                                  : true,
+          status: "Order is out for delivery.",
+        ),
+        CustomDottedLine(
+          inProgress: activityModel.activityStatus == "An order is confirmed."
+              ? true
+              : activityModel.activityStatus == "Preparing order."
+                  ? true
+                  : activityModel.activityStatus ==
+                          "Order is ready for delivery."
+                      ? true
+                      : activityModel.activityStatus ==
+                              "Order is out for delivery."
+                          ? true
+                          : activityModel.activityStatus ==
+                                  "Order is delivered."
+                              ? false
+                              : activityModel.activityStatus ==
+                                      "Order is complete."
+                                  ? false
+                                  : true,
+        ),
+        TimeLineCircularWidget(
+          inProgress: activityModel.activityStatus == "An order is confirmed."
+              ? true
+              : activityModel.activityStatus == "Preparing order."
+                  ? true
+                  : activityModel.activityStatus ==
+                          "Order is ready for delivery."
+                      ? true
+                      : activityModel.activityStatus ==
+                              "Order is out for delivery."
+                          ? true
+                          : activityModel.activityStatus ==
+                                  "Order is delivered."
+                              ? false
+                              : activityModel.activityStatus ==
+                                      "Order is complete."
+                                  ? false
+                                  : true,
+          status: "Order is delivered.",
+        ),
+        CustomDottedLine(
+          inProgress: activityModel.activityStatus == "An order is confirmed."
+              ? true
+              : activityModel.activityStatus == "Preparing order."
+                  ? true
+                  : activityModel.activityStatus ==
+                          "Order is ready for delivery."
+                      ? true
+                      : activityModel.activityStatus ==
+                              "Order is out for delivery."
+                          ? true
+                          : activityModel.activityStatus ==
+                                  "Order is delivered."
+                              ? true
+                              : activityModel.activityStatus ==
+                                      "Order is complete."
+                                  ? false
+                                  : true,
+        ),
+        TimeLineCircularWidget(
+          inProgress: activityModel.activityStatus == "An order is confirmed."
+              ? true
+              : activityModel.activityStatus == "Preparing order."
+                  ? true
+                  : activityModel.activityStatus ==
+                          "Order is ready for delivery."
+                      ? true
+                      : activityModel.activityStatus ==
+                              "Order is out for delivery."
+                          ? true
+                          : activityModel.activityStatus ==
+                                  "Order is delivered."
+                              ? true
+                              : activityModel.activityStatus ==
+                                      "Order is complete."
+                                  ? false
+                                  : true,
+          status: "Order is complete.",
         ),
       ],
     );
@@ -119,10 +252,11 @@ class CustomDottedLine extends StatelessWidget {
   Widget build(BuildContext context) {
     return DottedLine(
       direction: Axis.vertical,
-      lineLength: 45,
+      lineLength: 35,
       lineThickness: inProgress ? 1 : 2,
-      dashLength: inProgress ? 1 : 45,
-      dashColor: inProgress ? CColors.greenAccentColor : CColors.whiteColor,
+      dashLength: inProgress ? 4 : 2,
+      dashGapLength: inProgress ? 4 : 0,
+      dashColor: inProgress ? CColors.greyColor : CColors.greenAccentColor,
     ).paddingOnly(left: 10).alignWidget(
           alignment: Alignment.centerLeft,
         );
@@ -145,22 +279,22 @@ class TimeLineCircularWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          height: 20,
-          width: 20,
+          height: 22,
+          width: 22,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: inProgress
-                ? CColors.whiteColor.withOpacity(0.4)
-                : CColors.whiteColor,
+            color: inProgress ? CColors.greyColor : CColors.greenAccentColor,
             shape: BoxShape.circle,
           ),
-          child: const Icon(
-            Icons.circle,
-            size: 10,
-            color: CColors.greenAccentColor,
-          ),
+          child: inProgress
+              ? const SizedBox.shrink()
+              : const Icon(
+                  Icons.check_rounded,
+                  color: CColors.whiteColor,
+                  size: 15,
+                ),
         ),
-        15.pw,
+        10.pw,
         Text(
           status,
           style: CustomTextStyles.darkGreyColor412,

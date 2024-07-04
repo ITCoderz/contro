@@ -293,6 +293,12 @@ class CustomTextStyles {
     color: CColors.darkGreyColor,
     fontFamily: 'SfProText',
   );
+  static const TextStyle darkGreyColor614 = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 14,
+    color: CColors.darkGreyColor,
+    fontFamily: 'SfProText',
+  );
   static const TextStyle darkGreyColor622 = TextStyle(
     fontWeight: FontWeight.w600,
     fontSize: 22,
