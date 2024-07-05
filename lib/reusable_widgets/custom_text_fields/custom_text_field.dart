@@ -12,7 +12,7 @@ class CustomTextField extends StatelessWidget {
   final bool isEnabled, readOnly;
 
   final TextInputType? keyboardType;
-  final int? minLines, maxLines;
+  final int? minLines, maxLines, hintMaxLines;
   final double? horizontalPadding,
       verticalPadding,
       suffixMinWidth,
@@ -33,6 +33,7 @@ class CustomTextField extends StatelessWidget {
     this.onChangedFunction,
     this.onTap,
     this.keyboardType,
+    this.hintMaxLines,
     this.minLines,
     this.maxLines = 1,
     this.isEnabled = true,
@@ -75,6 +76,7 @@ class CustomTextField extends StatelessWidget {
           hintStyle: CustomTextStyles.greyTwoColor412,
           enabled: true,
           filled: true,
+          hintMaxLines: hintMaxLines,
           suffixIcon:
               needSuffix ? suffixWidget ?? const SizedBox.shrink() : null,
           suffixIconConstraints: BoxConstraints(

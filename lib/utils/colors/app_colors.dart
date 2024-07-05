@@ -20,6 +20,7 @@ class CColors {
   static const blueSecondColor = Color(0xFF4279FA);
   static const greenAccentColor = Color(0xFF0CC67C);
   static const redAccentColor = Color(0xFFFE2B54);
+  static const redAccentTwoColor = Color(0xFFFF0000);
   static const pinkAccentColor = Color(0xFFF03B77);
   static List<Color> splashGradientColors = [
     const Color(0xFF622CEA).withOpacity(1),

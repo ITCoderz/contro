@@ -32,6 +32,7 @@ class Assets {
   static const String iconsActivitySearchIcon =
       'assets/icons/activity_search_icon.svg';
   static const String iconsAddBankIcon = 'assets/icons/add_bank_icon.svg';
+  static const String iconsAeroplaneIcon = 'assets/icons/aeroplane_icon.svg';
   static const String iconsAppearanceIcon = 'assets/icons/appearance_icon.svg';
   static const String iconsArrowDown = 'assets/icons/arrow_down.svg';
   static const String iconsArrowDownLeftCircle =
@@ -54,11 +55,19 @@ class Assets {
   static const String iconsControSplash = 'assets/icons/contro_splash.svg';
   static const String iconsControSplashTwoIcon =
       'assets/icons/contro_splash_two_icon.svg';
+  static const String iconsDeleteVariationIcon =
+      'assets/icons/delete_variation_icon.svg';
+  static const String iconsDeleteVariationIconTwo =
+      'assets/icons/delete_variation_icon_two.svg';
   static const String iconsFinancial = 'assets/icons/financial.svg';
+  static const String iconsGalleryIcon = 'assets/icons/gallery_icon.svg';
   static const String iconsHair = 'assets/icons/hair.svg';
+  static const String iconsHandStop = 'assets/icons/hand_stop.svg';
   static const String iconsInfoCircle = 'assets/icons/info_circle.svg';
   static const String iconsLanguagesIcon = 'assets/icons/languages_icon.svg';
   static const String iconsMapPinConnect = 'assets/icons/map_pin_connect.svg';
+  static const String iconsMapPinLocationIcon =
+      'assets/icons/map_pin_location_icon.svg';
   static const String iconsMenuIcon = 'assets/icons/menu_icon.svg';
   static const String iconsMessageAddAttachment =
       'assets/icons/message_add_attachment.svg';
@@ -98,6 +107,10 @@ class Assets {
   static const String iconsSpeakerIcon = 'assets/icons/speaker_icon.svg';
   static const String iconsTechnology = 'assets/icons/technology.svg';
   static const String iconsThemesIcon = 'assets/icons/themes_icon.svg';
+  static const String iconsTruckIcon = 'assets/icons/truck_icon.svg';
+  static const String iconsVariationGalleryIcon =
+      'assets/icons/variation_gallery_icon.svg';
+  static const String iconsVariationImage = 'assets/icons/variation_image.svg';
   static const String iconsVerifiedIcon = 'assets/icons/verified_icon.svg';
   static const String iconsWalletIcon = 'assets/icons/wallet_icon.svg';
   static const String imagesActivityItemImage =

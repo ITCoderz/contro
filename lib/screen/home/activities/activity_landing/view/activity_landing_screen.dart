@@ -61,37 +61,38 @@ class ActivityLandingScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       Expanded(
-                          child: ListView.separated(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: ConstantLists.activitiesFilterList.length,
-                        separatorBuilder: (context, index) => 5.pw,
-                        itemBuilder: (BuildContext context, int index) {
-                          return AnimationConfiguration.staggeredList(
-                            position: index,
-                            duration: const Duration(milliseconds: 375),
-                            child: SlideAnimation(
-                              verticalOffset: 50.0,
-                              child: FadeInAnimation(
-                                child: Obx(
-                                  () {
-                                    return FilterOptionContainer(
-                                      onTapFunction: () {
-                                        activityLandingController.toggleFilter(
-                                            index: index);
-                                      },
-                                      walletFiltersModel: ConstantLists
-                                          .activitiesFilterList[index],
-                                      selectedIndex: activityLandingController
-                                          .selectedIndex.value,
-                                    );
-                                  },
+                        child: ListView.separated(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: ConstantLists.activitiesFilterList.length,
+                          separatorBuilder: (context, index) => 5.pw,
+                          itemBuilder: (BuildContext context, int index) {
+                            return AnimationConfiguration.staggeredList(
+                              position: index,
+                              duration: const Duration(milliseconds: 375),
+                              child: SlideAnimation(
+                                verticalOffset: 50.0,
+                                child: FadeInAnimation(
+                                  child: Obx(
+                                    () {
+                                      return FilterOptionContainer(
+                                        onTapFunction: () {
+                                          activityLandingController
+                                              .toggleFilter(index: index);
+                                        },
+                                        walletFiltersModel: ConstantLists
+                                            .activitiesFilterList[index],
+                                        selectedIndex: activityLandingController
+                                            .selectedIndex.value,
+                                      );
+                                    },
+                                  ),
                                 ),
                               ),
-                            ),
-                          );
-                        },
-                      )),
+                            );
+                          },
+                        ),
+                      ),
                       10.pw,
                       InkWell(
                         onTap: () {},

@@ -1,5 +1,5 @@
+import 'package:contro/reusable_widgets/custom_buttons/custom_outlined_button.dart';
 import 'package:contro/screen/home/activities/activity_landing/controller/activity_landing_controller.dart';
-import 'package:contro/screen/home/settings/qr_codes/create_qr_code/view/create_qr_code_screen.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -12,6 +12,7 @@ import '../../../../../../reusable_widgets/filter_option_container.dart';
 import '../../../../../../utils/colors/app_colors.dart';
 import '../../../../../../utils/constants/constant_lists.dart';
 import '../../../../../../utils/text_styles/text_styles.dart';
+import '../../add_new_item/view/add_new_item_screen.dart';
 import '../../item_filters/view/item_category_screen.dart';
 import '../../item_filters/view/item_filters_screen.dart';
 import '../../item_filters/view/item_options_screen.dart';
@@ -181,33 +182,23 @@ class ItemLandingScreen extends StatelessWidget {
                                 ),
                                 15.ph,
                                 CustomElevatedButton(
-                                  onPressedFunction: () {},
+                                  onPressedFunction: () {
+                                    Get.to(
+                                      () => const AddNewItemScreen(),
+                                      transition: Transition.fadeIn,
+                                    );
+                                  },
                                   buttonText: "Add New Item",
                                   needShadow: false,
                                   width: 220,
                                 ),
                                 5.ph,
-                                OutlinedButton(
-                                  onPressed: () {
+                                CustomOutlinedButton(
+                                  onPressedFunction: () {
                                     activityLandingController.toggleRefreshed();
                                   },
-                                  style: ElevatedButton.styleFrom(
-                                    fixedSize: const Size(220, 48),
-                                    side: const BorderSide(
-                                      color: CColors.purpleAccentColor,
-                                    ),
-                                    elevation: 0.0,
-                                    backgroundColor: Colors.transparent,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(6),
-                                    ),
-                                  ),
-                                  child: const Text(
-                                    "Import Items",
-                                    style:
-                                        CustomTextStyles.purpleAccentColor414,
-                                  ),
-                                )
+                                  buttonText: "Import Items",
+                                ),
                               ],
                             ),
                           ),
@@ -241,7 +232,7 @@ class ItemLandingScreen extends StatelessWidget {
                     buttonText: "Add Item",
                     onPressedFunction: () {
                       Get.to(
-                        () => const CreateQrCodeScreen(),
+                        () => const AddNewItemScreen(),
                         transition: Transition.fadeIn,
                       );
                     },

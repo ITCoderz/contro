@@ -12,8 +12,13 @@ import '../screen/home/chat/messages_screen/controller/messages_controller.dart'
 import '../screen/home/create_new_business/controller/create_new_business_controller.dart';
 import '../screen/home/dashboard/controller/dashboard_controller.dart';
 import '../screen/home/dashboard_new/controller/dashboard_new_controller.dart';
+import '../screen/home/item/add_location/controller/add_location_controller.dart';
+import '../screen/home/item/add_new_item/controller/add_new_item_controller.dart';
+import '../screen/home/item/create_variations/controller/create_variations_controller.dart';
 import '../screen/home/item/item_filters/controller/item_filters_controller.dart';
 import '../screen/home/item/item_landing/controller/item_landing_controller.dart';
+import '../screen/home/item/set_pick_up_delivery/controller/set_pick_up_delivery_controller.dart';
+import '../screen/home/item/set_price_and_inventory/controller/set_price_and_inventory_controller.dart';
 import '../screen/home/settings/account_information/account_information_landing/controller/account_information_controller.dart';
 import '../screen/home/settings/account_information/contact_person/controller/contact_person_controller.dart';
 import '../screen/home/settings/qr_codes/connect_to/controller/connect_to_controller.dart';
@@ -142,6 +147,26 @@ class InitializingDependency implements Bindings {
     );
     Get.lazyPut(
       () => ItemFilterController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => AddNewItemController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => CreateVariationsController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => SetPriceAndInventoryController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => SetPickUpDeliveryController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => AddLocationController(),
       fenix: true,
     );
   }

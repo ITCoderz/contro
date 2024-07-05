@@ -9,6 +9,7 @@ import '../../models/category_selection_model/category_selection_model.dart';
 import '../../models/charts/column_chart_model.dart';
 import '../../models/chat_model/chat_model.dart';
 import '../../models/item_model/item_model.dart';
+import '../../models/pick_up_location_model/pick_up_location_model.dart';
 import '../../models/seller_finance_model/seller_finance_model.dart';
 import '../../models/summary_model/summary_model.dart';
 import '../../models/wallet_filters_model/wallet_filters_model.dart';
@@ -582,6 +583,71 @@ class ConstantLists {
       name: "Digital Printed Offset Box",
       reference: "TBC-8900-2C",
       amount: "5.80",
+    ),
+  ];
+
+  static List<PickUpLocationModel> pickUpLocationModelList = [
+    PickUpLocationModel(
+      title: "Pavilion Bukit Bintang",
+      description: "Kuala Lumpur, 5000, Malaysia.",
+    ),
+    PickUpLocationModel(
+      title: "Mid Valley Megamall",
+      description: "Kuala Lumpur, 5000, Malaysia.",
+    ),
+    PickUpLocationModel(
+      title: "One Utama Shopping Centre",
+      description: "Petaling Jaya, 47800, Malaysia.",
+    ),
+    PickUpLocationModel(
+      title: "TRX Shopping Gallery",
+      description: "TRX, Kuala Lumpur, 50000, Malaysia.",
+    ),
+    PickUpLocationModel(
+      title: "Kuala Lumpur City Centre",
+      description: "Kuala Lumpur, 5000, Malaysia.",
+    ),
+  ];
+  static List<PickUpLocationModel> locationList = [
+    PickUpLocationModel(
+      title: "Kuala Lumpur City Centre",
+      description: "Kuala Lumpur, 5000, Malaysia.",
+    ),
+    PickUpLocationModel(
+      title: "Pavilion Kuala Lumpur",
+      description: "Kuala Lumpur, 5000, Malaysia",
+    ),
+    PickUpLocationModel(
+      title: "Mid Valley Megamall",
+      description: "Kuala Lumpur, 5000, Malaysia",
+    ),
+    PickUpLocationModel(
+      title: "One Utama Shopping Centre",
+      description: "Petaling Jaya, 47800, Malaysia",
+    ),
+    PickUpLocationModel(
+      title: "Publika",
+      description: "Solaris Dutamas, Kuala Lumpur, 51000, Malaysia",
+    ),
+    PickUpLocationModel(
+      title: "TRX Shopping Gallery",
+      description: "TRX, Kuala Lumpur, 50000, Malaysia.",
+    ),
+    PickUpLocationModel(
+      title: "TRX Shopping Gallery",
+      description: "Petaling Jaya, 47000, Malaysia",
+    ),
+    PickUpLocationModel(
+      title: "Jalan Alor",
+      description: "Kuala Lumpur, 50000, Malaysia",
+    ),
+    PickUpLocationModel(
+      title: "Petaling Street (Chinatown)",
+      description: "Kuala Lumpur, 50000, Malaysia",
+    ),
+    PickUpLocationModel(
+      title: "Central Market (Pasar Seni)",
+      description: "Kuala Lumpur, 50000, Malaysia",
     ),
   ];
 }

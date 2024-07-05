@@ -181,7 +181,7 @@ class QrFilterScreen extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

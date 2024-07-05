@@ -107,7 +107,7 @@ class BankAccountScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

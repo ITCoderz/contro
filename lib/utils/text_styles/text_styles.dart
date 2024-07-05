@@ -255,6 +255,12 @@ class CustomTextStyles {
     color: CColors.whiteColor,
     fontFamily: 'SfProText',
   );
+  static const TextStyle white416 = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 16,
+    color: CColors.whiteColor,
+    fontFamily: 'SfProText',
+  );
   static const TextStyle white425 = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 25,
