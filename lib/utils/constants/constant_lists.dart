@@ -55,10 +55,10 @@ class ConstantLists {
       selectedIconsString: Assets.bottomNavigationIconsSquarePlusIconUnselected,
       title: "Plus",
       onTapFunction: () {
-        Get.to(
-          () => const ItemLandingScreen(),
-          transition: Transition.fadeIn,
-        );
+        // Get.to(
+        //   () => const ItemLandingScreen(),
+        //   transition: Transition.fadeIn,
+        // );
       },
     ),
     BottomNavigationBarModel(
@@ -171,8 +171,6 @@ class ConstantLists {
       status: "In Transit",
       activityStatus: "Order is ready for delivery.",
     ),
-  ];
-  static List<ActivityModel> activityModelListTwo = [
     ActivityModel(
       orderId: "3499889",
       created: "24/03/2024",
@@ -181,17 +179,18 @@ class ConstantLists {
       activityStatus: "Preparing order.",
     ),
     ActivityModel(
-        orderId: "3499889",
-        created: "24/03/2024",
-        price: "\$ 668.80",
-        status: "In Transit",
-        activityStatus: ""),
+      orderId: "3499889",
+      created: "24/03/2024",
+      price: "\$ 668.80",
+      status: "In Transit",
+      activityStatus: "Order is ready for delivery.",
+    ),
     ActivityModel(
       orderId: "3499889",
       created: "24/03/2024",
       price: "\$ 668.80",
       status: "Complete",
-      activityStatus: "Order is complete.",
+      activityStatus: "Order is out for delivery.",
     ),
     ActivityModel(
       orderId: "3499889",
@@ -203,6 +202,42 @@ class ConstantLists {
     ActivityModel(
       orderId: "3499889",
       created: "24/03/2024",
+      price: "\$ 668.80",
+      status: "In Transit",
+      activityStatus: "Order is ready for delivery.",
+    ),
+  ];
+  static List<ActivityModel> activityModelListTwo = [
+    ActivityModel(
+      orderId: "3499889",
+      created: "24/04/2023",
+      price: "\$ 660.80",
+      status: "Open",
+      activityStatus: "Preparing order.",
+    ),
+    ActivityModel(
+        orderId: "3499889",
+        created: "24/03/2021",
+        price: "\$ 628.80",
+        status: "In Transit",
+        activityStatus: ""),
+    ActivityModel(
+      orderId: "3499889",
+      created: "24/03/2021",
+      price: "\$ 662.80",
+      status: "Complete",
+      activityStatus: "Order is complete.",
+    ),
+    ActivityModel(
+      orderId: "3499889",
+      created: "24/03/2022",
+      price: "\$ 668.80",
+      status: "Dispute",
+      activityStatus: "Preparing order.",
+    ),
+    ActivityModel(
+      orderId: "3499889",
+      created: "21/03/2020",
       price: "\$ 668.80",
       status: "In Transit",
       activityStatus: "Order is ready for delivery.",

@@ -31,23 +31,26 @@ class LoginScreen extends StatelessWidget {
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    80.ph,
-                    Image.asset(
-                      Assets.iconsControAuthIcon,
-                      height: 120,
-                      width: 120,
+                    const Expanded(child: SizedBox()),
+                    Center(
+                      child: Image.asset(
+                        Assets.iconsControAuthIcon,
+                        height: 120,
+                        width: 120,
+                      ),
                     ),
-                    const Text(
+                     const Text(
                       "Verify your mobile number.",
                       style: CustomTextStyles.darkGreyColor522,
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.left,
                     ),
                     10.ph,
                     const Text(
                       'Tap "Continue" to get One Time Password (OTP) on this mobile number.',
                       style: CustomTextStyles.darkGreyColor314,
-                      textAlign: TextAlign.justify,
+                      textAlign: TextAlign.left,
                     ),
                     20.ph,
                     Row(
@@ -89,34 +92,41 @@ class LoginScreen extends StatelessWidget {
                       ],
                     ),
                     20.ph,
-                    CustomElevatedButton(
-                      onPressedFunction: () {
-                        loginController.validate();
-                      },
-                      buttonText: "Continue",
+                    Center(
+                      child: CustomElevatedButton(
+                        onPressedFunction: () {
+                          loginController.validate();
+                        },
+                        buttonText: "Continue",
+                      ),
                     ),
                     10.ph,
-                    Text.rich(
-                      TextSpan(
-                        children: [
-                          const TextSpan(
-                            text: "By joining Contro you agree our\n",
-                            style: CustomTextStyles.darkGreyColor311,
-                          ),
-                          TextSpan(
-                            text: "Terms & Conditions.",
-                            style: CustomTextStyles.blue412,
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () => debugPrint('Terms & Conditions.'),
-                          ),
-                        ],
+                    Center(
+                      child: Text.rich(
+                        TextSpan(
+                          children: [
+                            const TextSpan(
+                              text: "By joining Contro you agree our\n",
+                              style: CustomTextStyles.darkGreyColor311,
+                            ),
+                            TextSpan(
+                              text: "Terms & Conditions.",
+                              style: CustomTextStyles.blue412,
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () => debugPrint('Terms & Conditions.'),
+                            ),
+                          ],
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
-                    const Spacer(),
-                    const Text(
-                      "contro",
-                      style: CustomTextStyles.darkGreyColorColorPoppins420,
+                    75.ph,
+                    const Expanded(child: SizedBox()),
+                    const Center(
+                      child: Text(
+                        "contro",
+                        style: CustomTextStyles.darkGreyColorColorPoppins420,
+                      ),
                     ),
                     5.ph,
                   ],

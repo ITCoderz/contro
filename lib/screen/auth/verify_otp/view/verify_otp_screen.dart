@@ -45,7 +45,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                 hasScrollBody: false,
                 child: Column(
                   children: [
-                    80.ph,
+                    const Expanded(child: SizedBox()),
                     Image.asset(
                       Assets.iconsControAuthIcon,
                       height: 120,
@@ -105,7 +105,8 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    const Spacer(),
+                    60.ph,
+                    const Expanded(child: SizedBox()),
                     const Text(
                       "contro",
                       style: CustomTextStyles.darkGreyColorColorPoppins420,

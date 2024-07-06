@@ -22,8 +22,8 @@ class WithdrawalScreen extends StatelessWidget {
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.only(
-            left: 20,
-            right: 20,
+            left: 10,
+            right: 10,
             bottom: 20,
           ),
           height: context.height,
@@ -89,11 +89,14 @@ class WithdrawalScreen extends StatelessWidget {
                                       Get.to(() => const BankAccountScreen(),
                                           transition: Transition.fadeIn);
                                     },
-                                    child: Ink(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 20,
-                                        vertical: 15,
+                                    child: Container(
+                                      padding: const EdgeInsets.only(
+                                        left: 10,
+                                        top: 5,
+                                        bottom: 5,
+                                        right: 5
                                       ),
+                                      height: 42,
                                       decoration: BoxDecoration(
                                         color: CColors.scaffoldColor,
                                         border: Border.all(
@@ -102,20 +105,20 @@ class WithdrawalScreen extends StatelessWidget {
                                         ),
                                       ),
                                       width: context.width,
-                                      child: Center(
+                                      child: const Center(
                                         child: Row(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
-                                            const Expanded(
+                                            Expanded(
                                               child: Text(
                                                 "Maybank Berhad (Account No: ********2098)",
                                                 style: CustomTextStyles
                                                     .darkGreyColor412,
                                               ),
                                             ),
-                                            20.pw,
-                                            const Icon(
+
+                                            Icon(
                                               Icons.arrow_forward_ios_rounded,
                                               color: CColors.darkGreyColor,
                                               size: 15,

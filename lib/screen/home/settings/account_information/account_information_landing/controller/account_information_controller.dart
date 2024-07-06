@@ -8,6 +8,13 @@ class AccountInformationLandingController extends GetxController {
   TextEditingController businessNatureController = TextEditingController();
   TextEditingController contactPersonController = TextEditingController();
 
+  bool isReadOnly=true;
+
+  toggleEdit(){
+    isReadOnly=!isReadOnly;
+    update();
+  }
+
   @override
   void onInit() {
     companyNameController.text = "Extrabread Sdn Bhd";

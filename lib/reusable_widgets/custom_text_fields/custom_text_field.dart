@@ -9,8 +9,7 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController textEditingController;
   final String? hintText;
   final double? width, height;
-  final bool isEnabled, readOnly;
-
+  final bool isEnabled, readOnly,isAutofocus;
   final TextInputType? keyboardType;
   final int? minLines, maxLines, hintMaxLines;
   final double? horizontalPadding,
@@ -38,6 +37,7 @@ class CustomTextField extends StatelessWidget {
     this.maxLines = 1,
     this.isEnabled = true,
     this.readOnly = false,
+    this.isAutofocus = false,
     this.needSuffix = false,
     this.horizontalPadding,
     this.fillColor,
@@ -68,6 +68,7 @@ class CustomTextField extends StatelessWidget {
         minLines: minLines,
         maxLines: maxLines,
         enabled: isEnabled,
+        autofocus: isAutofocus,
         readOnly: readOnly,
         inputFormatters: inputFormatters,
         maxLength: maxLength,

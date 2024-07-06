@@ -43,8 +43,10 @@ class CColors {
   static const Color blueColorLight = Color(0xFFD2E5FF);
   static const Color blueColorLightTwo = Color(0xFFDBEAFE);
   static const Color yellowAccentColor = Color(0xFFFCE75D);
+  static const Color orangeColor = Color(0xFFFFAA3C);
   static const Color redColor = Color(0xFFDE5042);
   static const Color greenAccentTwoColor = Color(0xFF22C55E);
+  static const Color greenTableColor = Color(0xFF0CC67C);
   static const Color lightBlueColor = Color(0xFFDBEAFE);
   static const Color lightGreyColorTwo = Color(0xFFDFDFDF);
   static const Color lightGreyColorThree = Color(0xFFE0E0E0);

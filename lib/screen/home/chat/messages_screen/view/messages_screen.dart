@@ -50,7 +50,9 @@ class MessagesScreen extends StatelessWidget {
                     Expanded(
                       child: Row(
                         children: [
-                          Image.asset(
+                          chatModel.image.contains('svg')? SvgPicture.asset( chatModel.image,
+                            height: 32,
+                            width: 32,) :   Image.asset(
                             chatModel.image,
                             height: 32,
                             width: 32,
@@ -122,6 +124,7 @@ class MessagesScreen extends StatelessWidget {
                           textEditingController:
                               messagesController.messageTextController,
                           borderColor: CColors.greyTwoColor,
+                          isAutofocus: true,
                           borderRadius: 8,
                         ),
                       ),

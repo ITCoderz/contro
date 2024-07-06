@@ -1,3 +1,5 @@
+import 'package:contro/generated/assets.dart';
+import 'package:contro/reusable_widgets/business_category_selection_widget/business_category_selection_widget.dart';
 import 'package:contro/reusable_widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:contro/screen/home/create_new_business/components/create_new_business_components.dart';
 import 'package:contro/screen/home/create_new_business/controller/create_new_business_controller.dart';
@@ -5,6 +7,7 @@ import 'package:contro/utils/gaps/gaps.dart';
 import 'package:contro/utils/text_styles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
@@ -59,15 +62,15 @@ class CreateNewBusinessScreen extends StatelessWidget {
                       childWidget: Column(
                         children: [
                           Obx(
-                            () {
+                                () {
                               return SelectionTileComponent(
                                 isSelected: createNewBusinessController
                                     .isIndividualSelected.value,
                                 title: "Individual",
                                 descriptionTextOne:
-                                    'When signing up as a sole trader, please choose "Individual" as your business type.',
+                                'When signing up as a sole trader, please choose "Individual" as your business type.',
                                 descriptionTextTwo:
-                                    'Please verify your identity using a valid passport and bank account.',
+                                'Please verify your identity using a valid passport and bank account.',
                                 onTapFunction: () {
                                   createNewBusinessController
                                       .toggleIndividualSelected(val: true);
@@ -77,15 +80,15 @@ class CreateNewBusinessScreen extends StatelessWidget {
                           ),
                           10.ph,
                           Obx(
-                            () {
+                                () {
                               return SelectionTileComponent(
                                 isSelected: createNewBusinessController
                                     .isCorporateSelected.value,
                                 title: "Corporate",
                                 descriptionTextOne:
-                                    'When signing up as a corporate entity, please choose "Company" as your business type.',
+                                'When signing up as a corporate entity, please choose "Company" as your business type.',
                                 descriptionTextTwo:
-                                    'Please complete your business verification with a business license.',
+                                'Please complete your business verification with a business license.',
                                 onTapFunction: () {
                                   createNewBusinessController
                                       .toggleCorporateSelected(val: true);
@@ -103,7 +106,7 @@ class CreateNewBusinessScreen extends StatelessWidget {
                         horizontal: 15,
                       ),
                       decoration:
-                          const BoxDecoration(color: CColors.darkGreyColor),
+                      const BoxDecoration(color: CColors.darkGreyColor),
                       child: const Text(
                         "For compliance purposes only, we may need to verify your personal information. This information will never be shared outside of our secured services.",
                         style: CustomTextStyles.white311,
@@ -113,10 +116,10 @@ class CreateNewBusinessScreen extends StatelessWidget {
                     WhiteContainerTitleBackground(
                       titleString: "Instant App Name",
                       subtitleString:
-                          "${createNewBusinessController.appNameController.text.length}/120",
+                      "${createNewBusinessController.appNameController.text.length}/120",
                       childWidget: CustomTextField(
                         textEditingController:
-                            createNewBusinessController.appNameController,
+                        createNewBusinessController.appNameController,
                         hintText: "Enter Instant App Name",
                       ),
                     ),
@@ -129,7 +132,68 @@ class CreateNewBusinessScreen extends StatelessWidget {
                         hintText: "Enter your Full Name",
                       ),
                     ),
-                  ],
+                    10.ph,
+                    WhiteContainerTitleBackground(
+                      titleString: "Business Nature",
+                      childWidget: CustomTextField(
+                        textEditingController: createNewBusinessController
+                            .businessNatureController,
+                        hintText: "Select Business Nature",
+                        readOnly: true,
+                        needSuffix: true,
+                        suffixWidget: IconButton(onPressed: (){
+                          Get.to(()=> const BusinessCategorySelectionWidget());
+                        },icon: const Icon(Icons.arrow_forward_ios_rounded,size: 12,),),
+                      ),
+                    ),
+                    10.ph,
+                    WhiteContainerTitleBackground(
+                      titleString: "Verify Personal Information",
+                      childWidget: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5),
+                            child: SvgPicture.asset(Assets.iconsPickImageIcon,height: 24,),
+                          ),
+                          10.pw,
+                          const Expanded(child: Column(children: [
+                            Text("Upload a clear copy of your valid passport and recent bank statement\n\nFile must not be more than 10MB in JPG, JPEG, PNG or PDF format.",style: CustomTextStyles.greyTwoColor412,)
+                          ],))
+                        ],
+                      ),
+                    ),
+                    10.ph,
+                    WhiteContainerTitleBackground(
+                      titleString: "Email",
+                      childWidget: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CustomTextField(
+                            textEditingController: createNewBusinessController
+                                .emailController,
+                            hintText: "Enter email",
+                          ),
+                          10.ph,
+                          const Text(
+                            "Verification Code",
+                            style: CustomTextStyles.darkGreyColor414,
+                          ),
+                          10.ph,
+                          CustomTextField(
+                            textEditingController: createNewBusinessController
+                                .verificationCodeController,
+                            suffixMinWidth: 90,
+                            needSuffix: true,
+                            suffixWidget: TextButton(
+                              onPressed: (){},
+                              child: const FittedBox(child: Text("Send Code",style: CustomTextStyles.blueThreeColor412,)),
+                            ),
+                            hintText: "Enter Verification Code",
+                          ),
+                        ],
+                      ),
+                    ),],
                 ),
               ),
             ),
@@ -145,18 +209,28 @@ class CreateNewBusinessScreen extends StatelessWidget {
           right: 35,
           bottom: 10,
         ),
-        child: CustomElevatedButton(
-          buttonText: "Submit for Review",
-          onPressedFunction: () {
-            Get.offAll(
-              () => const DashboardNewScreen(),
-              transition: Transition.fadeIn,
-            );
-          },
-          needShadow: false,
-          backgroundColor: CColors.lightGreyColor,
-          textStyle: CustomTextStyles.greyTwoColor414,
-        ),
+        child: Obx(() {
+          bool areAllFieldsFilled = createNewBusinessController.areAllFieldsFilled();
+          print(areAllFieldsFilled);
+          return CustomElevatedButton(
+            buttonText: "Submit for Review",
+            onPressedFunction: areAllFieldsFilled
+                ? () {
+              Get.offAll(
+                    () => const DashboardNewScreen(),
+                transition: Transition.fadeIn,
+              );
+            }
+                : null,
+            needShadow: false,
+            backgroundColor: areAllFieldsFilled
+                ? CColors.purpleAccentColor
+                : CColors.lightGreyColor,
+            textStyle: areAllFieldsFilled
+                ? CustomTextStyles.white414
+                : CustomTextStyles.greyTwoColor414,
+          );
+        }),
       ),
     );
   }

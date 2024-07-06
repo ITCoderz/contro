@@ -1,3 +1,4 @@
+import 'package:contro/reusable_widgets/bottom_nav_bar/reusable_bottom_navbar.dart';
 import 'package:contro/screen/home/settings/qr_codes/create_qr_code/view/create_qr_code_screen.dart';
 import 'package:contro/screen/home/settings/qr_codes/qr_codes_landing/components/qr_codes_landing_components.dart';
 import 'package:contro/utils/gaps/gaps.dart';
@@ -185,33 +186,36 @@ class QrCodesLandingScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 68,
-        padding: const EdgeInsets.only(
-          top: 10,
-          left: 20,
-          right: 20,
-          bottom: 10,
-        ),
-        decoration: const BoxDecoration(
-          color: CColors.whiteColor,
-          border: Border(
-            top: BorderSide(
-              color: CColors.lightGreyColor,
-            ),
-          ),
-        ),
-        child: CustomElevatedButton(
-          buttonText: "Create QR Code",
-          onPressedFunction: () {
-            Get.to(
-              () => const CreateQrCodeScreen(),
-              transition: Transition.fadeIn,
-            );
-          },
-          needShadow: false,
-        ),
-      ),
+      bottomNavigationBar: 
+     Obx((){
+       return qrCodeLandingController.isRefreshed.value?  Container(
+         height: 68,
+         padding: const EdgeInsets.only(
+           top: 10,
+           left: 20,
+           right: 20,
+           bottom: 10,
+         ),
+         decoration: const BoxDecoration(
+           color: CColors.whiteColor,
+           border: Border(
+             top: BorderSide(
+               color: CColors.lightGreyColor,
+             ),
+           ),
+         ),
+         child: CustomElevatedButton(
+           buttonText: "Create QR Code",
+           onPressedFunction: () {
+             Get.to(
+                   () => const CreateQrCodeScreen(),
+               transition: Transition.fadeIn,
+             );
+           },
+           needShadow: false,
+         ),
+       ) : CustomBottomAppBar(selectedIndex: 4);
+     })
     );
   }
 }

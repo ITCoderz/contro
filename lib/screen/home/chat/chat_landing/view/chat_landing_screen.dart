@@ -73,14 +73,13 @@ class ChatLandingScreen extends StatelessWidget {
                             child: ChatLandingBubble(
                               chatModel: ConstantLists.chatList[index],
                               onTapFunction: () {
-                                if (index == 1 || index == 2) {
                                   Get.to(
                                       () => MessagesScreen(
                                             chatModel:
                                                 ConstantLists.chatList[index],
                                           ),
                                       transition: Transition.fadeIn);
-                                }
+
                               },
                             ),
                           ),

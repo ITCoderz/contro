@@ -95,7 +95,12 @@ class ActivityLandingScreen extends StatelessWidget {
                       ),
                       10.pw,
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(
+                                () => const ActivityFilterScreen(),
+                            transition: Transition.downToUp,
+                          );
+                        },
                         borderRadius: BorderRadius.circular(5),
                         child: SvgPicture.asset(Assets.iconsMenuIcon),
                       ),

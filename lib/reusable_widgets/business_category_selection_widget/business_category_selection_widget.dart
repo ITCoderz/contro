@@ -1,3 +1,4 @@
+import 'package:contro/screen/home/create_new_business/controller/create_new_business_controller.dart';
 import 'package:contro/utils/alignment/widget_alignment.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:contro/utils/text_styles/text_styles.dart';
@@ -74,7 +75,9 @@ class BusinessCategorySelectionWidget extends StatelessWidget {
                             verticalOffset: 50.0,
                             child: FadeInAnimation(
                               child: CategorySelectionTile(
-                                onTapFunction: () {},
+                                onTapFunction: () {
+                                  Get.find<CreateNewBusinessController>().addBusinessCategory(ConstantLists.categorySelectionList[index].title);
+                                },
                                 categorySelectionModel:
                                     ConstantLists.categorySelectionList[index],
                               ),

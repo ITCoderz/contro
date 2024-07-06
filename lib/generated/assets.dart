@@ -2,63 +2,42 @@
 class Assets {
   Assets._();
 
-  static const String appIconControAppIcon =
-      'assets/app_icon/contro_app_icon.png';
-  static const String appIconControAppIconChangedColor =
-      'assets/app_icon/contro_app_icon_changed_color.png';
-  static const String bottomNavigationIconsActivitiesIconSelected =
-      'assets/bottom_navigation_icons/activities_icon_selected.svg';
-  static const String bottomNavigationIconsActivitiesIconUnselected =
-      'assets/bottom_navigation_icons/activities_icon_unselected.svg';
-  static const String bottomNavigationIconsChatIconSelected =
-      'assets/bottom_navigation_icons/chat_icon_selected.svg';
-  static const String bottomNavigationIconsChatIconUnselected =
-      'assets/bottom_navigation_icons/chat_icon_unselected.svg';
-  static const String bottomNavigationIconsDashBoardSelected =
-      'assets/bottom_navigation_icons/dash_board_selected.svg';
-  static const String bottomNavigationIconsDashBoardUnselected =
-      'assets/bottom_navigation_icons/dash_board_unselected.svg';
-  static const String bottomNavigationIconsSettingsSelected =
-      'assets/bottom_navigation_icons/settings_selected.svg';
-  static const String bottomNavigationIconsSettingsUnselected =
-      'assets/bottom_navigation_icons/settings_unselected.svg';
-  static const String bottomNavigationIconsSquarePlusIconUnselected =
-      'assets/bottom_navigation_icons/square_plus_icon_unselected.svg';
+  static const String appIconControAppIcon = 'assets/app_icon/contro_app_icon.png';
+  static const String appIconControAppIconChangedColor = 'assets/app_icon/contro_app_icon_changed_color.png';
+  static const String bottomNavigationIconsActivitiesIconSelected = 'assets/bottom_navigation_icons/activities_icon_selected.svg';
+  static const String bottomNavigationIconsActivitiesIconUnselected = 'assets/bottom_navigation_icons/activities_icon_unselected.svg';
+  static const String bottomNavigationIconsChatIconSelected = 'assets/bottom_navigation_icons/chat_icon_selected.svg';
+  static const String bottomNavigationIconsChatIconUnselected = 'assets/bottom_navigation_icons/chat_icon_unselected.svg';
+  static const String bottomNavigationIconsDashBoardSelected = 'assets/bottom_navigation_icons/dash_board_selected.svg';
+  static const String bottomNavigationIconsDashBoardUnselected = 'assets/bottom_navigation_icons/dash_board_unselected.svg';
+  static const String bottomNavigationIconsSettingsSelected = 'assets/bottom_navigation_icons/settings_selected.svg';
+  static const String bottomNavigationIconsSettingsUnselected = 'assets/bottom_navigation_icons/settings_unselected.svg';
+  static const String bottomNavigationIconsSquarePlusIconUnselected = 'assets/bottom_navigation_icons/square_plus_icon_unselected.svg';
   static const String hindHindBold = 'assets/fonts/hind/Hind-Bold.ttf';
   static const String hindHindLight = 'assets/fonts/hind/Hind-Light.ttf';
   static const String hindHindMedium = 'assets/fonts/hind/Hind-Medium.ttf';
   static const String hindHindRegular = 'assets/fonts/hind/Hind-Regular.ttf';
   static const String iconsAboutIcon = 'assets/icons/about_icon.svg';
-  static const String iconsActivitySearchIcon =
-      'assets/icons/activity_search_icon.svg';
+  static const String iconsActivitySearchIcon = 'assets/icons/activity_search_icon.svg';
   static const String iconsAddBankIcon = 'assets/icons/add_bank_icon.svg';
   static const String iconsAeroplaneIcon = 'assets/icons/aeroplane_icon.svg';
   static const String iconsAppearanceIcon = 'assets/icons/appearance_icon.svg';
   static const String iconsArrowDown = 'assets/icons/arrow_down.svg';
-  static const String iconsArrowDownLeftCircle =
-      'assets/icons/arrow-down-left-circle.svg';
+  static const String iconsArrowDownLeftCircle = 'assets/icons/arrow-down-left-circle.svg';
   static const String iconsArrowUp = 'assets/icons/arrow_up.svg';
-  static const String iconsArrowUpRightCircle =
-      'assets/icons/arrow-up-right-circle.svg';
+  static const String iconsArrowUpRightCircle = 'assets/icons/arrow-up-right-circle.svg';
   static const String iconsArtist = 'assets/icons/artist.svg';
   static const String iconsCartIcon = 'assets/icons/cart_icon.svg';
   static const String iconsCash = 'assets/icons/cash.svg';
-  static const String iconsChatConnectIcon =
-      'assets/icons/chat_connect_icon.svg';
-  static const String iconsContactBuyerIcon =
-      'assets/icons/contact_buyer_icon.svg';
+  static const String iconsChatConnectIcon = 'assets/icons/chat_connect_icon.svg';
+  static const String iconsContactBuyerIcon = 'assets/icons/contact_buyer_icon.svg';
   static const String iconsControAuthIcon = 'assets/icons/contro_auth_icon.png';
-  static const String iconsControConnectIcon =
-      'assets/icons/contro_connect_icon.svg';
-  static const String iconsControMessageIcon =
-      'assets/icons/contro_message_icon.svg';
+  static const String iconsControConnectIcon = 'assets/icons/contro_connect_icon.svg';
+  static const String iconsControMessageIcon = 'assets/icons/contro_message_icon.svg';
   static const String iconsControSplash = 'assets/icons/contro_splash.svg';
-  static const String iconsControSplashTwoIcon =
-      'assets/icons/contro_splash_two_icon.svg';
-  static const String iconsDeleteVariationIcon =
-      'assets/icons/delete_variation_icon.svg';
-  static const String iconsDeleteVariationIconTwo =
-      'assets/icons/delete_variation_icon_two.svg';
+  static const String iconsControSplashTwoIcon = 'assets/icons/contro_splash_two_icon.svg';
+  static const String iconsDeleteVariationIcon = 'assets/icons/delete_variation_icon.svg';
+  static const String iconsDeleteVariationIconTwo = 'assets/icons/delete_variation_icon_two.svg';
   static const String iconsFinancial = 'assets/icons/financial.svg';
   static const String iconsGalleryIcon = 'assets/icons/gallery_icon.svg';
   static const String iconsHair = 'assets/icons/hair.svg';
@@ -66,26 +45,18 @@ class Assets {
   static const String iconsInfoCircle = 'assets/icons/info_circle.svg';
   static const String iconsLanguagesIcon = 'assets/icons/languages_icon.svg';
   static const String iconsMapPinConnect = 'assets/icons/map_pin_connect.svg';
-  static const String iconsMapPinLocationIcon =
-      'assets/icons/map_pin_location_icon.svg';
+  static const String iconsMapPinLocationIcon = 'assets/icons/map_pin_location_icon.svg';
   static const String iconsMenuIcon = 'assets/icons/menu_icon.svg';
-  static const String iconsMessageAddAttachment =
-      'assets/icons/message_add_attachment.svg';
-  static const String iconsMessageCameraIcon =
-      'assets/icons/message_camera_icon.svg';
-  static const String iconsMessageRecordIcon =
-      'assets/icons/message_record_icon.svg';
-  static const String iconsMessagesCirclePlus =
-      'assets/icons/messages_circle_plus.svg';
+  static const String iconsMessageAddAttachment = 'assets/icons/message_add_attachment.svg';
+  static const String iconsMessageCameraIcon = 'assets/icons/message_camera_icon.svg';
+  static const String iconsMessageRecordIcon = 'assets/icons/message_record_icon.svg';
+  static const String iconsMessagesCirclePlus = 'assets/icons/messages_circle_plus.svg';
   static const String iconsMovieIcon = 'assets/icons/movie_icon.svg';
-  static const String iconsNewUserDashboardLogo =
-      'assets/icons/new_user_dashboard_logo.png';
-  static const String iconsPaymentAndSubscriptionsIcon =
-      'assets/icons/payment_and_subscriptions_icon.svg';
-  static const String iconsProductAndServicesIcon =
-      'assets/icons/product_and_services_icon.svg';
-  static const String iconsProductConnectIcon =
-      'assets/icons/product_connect_icon.svg';
+  static const String iconsNewUserDashboardLogo = 'assets/icons/new_user_dashboard_logo.png';
+  static const String iconsPaymentAndSubscriptionsIcon = 'assets/icons/payment_and_subscriptions_icon.svg';
+  static const String iconsPickImageIcon = 'assets/icons/pick_image_icon.svg';
+  static const String iconsProductAndServicesIcon = 'assets/icons/product_and_services_icon.svg';
+  static const String iconsProductConnectIcon = 'assets/icons/product_connect_icon.svg';
   static const String iconsProductIcon = 'assets/icons/product_icon.svg';
   static const String iconsProductTwoIcon = 'assets/icons/product_two_icon.svg';
   static const String iconsProfessional = 'assets/icons/professional.svg';
@@ -97,24 +68,19 @@ class Assets {
   static const String iconsQrcodeIcon = 'assets/icons/qrcode_icon.svg';
   static const String iconsRealEstate = 'assets/icons/real_estate.svg';
   static const String iconsSearchIcon = 'assets/icons/search_icon.svg';
-  static const String iconsServiceAnnouncement =
-      'assets/icons/service_announcement.svg';
-  static const String iconsServiceConnectIcon =
-      'assets/icons/service_connect_icon.svg';
+  static const String iconsServiceAnnouncement = 'assets/icons/service_announcement.svg';
+  static const String iconsServiceConnectIcon = 'assets/icons/service_connect_icon.svg';
   static const String iconsServiceIcon = 'assets/icons/service_icon.svg';
-  static const String iconsSignInAndSecurityIcon =
-      'assets/icons/sign_in_and_security_icon.svg';
+  static const String iconsSignInAndSecurityIcon = 'assets/icons/sign_in_and_security_icon.svg';
   static const String iconsSpeakerIcon = 'assets/icons/speaker_icon.svg';
   static const String iconsTechnology = 'assets/icons/technology.svg';
   static const String iconsThemesIcon = 'assets/icons/themes_icon.svg';
   static const String iconsTruckIcon = 'assets/icons/truck_icon.svg';
-  static const String iconsVariationGalleryIcon =
-      'assets/icons/variation_gallery_icon.svg';
+  static const String iconsVariationGalleryIcon = 'assets/icons/variation_gallery_icon.svg';
   static const String iconsVariationImage = 'assets/icons/variation_image.svg';
   static const String iconsVerifiedIcon = 'assets/icons/verified_icon.svg';
   static const String iconsWalletIcon = 'assets/icons/wallet_icon.svg';
-  static const String imagesActivityItemImage =
-      'assets/images/activity_item_image.png';
+  static const String imagesActivityItemImage = 'assets/images/activity_item_image.png';
   static const String imagesChatOne = 'assets/images/chat_one.png';
   static const String imagesChatTwo = 'assets/images/chat_two.png';
   static const String imagesCityBank = 'assets/images/city_bank.png';
@@ -127,27 +93,17 @@ class Assets {
   static const String imagesItemThree = 'assets/images/item_three.png';
   static const String imagesItemTwo = 'assets/images/item_two.png';
   static const String imagesMaybank = 'assets/images/maybank.png';
-  static const String imagesMessageContainer =
-      'assets/images/message_container.png';
+  static const String imagesMessageContainer = 'assets/images/message_container.png';
   static const String imagesQrCodeImage = 'assets/images/qr_code_image.png';
-  static const String imagesThemeBackground =
-      'assets/images/theme_background.png';
-  static const String imagesThemeWhiteBackground =
-      'assets/images/theme_white_background.png';
-  static const String poppinsPoppinsBold =
-      'assets/fonts/poppins/Poppins-Bold.ttf';
-  static const String poppinsPoppinsLight =
-      'assets/fonts/poppins/Poppins-Light.ttf';
-  static const String poppinsPoppinsMedium =
-      'assets/fonts/poppins/Poppins-Medium.ttf';
-  static const String poppinsPoppinsRegular =
-      'assets/fonts/poppins/Poppins-Regular.ttf';
-  static const String sfProTextSFProTextBold =
-      'assets/fonts/sf_pro_text/SFProText-Bold.ttf';
-  static const String sfProTextSFProTextLight =
-      'assets/fonts/sf_pro_text/SFProText-Light.ttf';
-  static const String sfProTextSFProTextMedium =
-      'assets/fonts/sf_pro_text/SFProText-Medium.ttf';
-  static const String sfProTextSFProTextRegular =
-      'assets/fonts/sf_pro_text/SFProText-Regular.ttf';
+  static const String imagesThemeBackground = 'assets/images/theme_background.png';
+  static const String imagesThemeWhiteBackground = 'assets/images/theme_white_background.png';
+  static const String poppinsPoppinsBold = 'assets/fonts/poppins/Poppins-Bold.ttf';
+  static const String poppinsPoppinsLight = 'assets/fonts/poppins/Poppins-Light.ttf';
+  static const String poppinsPoppinsMedium = 'assets/fonts/poppins/Poppins-Medium.ttf';
+  static const String poppinsPoppinsRegular = 'assets/fonts/poppins/Poppins-Regular.ttf';
+  static const String sfProTextSFProTextBold = 'assets/fonts/sf_pro_text/SFProText-Bold.ttf';
+  static const String sfProTextSFProTextLight = 'assets/fonts/sf_pro_text/SFProText-Light.ttf';
+  static const String sfProTextSFProTextMedium = 'assets/fonts/sf_pro_text/SFProText-Medium.ttf';
+  static const String sfProTextSFProTextRegular = 'assets/fonts/sf_pro_text/SFProText-Regular.ttf';
+
 }

@@ -25,8 +25,8 @@ class GetStartedComponent extends StatelessWidget {
     return Container(
       width: context.width,
       padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 20,
+        horizontal: 10,
+        vertical: 10,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(3),
@@ -43,8 +43,8 @@ class GetStartedComponent extends StatelessWidget {
           10.ph,
           Container(
             padding: const EdgeInsets.symmetric(
-              horizontal: 15,
-              vertical: 15,
+              horizontal: 5,
+              vertical: 10,
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(2),
@@ -70,7 +70,7 @@ class GetStartedComponent extends StatelessWidget {
                         subTitleOne,
                         style: CustomTextStyles.darkGreyColor414,
                       ),
-                      5.ph,
+
                       Text(
                         subTitleTwo,
                         style: CustomTextStyles.greyTwoColor412,
@@ -79,7 +79,7 @@ class GetStartedComponent extends StatelessWidget {
                       CustomElevatedButton(
                         onPressedFunction: onPressedFunction,
                         buttonText: "Get Started",
-                        width: context.width,
+                        width:255,
                         height: 36,
                         needShadow: false,
                       ),

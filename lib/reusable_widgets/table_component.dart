@@ -1,10 +1,9 @@
-// Paginated Widget also Added if the you want to use that just uncomment the properties and in place of DataTable2 use PaginatedDataTable2
-
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 import '../generated/assets.dart';
 import '../models/activity_model/activity_model.dart';
@@ -12,7 +11,7 @@ import '../screen/home/activities/activity_details/view/activity_detail_screen.d
 import '../utils/colors/app_colors.dart';
 import '../utils/text_styles/text_styles.dart';
 
-class TableComponent extends StatelessWidget {
+class TableComponent extends StatefulWidget {
   final PaginatorController? paginationController;
   final List<ActivityModel> dataList;
 
@@ -23,14 +22,69 @@ class TableComponent extends StatelessWidget {
   });
 
   @override
+  _TableComponentState createState() => _TableComponentState();
+}
+
+class _TableComponentState extends State<TableComponent> {
+  List<ActivityModel> sortedDataList = [];
+  bool sortAscendingCreated = true;
+  bool sortAscendingPrice = true;
+  bool sortAscendingOrderId = true;
+
+  @override
+  void initState() {
+    super.initState();
+    sortedDataList = List.from(widget.dataList);
+  }
+
+  void _sortCreated() {
+    setState(() {
+      if (sortAscendingCreated) {
+        sortedDataList.sort((a, b) => _parseDate(a.created!).compareTo(_parseDate(b.created!)));
+      } else {
+        sortedDataList.sort((a, b) => _parseDate(b.created!).compareTo(_parseDate(a.created!)));
+      }
+      sortAscendingCreated = !sortAscendingCreated;
+    });
+  }
+
+  void _sortPrice() {
+    setState(() {
+      if (sortAscendingPrice) {
+        sortedDataList.sort((a, b) => _parsePrice(a.price!).compareTo(_parsePrice(b.price!)));
+      } else {
+        sortedDataList.sort((a, b) => _parsePrice(b.price!).compareTo(_parsePrice(a.price!)));
+      }
+      sortAscendingPrice = !sortAscendingPrice;
+    });
+  }
+
+  void _sortOrderId() {
+    setState(() {
+      if (sortAscendingOrderId) {
+        sortedDataList.sort((a, b) => a.orderId!.compareTo(b.orderId!));
+      } else {
+        sortedDataList.sort((a, b) => b.orderId!.compareTo(a.orderId!));
+      }
+      sortAscendingOrderId = !sortAscendingOrderId;
+    });
+  }
+
+  DateTime _parseDate(String date) {
+    final DateFormat format = DateFormat('dd/MM/yyyy');
+    return format.parse(date);
+  }
+
+  double _parsePrice(String price) {
+    return double.parse(price.replaceAll('\$', '').trim());
+  }
+
+  @override
   Widget build(BuildContext context) {
     return DataTable2(
-      horizontalMargin: 10,
-      columnSpacing: 10,
-      // renderEmptyRowsInTheEnd: false,
-      // wrapInCard: false,
-      minWidth: context.width,
-
+      horizontalMargin: 5,
+      columnSpacing: 0,
+      minWidth: context.width - 40,
       border: TableBorder(
         horizontalInside: BorderSide(
           color: CColors.borderOneColor.withOpacity(0.1),
@@ -38,59 +92,62 @@ class TableComponent extends StatelessWidget {
         ),
         bottom: BorderSide.none,
       ),
-      // autoRowsToHeight: true,
-      // controller: paginationController,
       dividerThickness: 0.5,
       headingRowColor: WidgetStateProperty.all(Colors.transparent),
       headingRowHeight: 40,
       dataTextStyle: CustomTextStyles.darkGreyColor412,
       headingTextStyle: CustomTextStyles.darkGreyColor412,
       rows: [
-        for (int index = 0; index < dataList.length; index++) ...[
+        for (int index = 0; index < sortedDataList.length; index++) ...[
           DataRow(
             color: WidgetStateProperty.all(Colors.white),
             cells: [
               DataCell(
                 Text(
-                  "#${dataList[index].orderId}",
+                  "#${sortedDataList[index].orderId}",
                 ),
               ),
               DataCell(
                 Text(
-                  dataList[index].created!,
+                  sortedDataList[index].created!,
                 ),
               ),
               DataCell(
                 Text(
-                  dataList[index].price!,
+                  sortedDataList[index].price!,
                 ),
               ),
               DataCell(
                 GestureDetector(
                   onTap: () {
                     Get.to(
-                      () => ActivityDetailScreen(
-                        activityModel: dataList[index],
+                          () => ActivityDetailScreen(
+                        activityModel: sortedDataList[index],
                       ),
                       transition: Transition.fadeIn,
                     );
                   },
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 5,
-                    ),
+                    width: sortedDataList[index].status == "Open"
+                        ? 61
+                        : sortedDataList[index].status == "In Transit"
+                        ? 91
+                        : sortedDataList[index].status == "Complete"
+                        ? 92
+                        : 91,
+                    height: 32,
+                    alignment: Alignment.center,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(6),
-                        color: dataList[index].status == "Open"
-                            ? CColors.yellowAccentColor
-                            : dataList[index].status == "In Transit"
-                                ? CColors.blueSecondColor
-                                : dataList[index].status == "Complete"
-                                    ? CColors.greenAccentTwoColor
-                                    : CColors.redAccentColor),
+                        color: sortedDataList[index].status == "Open"
+                            ? CColors.orangeColor
+                            : sortedDataList[index].status == "In Transit"
+                            ? CColors.blueSecondColor
+                            : sortedDataList[index].status == "Complete"
+                            ? CColors.greenTableColor
+                            : CColors.redAccentColor),
                     child: Text(
-                      dataList[index].status!,
+                      sortedDataList[index].status!,
                       style: CustomTextStyles.white412,
                     ),
                   ),
@@ -102,21 +159,30 @@ class TableComponent extends StatelessWidget {
       ],
       columns: <DataColumn>[
         DataColumn(
+          onSort: (va,bool v){
+            _sortOrderId();
+          },
           label: TableTitleToggleComponent(
             titleString: "Order ID",
-            onTapFunction: () {},
+            onTapFunction: _sortOrderId,
           ),
         ),
         DataColumn(
+          onSort: (va,bool v){
+            _sortCreated();
+          },
           label: TableTitleToggleComponent(
             titleString: "Created",
-            onTapFunction: () {},
+            onTapFunction: _sortCreated,
           ),
         ),
         DataColumn(
+          onSort: (va,bool v){
+            _sortPrice();
+          },
           label: TableTitleToggleComponent(
             titleString: "Price",
-            onTapFunction: () {},
+            onTapFunction: _sortPrice,
           ),
         ),
         DataColumn(
@@ -133,82 +199,8 @@ class TableComponent extends StatelessWidget {
           child: const Text('No data'),
         ),
       ),
-      // source: ActiveOrdersPaginatedTable(
-      //   dataList: dataList,
-      // ),
     );
   }
-}
-
-class PaginatedTable extends DataTableSource {
-  final List<ActivityModel> dataList;
-
-  PaginatedTable({required this.dataList});
-
-  @override
-  DataRow? getRow(int index) {
-    return DataRow(
-      color: WidgetStateProperty.resolveWith(
-        (states) {
-          if (states.contains(WidgetState.pressed)) {
-            return CColors.whiteColor;
-          }
-          return CColors.whiteColor;
-        },
-      ),
-      cells: [
-        DataCell(
-          Text(
-            "#${dataList[index].orderId}",
-          ),
-        ),
-        DataCell(
-          Text(
-            dataList[index].created!,
-          ),
-        ),
-        DataCell(
-          Text(
-            dataList[index].price!,
-          ),
-        ),
-        DataCell(
-          GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 5,
-              ),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
-                  color: dataList[index].status == "Open"
-                      ? CColors.yellowAccentColor
-                      : dataList[index].status == "In Transit"
-                          ? CColors.blueSecondColor
-                          : dataList[index].status == "Complete"
-                              ? CColors.greenAccentTwoColor
-                              : CColors.redAccentColor),
-              child: Text(
-                dataList[index].status!,
-                style: CustomTextStyles.white412,
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  @override
-  bool get isRowCountApproximate => false;
-
-  @override
-  int get rowCount => dataList.length;
-
-  @override
-  // TODO: implement selectedRowCount
-  int get selectedRowCount => 0;
 }
 
 class TableTitleToggleComponent extends StatelessWidget {
@@ -225,12 +217,15 @@ class TableTitleToggleComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
-          titleString,
-          style: CustomTextStyles.darkGreyColor412,
-          textAlign: TextAlign.left,
+        Flexible(
+          child: Text(
+            titleString,
+            style: CustomTextStyles.darkGreyColor412,
+            textAlign: TextAlign.left,
+          ),
         ),
         5.pw,
         InkWell(

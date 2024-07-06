@@ -20,9 +20,9 @@ class DashboardNewScreen extends StatelessWidget {
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.only(
-            left: 20,
-            right: 20,
-            bottom: 20,
+            left: 10,
+            right: 10,
+            bottom: 10,
           ),
           height: context.height,
           width: context.width,
@@ -60,7 +60,7 @@ class DashboardNewScreen extends StatelessWidget {
                     Container(
                       width: context.width,
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 20,
+                        horizontal: 10,
                         vertical: 20,
                       ),
                       decoration: BoxDecoration(
@@ -83,12 +83,12 @@ class DashboardNewScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    20.ph,
+                    10.ph,
                     Container(
                       width: context.width,
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 20,
+                        horizontal: 15,
+                        vertical: 10,
                       ),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(3),
@@ -115,7 +115,7 @@ class DashboardNewScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    20.ph,
+                    10.ph,
                     GetStartedComponent(
                       iconString: Assets.iconsProductTwoIcon,
                       title: "Do you have a product or service to sell?",
@@ -129,7 +129,7 @@ class DashboardNewScreen extends StatelessWidget {
                         );
                       },
                     ),
-                    20.ph,
+                    10.ph,
                     GetStartedComponent(
                       iconString: Assets.iconsMovieIcon,
                       title: "Create awesome instant app for your business.",
