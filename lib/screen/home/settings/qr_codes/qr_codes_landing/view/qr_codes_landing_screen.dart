@@ -13,6 +13,7 @@ import '../../../../../../reusable_widgets/filter_option_container.dart';
 import '../../../../../../utils/colors/app_colors.dart';
 import '../../../../../../utils/constants/constant_lists.dart';
 import '../../../../../../utils/text_styles/text_styles.dart';
+import '../../qr_filter/view/qr_filter_options.dart';
 import '../../qr_filter/view/qr_filter_screen.dart';
 import '../controller/qr_codes_landing_controller.dart';
 
@@ -44,12 +45,7 @@ class QrCodesLandingScreen extends StatelessWidget {
                     style: CustomTextStyles.darkGreyColor622,
                   ),
                   InkWell(
-                    onTap: () {
-                      Get.to(
-                        () => const QrFilterScreen(),
-                        transition: Transition.downToUp,
-                      );
-                    },
+                    onTap: () {},
                     borderRadius: BorderRadius.circular(5),
                     child: SvgPicture.asset(Assets.iconsActivitySearchIcon),
                   ),
@@ -96,7 +92,12 @@ class QrCodesLandingScreen extends StatelessWidget {
                       ),
                       10.pw,
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(
+                            () => const QrFilterScreen(),
+                            transition: Transition.downToUp,
+                          );
+                        },
                         borderRadius: BorderRadius.circular(5),
                         child: SvgPicture.asset(Assets.iconsMenuIcon),
                       ),
@@ -139,7 +140,7 @@ class QrCodesLandingScreen extends StatelessWidget {
                                         value: false,
                                         optionOnPressed: () {
                                           Get.to(
-                                            () => const QrFilterScreen(),
+                                            () => const QrFilterOptionsScreen(),
                                             transition: Transition.downToUp,
                                           );
                                         },
@@ -186,36 +187,39 @@ class QrCodesLandingScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: 
-     Obx((){
-       return qrCodeLandingController.isRefreshed.value?  Container(
-         height: 68,
-         padding: const EdgeInsets.only(
-           top: 10,
-           left: 20,
-           right: 20,
-           bottom: 10,
-         ),
-         decoration: const BoxDecoration(
-           color: CColors.whiteColor,
-           border: Border(
-             top: BorderSide(
-               color: CColors.lightGreyColor,
-             ),
-           ),
-         ),
-         child: CustomElevatedButton(
-           buttonText: "Create QR Code",
-           onPressedFunction: () {
-             Get.to(
-                   () => const CreateQrCodeScreen(),
-               transition: Transition.fadeIn,
-             );
-           },
-           needShadow: false,
-         ),
-       ) : CustomBottomAppBar(selectedIndex: 4);
-     })
+      bottomNavigationBar: Obx(
+        () {
+          return qrCodeLandingController.isRefreshed.value
+              ? Container(
+                  height: 68,
+                  padding: const EdgeInsets.only(
+                    top: 10,
+                    left: 20,
+                    right: 20,
+                    bottom: 10,
+                  ),
+                  decoration: const BoxDecoration(
+                    color: CColors.whiteColor,
+                    border: Border(
+                      top: BorderSide(
+                        color: CColors.lightGreyColor,
+                      ),
+                    ),
+                  ),
+                  child: CustomElevatedButton(
+                    buttonText: "Create QR Code",
+                    onPressedFunction: () {
+                      Get.to(
+                        () => const CreateQrCodeScreen(),
+                        transition: Transition.fadeIn,
+                      );
+                    },
+                    needShadow: false,
+                  ),
+                )
+              : const CustomBottomAppBar(selectedIndex: 4);
+        },
+      ),
     );
   }
 }

@@ -38,4 +38,12 @@ class CreateQrCodeController extends GetxController {
           DateFormat('dd/MM/yyyy').format(pickedDate);
     }
   }
+
+  @override
+  void onInit() {
+    dateControllerController.text = DateFormat('dd/MM/yyyy').format(
+      DateTime.now(),
+    );
+    super.onInit();
+  }
 }

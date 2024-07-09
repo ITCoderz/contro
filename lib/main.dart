@@ -3,11 +3,15 @@ import 'package:contro/utils/text_styles/text_styles.dart';
 import 'package:contro/utils/theme/theme_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'bindings/initializing_dependency.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
   ErrorWidget.builder = (FlutterErrorDetails details) {
     if (kDebugMode) {
       return ErrorWidget(details.exception);

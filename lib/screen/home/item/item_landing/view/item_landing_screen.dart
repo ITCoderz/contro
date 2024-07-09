@@ -55,12 +55,7 @@ class ItemLandingScreen extends StatelessWidget {
                   ),
                   const Spacer(),
                   InkWell(
-                    onTap: () {
-                      Get.to(
-                        () => const ItemFilterScreen(),
-                        transition: Transition.downToUp,
-                      );
-                    },
+                    onTap: () {},
                     borderRadius: BorderRadius.circular(5),
                     child: SvgPicture.asset(Assets.iconsActivitySearchIcon),
                   ),
@@ -108,8 +103,12 @@ class ItemLandingScreen extends StatelessWidget {
                       10.pw,
                       InkWell(
                         onTap: () {
+                          // Get.to(
+                          //   () => const ItemCategoryScreen(),
+                          //   transition: Transition.downToUp,
+                          // );
                           Get.to(
-                            () => const ItemCategoryScreen(),
+                            () => const ItemFilterScreen(),
                             transition: Transition.downToUp,
                           );
                         },
@@ -199,6 +198,7 @@ class ItemLandingScreen extends StatelessWidget {
                                   },
                                   buttonText: "Import Items",
                                 ),
+                                if (context.isPortrait) 120.ph,
                               ],
                             ),
                           ),

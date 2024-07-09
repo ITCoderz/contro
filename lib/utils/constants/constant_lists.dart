@@ -16,7 +16,6 @@ import '../../models/wallet_filters_model/wallet_filters_model.dart';
 import '../../screen/home/activities/activity_landing/view/activity_landing_screen.dart';
 import '../../screen/home/chat/chat_landing/view/chat_landing_screen.dart';
 import '../../screen/home/dashboard/view/dashboard_screen.dart';
-import '../../screen/home/item/item_landing/view/item_landing_screen.dart';
 import '../../screen/home/settings/settings_landing/view/settings_landing_screen.dart';
 
 class ConstantLists {

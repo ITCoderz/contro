@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 
 import '../../../../../generated/assets.dart';
 import '../../../../../reusable_widgets/bottom_nav_bar/reusable_bottom_navbar.dart';
+import '../../../item/item_landing/view/item_landing_screen.dart';
 import '../../qr_codes/qr_codes_landing/view/qr_codes_landing_screen.dart';
 import '../../signin_and_security/signin_and_security_landing/view/sign_in_and_security_screen.dart';
 import '../../theme/view/theme_screen.dart';
@@ -73,7 +74,12 @@ class SettingsLandingScreen extends StatelessWidget {
                     ),
                     10.ph,
                     CategorySelectionTile(
-                      onTapFunction: () {},
+                      onTapFunction: () {
+                        Get.to(
+                          () => const ItemLandingScreen(),
+                          transition: Transition.fadeIn,
+                        );
+                      },
                       categorySelectionModel: CategorySelectionModel(
                         iconString: Assets.iconsProductAndServicesIcon,
                         title: "Products & Services",
