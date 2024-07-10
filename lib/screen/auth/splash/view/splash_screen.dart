@@ -1,7 +1,6 @@
 import 'package:contro/screen/auth/splash/controller/splash_controller.dart';
 import 'package:contro/utils/alignment/widget_alignment.dart';
 import 'package:contro/utils/gaps/gaps.dart';
-import 'package:contro/utils/text_styles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
