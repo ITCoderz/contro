@@ -13,7 +13,6 @@ import '../../../../../../utils/colors/app_colors.dart';
 import '../../../../../../utils/constants/constant_lists.dart';
 import '../../../../../../utils/text_styles/text_styles.dart';
 import '../../add_new_item/view/add_new_item_screen.dart';
-import '../../item_filters/view/item_category_screen.dart';
 import '../../item_filters/view/item_filters_screen.dart';
 import '../../item_filters/view/item_options_screen.dart';
 import '../components/item_landing_components.dart';

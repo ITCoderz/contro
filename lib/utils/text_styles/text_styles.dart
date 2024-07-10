@@ -24,6 +24,12 @@ class CustomTextStyles {
     color: CColors.blueColor,
     fontFamily: 'SfProText',
   );
+  static const TextStyle blue411 = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 12,
+    color: CColors.blueColor,
+    fontFamily: 'SfProText',
+  );
   static const TextStyle blueTwoColor414 = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 14,
@@ -67,6 +73,12 @@ class CustomTextStyles {
     color: CColors.blueColor,
     fontFamily: 'SfProText',
   );
+  static const TextStyle blue513 = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 13,
+    color: CColors.blueColor,
+    fontFamily: 'SfProText',
+  );
 
   static const TextStyle mainBlack514 = TextStyle(
     fontWeight: FontWeight.w500,
@@ -85,6 +97,12 @@ class CustomTextStyles {
     fontWeight: FontWeight.w400,
     fontSize: 12,
     color: CColors.darkGreyColor,
+    fontFamily: 'SfProText',
+  );
+  static const TextStyle darkGreyTwoColor412 = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 12,
+    color: CColors.darkGreyTwoColor,
     fontFamily: 'SfProText',
   );
   static const TextStyle darkGreyColor410 = TextStyle(
@@ -111,6 +129,12 @@ class CustomTextStyles {
     color: CColors.greyTwoColor,
     fontFamily: 'SfProText',
   );
+  static const TextStyle greyTwoColor411 = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 11,
+    color: CColors.greyTwoColor,
+    fontFamily: 'SfProText',
+  );
   static const TextStyle greyTwoColor413 = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 13,
@@ -121,6 +145,12 @@ class CustomTextStyles {
     fontWeight: FontWeight.w400,
     fontSize: 10,
     color: CColors.greyTwoColor,
+    fontFamily: 'SfProText',
+  );
+  static const TextStyle darkGreyTwoColor410 = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 10,
+    color: CColors.darkGreyTwoColor,
     fontFamily: 'SfProText',
   );
   static const TextStyle greyTwoColor510 = TextStyle(
@@ -408,6 +438,12 @@ class CustomTextStyles {
   static const TextStyle darkGreyColor314 = TextStyle(
     fontWeight: FontWeight.w300,
     fontSize: 14,
+    color: CColors.darkGreyColor,
+    fontFamily: 'SfProText',
+  );
+  static const TextStyle darkGreyColor313 = TextStyle(
+    fontWeight: FontWeight.w300,
+    fontSize: 13,
     color: CColors.darkGreyColor,
     fontFamily: 'SfProText',
   );

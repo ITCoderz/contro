@@ -22,7 +22,7 @@ class TableComponent extends StatefulWidget {
   });
 
   @override
-  _TableComponentState createState() => _TableComponentState();
+  State<TableComponent> createState() => _TableComponentState();
 }
 
 class _TableComponentState extends State<TableComponent> {
@@ -40,9 +40,11 @@ class _TableComponentState extends State<TableComponent> {
   void _sortCreated() {
     setState(() {
       if (sortAscendingCreated) {
-        sortedDataList.sort((a, b) => _parseDate(a.created!).compareTo(_parseDate(b.created!)));
+        sortedDataList.sort(
+            (a, b) => _parseDate(a.created!).compareTo(_parseDate(b.created!)));
       } else {
-        sortedDataList.sort((a, b) => _parseDate(b.created!).compareTo(_parseDate(a.created!)));
+        sortedDataList.sort(
+            (a, b) => _parseDate(b.created!).compareTo(_parseDate(a.created!)));
       }
       sortAscendingCreated = !sortAscendingCreated;
     });
@@ -51,9 +53,11 @@ class _TableComponentState extends State<TableComponent> {
   void _sortPrice() {
     setState(() {
       if (sortAscendingPrice) {
-        sortedDataList.sort((a, b) => _parsePrice(a.price!).compareTo(_parsePrice(b.price!)));
+        sortedDataList.sort(
+            (a, b) => _parsePrice(a.price!).compareTo(_parsePrice(b.price!)));
       } else {
-        sortedDataList.sort((a, b) => _parsePrice(b.price!).compareTo(_parsePrice(a.price!)));
+        sortedDataList.sort(
+            (a, b) => _parsePrice(b.price!).compareTo(_parsePrice(a.price!)));
       }
       sortAscendingPrice = !sortAscendingPrice;
     });
@@ -121,7 +125,7 @@ class _TableComponentState extends State<TableComponent> {
                 GestureDetector(
                   onTap: () {
                     Get.to(
-                          () => ActivityDetailScreen(
+                      () => ActivityDetailScreen(
                         activityModel: sortedDataList[index],
                       ),
                       transition: Transition.fadeIn,
@@ -131,10 +135,10 @@ class _TableComponentState extends State<TableComponent> {
                     width: sortedDataList[index].status == "Open"
                         ? 61
                         : sortedDataList[index].status == "In Transit"
-                        ? 91
-                        : sortedDataList[index].status == "Complete"
-                        ? 92
-                        : 91,
+                            ? 91
+                            : sortedDataList[index].status == "Complete"
+                                ? 92
+                                : 91,
                     height: 32,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
@@ -142,10 +146,10 @@ class _TableComponentState extends State<TableComponent> {
                         color: sortedDataList[index].status == "Open"
                             ? CColors.orangeColor
                             : sortedDataList[index].status == "In Transit"
-                            ? CColors.blueSecondColor
-                            : sortedDataList[index].status == "Complete"
-                            ? CColors.greenTableColor
-                            : CColors.redAccentColor),
+                                ? CColors.blueSecondColor
+                                : sortedDataList[index].status == "Complete"
+                                    ? CColors.greenTableColor
+                                    : CColors.redAccentColor),
                     child: Text(
                       sortedDataList[index].status!,
                       style: CustomTextStyles.white412,
@@ -159,7 +163,7 @@ class _TableComponentState extends State<TableComponent> {
       ],
       columns: <DataColumn>[
         DataColumn(
-          onSort: (va,bool v){
+          onSort: (va, bool v) {
             _sortOrderId();
           },
           label: TableTitleToggleComponent(
@@ -168,7 +172,7 @@ class _TableComponentState extends State<TableComponent> {
           ),
         ),
         DataColumn(
-          onSort: (va,bool v){
+          onSort: (va, bool v) {
             _sortCreated();
           },
           label: TableTitleToggleComponent(
@@ -177,7 +181,7 @@ class _TableComponentState extends State<TableComponent> {
           ),
         ),
         DataColumn(
-          onSort: (va,bool v){
+          onSort: (va, bool v) {
             _sortPrice();
           },
           label: TableTitleToggleComponent(

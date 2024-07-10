@@ -9,6 +9,7 @@ class CColors {
 
   static const Color scaffoldColor = Color(0xFFF5F6F8);
   static const Color darkGreyColor = Color(0xFF27262A);
+  static const Color darkGreyTwoColor = Color(0xFF58575A);
   static const Color greyColor = Color(0xFFCECECE);
   static const Color greyTwoColor = Color(0xFF919191);
   static const Color greyThreeColor = Color(0xFFD9D9D9);

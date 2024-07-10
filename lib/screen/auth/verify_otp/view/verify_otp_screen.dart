@@ -45,7 +45,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                 hasScrollBody: false,
                 child: Column(
                   children: [
-                    const Expanded(child: SizedBox()),
+                    const Spacer(),
                     Image.asset(
                       Assets.iconsControAuthIcon,
                       height: 120,
@@ -53,7 +53,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                     ),
                     const Text(
                       "Verify your OTP Code.",
-                      style: CustomTextStyles.darkGreyColor522,
+                      style: CustomTextStyles.darkGreyColor520,
                       textAlign: TextAlign.center,
                     ),
                     10.ph,
@@ -63,11 +63,11 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                           const TextSpan(
                             text:
                                 "Enter the One Time Password (OTP) code from the sms we sent to ",
-                            style: CustomTextStyles.darkGreyColor314,
+                            style: CustomTextStyles.darkGreyColor313,
                           ),
                           TextSpan(
                             text: widget.completeNumber,
-                            style: CustomTextStyles.blue514,
+                            style: CustomTextStyles.blue513,
                           ),
                         ],
                       ),
@@ -106,12 +106,14 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                       textAlign: TextAlign.center,
                     ),
                     60.ph,
-                    const Expanded(child: SizedBox()),
-                    const Text(
-                      "contro",
-                      style: CustomTextStyles.darkGreyColorColorPoppins420,
+                    const Spacer(
+                      flex: 2,
                     ),
-                    5.ph,
+                    // const Text(
+                    //   "contro",
+                    //   style: CustomTextStyles.darkGreyColorColorPoppins420,
+                    // ),
+                    // 5.ph,
                   ],
                 ),
               ),

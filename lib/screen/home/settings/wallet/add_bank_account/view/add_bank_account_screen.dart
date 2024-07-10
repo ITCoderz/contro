@@ -1,4 +1,3 @@
-import 'package:contro/reusable_widgets/custom_dropdown/custom_drop_down.dart';
 import 'package:contro/screen/home/settings/wallet/add_bank_account/controller/add_bank_account_controller.dart';
 import 'package:contro/utils/colors/app_colors.dart';
 import 'package:contro/utils/gaps/gaps.dart';
@@ -54,111 +53,100 @@ class AddBankAccountScreen extends StatelessWidget {
                             ),
                             20.ph,
                             TitleContainerWidget(
-                              titleString: "Payment Type",
-                              childWidget:ClipRRect(
-                                borderRadius: BorderRadius.circular(2),
-                                child: Material(
-                                  color: Colors.transparent,
-                                  child: InkWell(
-                                    onTap: () {
-
-                                    },
-                                    child: Container(
-                                      padding: const EdgeInsets.only(
-                                          left: 10,
-                                          top: 5,
-                                          bottom: 5,
-                                          right: 5
-                                      ),
-                                      height: 42,
-                                      decoration: BoxDecoration(
-                                        color: CColors.scaffoldColor,
-                                        border: Border.all(
-                                          color: CColors.borderOneColor,
-                                          width: 0.5,
+                                titleString: "Payment Type",
+                                childWidget: ClipRRect(
+                                  borderRadius: BorderRadius.circular(2),
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    child: InkWell(
+                                      onTap: () {},
+                                      child: Container(
+                                        padding: const EdgeInsets.only(
+                                            left: 10,
+                                            top: 5,
+                                            bottom: 5,
+                                            right: 5),
+                                        height: 42,
+                                        decoration: BoxDecoration(
+                                          color: CColors.scaffoldColor,
+                                          border: Border.all(
+                                            color: CColors.borderOneColor,
+                                            width: 0.5,
+                                          ),
                                         ),
-                                      ),
-                                      width: context.width,
-                                      child: const Center(
-                                        child: Row(
-                                          crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                          children: [
-                                            Expanded(
-                                              child: Text(
-                                                "Payment Type",
-                                                style: CustomTextStyles
-                                                    .darkGreyColor412,
+                                        width: context.width,
+                                        child: const Center(
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Expanded(
+                                                child: Text(
+                                                  "Payment Type",
+                                                  style: CustomTextStyles
+                                                      .darkGreyColor412,
+                                                ),
                                               ),
-                                            ),
-
-                                            Icon(
-                                              Icons.arrow_forward_ios_rounded,
-                                              color: CColors.darkGreyColor,
-                                              size: 15,
-                                            ),
-                                          ],
+                                              Icon(
+                                                Icons.arrow_forward_ios_rounded,
+                                                color: CColors.darkGreyColor,
+                                                size: 15,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              )
-                            ),
-
+                                )),
                             10.ph,
                             TitleContainerWidget(
-                              titleString: "Bank Name",
-                              childWidget: ClipRRect(
-                                borderRadius: BorderRadius.circular(2),
-                                child: Material(
-                                  color: Colors.transparent,
-                                  child: InkWell(
-                                    onTap: () {
-
-                                    },
-                                    child: Container(
-                                      padding: const EdgeInsets.only(
-                                          left: 10,
-                                          top: 5,
-                                          bottom: 5,
-                                          right: 5
-                                      ),
-                                      height: 42,
-                                      decoration: BoxDecoration(
-                                        color: CColors.scaffoldColor,
-                                        border: Border.all(
-                                          color: CColors.borderOneColor,
-                                          width: 0.5,
+                                titleString: "Bank Name",
+                                childWidget: ClipRRect(
+                                  borderRadius: BorderRadius.circular(2),
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    child: InkWell(
+                                      onTap: () {},
+                                      child: Container(
+                                        padding: const EdgeInsets.only(
+                                            left: 10,
+                                            top: 5,
+                                            bottom: 5,
+                                            right: 5),
+                                        height: 42,
+                                        decoration: BoxDecoration(
+                                          color: CColors.scaffoldColor,
+                                          border: Border.all(
+                                            color: CColors.borderOneColor,
+                                            width: 0.5,
+                                          ),
                                         ),
-                                      ),
-                                      width: context.width,
-                                      child: const Center(
-                                        child: Row(
-                                          crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                          children: [
-                                            Expanded(
-                                              child: Text(
-                                                "Choose a bank",
-                                                style: CustomTextStyles
-                                                    .darkGreyColor412,
+                                        width: context.width,
+                                        child: const Center(
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Expanded(
+                                                child: Text(
+                                                  "Choose a bank",
+                                                  style: CustomTextStyles
+                                                      .darkGreyColor412,
+                                                ),
                                               ),
-                                            ),
-
-                                            Icon(
-                                              Icons.arrow_forward_ios_rounded,
-                                              color: CColors.darkGreyColor,
-                                              size: 15,
-                                            ),
-                                          ],
+                                              Icon(
+                                                Icons.arrow_forward_ios_rounded,
+                                                color: CColors.darkGreyColor,
+                                                size: 15,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              )
-                            ),
+                                )),
                             10.ph,
                             TitleContainerWidget(
                               titleString: "Account Name",

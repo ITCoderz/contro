@@ -31,9 +31,8 @@ class LoginScreen extends StatelessWidget {
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Expanded(child: SizedBox()),
+                    const Spacer(),
                     Center(
                       child: Image.asset(
                         Assets.iconsControAuthIcon,
@@ -41,15 +40,15 @@ class LoginScreen extends StatelessWidget {
                         width: 120,
                       ),
                     ),
-                     const Text(
+                    const Text(
                       "Verify your mobile number.",
-                      style: CustomTextStyles.darkGreyColor522,
-                      textAlign: TextAlign.left,
+                      style: CustomTextStyles.darkGreyColor520,
+                      textAlign: TextAlign.center,
                     ),
                     10.ph,
                     const Text(
                       'Tap "Continue" to get One Time Password (OTP) on this mobile number.',
-                      style: CustomTextStyles.darkGreyColor314,
+                      style: CustomTextStyles.darkGreyColor313,
                       textAlign: TextAlign.left,
                     ),
                     20.ph,
@@ -113,7 +112,8 @@ class LoginScreen extends StatelessWidget {
                               text: "Terms & Conditions.",
                               style: CustomTextStyles.blue412,
                               recognizer: TapGestureRecognizer()
-                                ..onTap = () => debugPrint('Terms & Conditions.'),
+                                ..onTap =
+                                    () => debugPrint('Terms & Conditions.'),
                             ),
                           ],
                         ),
@@ -121,14 +121,16 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     75.ph,
-                    const Expanded(child: SizedBox()),
-                    const Center(
-                      child: Text(
-                        "contro",
-                        style: CustomTextStyles.darkGreyColorColorPoppins420,
-                      ),
+                    const Spacer(
+                      flex: 2,
                     ),
-                    5.ph,
+                    // const Center(
+                    //   child: Text(
+                    //     "contro",
+                    //     style: CustomTextStyles.darkGreyColorColorPoppins420,
+                    //   ),
+                    // ),
+                    // 5.ph,
                   ],
                 ),
               ),
