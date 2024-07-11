@@ -34,12 +34,17 @@ class BusinessCategorySelectionWidget extends StatelessWidget {
                     ),
                   ),
                   children: [
-                    Container(
-                      height: 5,
-                      width: 60,
-                      decoration: BoxDecoration(
-                          color: CColors.greyTwoColor,
-                          borderRadius: BorderRadius.circular(10)),
+                    GestureDetector(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: Container(
+                        height: 5,
+                        width: 60,
+                        decoration: BoxDecoration(
+                            color: CColors.greyTwoColor,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
                     ),
                     20.ph,
                     Row(
@@ -47,7 +52,9 @@ class BusinessCategorySelectionWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.back();
+                          },
                           icon: const Icon(
                             Icons.close_rounded,
                             color: CColors.darkGreyColor,
@@ -76,7 +83,9 @@ class BusinessCategorySelectionWidget extends StatelessWidget {
                             child: FadeInAnimation(
                               child: CategorySelectionTile(
                                 onTapFunction: () {
-                                  Get.find<CreateNewBusinessController>().addBusinessCategory(ConstantLists.categorySelectionList[index].title);
+                                  Get.find<CreateNewBusinessController>()
+                                      .addBusinessCategory(ConstantLists
+                                          .categorySelectionList[index].title);
                                 },
                                 categorySelectionModel:
                                     ConstantLists.categorySelectionList[index],

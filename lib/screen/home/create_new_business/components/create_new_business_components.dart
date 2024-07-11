@@ -10,13 +10,13 @@ class WhiteContainerTitleBackground extends StatelessWidget {
   final String? subtitleString;
 
   final Widget childWidget;
-
-  const WhiteContainerTitleBackground({
-    super.key,
-    required this.titleString,
-    this.subtitleString,
-    required this.childWidget,
-  });
+  final double radius;
+  const WhiteContainerTitleBackground(
+      {super.key,
+      required this.titleString,
+      this.subtitleString,
+      required this.childWidget,
+      this.radius = 3});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class WhiteContainerTitleBackground extends StatelessWidget {
         vertical: 15,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(3),
+        borderRadius: BorderRadius.circular(radius),
         color: CColors.whiteColor,
       ),
       child: Column(
@@ -38,12 +38,12 @@ class WhiteContainerTitleBackground extends StatelessWidget {
             children: [
               Text(
                 titleString,
-                style: CustomTextStyles.darkGreyColor414,
+                style: CustomTextStyles.darkGreyColor412,
               ),
               subtitleString != null
                   ? Text(
                       subtitleString!,
-                      style: CustomTextStyles.greyTwoColor412,
+                      style: CustomTextStyles.greyTwoColor411,
                     )
                   : const SizedBox.shrink()
             ],

@@ -45,6 +45,8 @@ class Assets {
   static const String iconsCash = 'assets/icons/cash.svg';
   static const String iconsChatConnectIcon =
       'assets/icons/chat_connect_icon.svg';
+  static const String iconsCloudUploadIcon =
+      'assets/icons/cloud_upload_icon.svg';
   static const String iconsContactBuyerIcon =
       'assets/icons/contact_buyer_icon.svg';
   static const String iconsControAuthIcon = 'assets/icons/contro_auth_icon.png';
@@ -121,6 +123,8 @@ class Assets {
       'assets/icons/variation_gallery_icon.svg';
   static const String iconsVariationImage = 'assets/icons/variation_image.svg';
   static const String iconsVerifiedIcon = 'assets/icons/verified_icon.svg';
+  static const String iconsVerifyItsYouIcon =
+      'assets/icons/verify_its_you_icon.svg';
   static const String iconsWalletIcon = 'assets/icons/wallet_icon.svg';
   static const String imagesActivityItemImage =
       'assets/images/activity_item_image.png';

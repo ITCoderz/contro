@@ -5,7 +5,11 @@ class CreateNewBusinessController extends GetxController {
   final isIndividualSelected = true.obs;
   final isCorporateSelected = false.obs;
   TextEditingController appNameController = TextEditingController();
-  TextEditingController businessOwnerNameController = TextEditingController();
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController companyNameController = TextEditingController();
+  TextEditingController businessRegistrationNumberController =
+      TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController verificationCodeController = TextEditingController();
   TextEditingController businessNatureController = TextEditingController();
@@ -17,8 +21,8 @@ class CreateNewBusinessController extends GetxController {
   var isVerificationCodeFilled = false.obs;
   var isBusinessNatureFilled = false.obs;
 
-  addBusinessCategory(value){
-    businessNatureController.text=value;
+  addBusinessCategory(value) {
+    businessNatureController.text = value;
     update();
     Get.back();
   }
@@ -26,18 +30,24 @@ class CreateNewBusinessController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    initializeListeners();
+  }
+
+  initializeListeners() {
     // Listen to text changes and update observables
     appNameController.addListener(() {
       isAppNameFilled.value = appNameController.text.isNotEmpty;
     });
-    businessOwnerNameController.addListener(() {
-      isBusinessOwnerNameFilled.value = businessOwnerNameController.text.isNotEmpty;
+    businessRegistrationNumberController.addListener(() {
+      isBusinessOwnerNameFilled.value =
+          businessRegistrationNumberController.text.isNotEmpty;
     });
     emailController.addListener(() {
       isEmailFilled.value = emailController.text.isNotEmpty;
     });
     verificationCodeController.addListener(() {
-      isVerificationCodeFilled.value = verificationCodeController.text.isNotEmpty;
+      isVerificationCodeFilled.value =
+          verificationCodeController.text.isNotEmpty;
     });
     businessNatureController.addListener(() {
       isBusinessNatureFilled.value = businessNatureController.text.isNotEmpty;
@@ -62,5 +72,4 @@ class CreateNewBusinessController extends GetxController {
     isCorporateSelected.value = val;
     isIndividualSelected.value = !val;
   }
-
 }
