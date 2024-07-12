@@ -34,160 +34,155 @@ class WalletLandingScreen extends StatelessWidget {
           width: context.width,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-
-              children: [
-                const CustomBackTitle(
-                  title: "Wallet.",
+            children: [
+              const CustomBackTitle(
+                title: "Wallet.",
+              ),
+              20.ph,
+              Container(
+                width: context.width,
+                padding: const EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 20,
                 ),
-                20.ph,
-                Container(
-                  width: context.width,
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 20,
-                  ),
-                  decoration:
-                      const BoxDecoration(color: CColors.greenAccentColor),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        "Account Balance",
-                        style: CustomTextStyles.white414,
-                      ),
-                      5.ph,
-                      const Text(
-                        "RM 1,888,000.00",
-                        style: CustomTextStyles.white425,
-                      ),
-                      15.ph,
-                      const Text(
-                        "Last Updated 24th June 2024",
-                        style: CustomTextStyles.white410,
-                      ),
-                    ],
-                  ),
+                decoration: const BoxDecoration(color: CColors.mildGreenColor),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Account Balance",
+                      style: CustomTextStyles.white414,
+                    ),
+                    5.ph,
+                    const Text(
+                      "RM 1,888,000.00",
+                      style: CustomTextStyles.white425,
+                    ),
+                    15.ph,
+                    const Text(
+                      "Last Updated 24th June 2024",
+                      style: CustomTextStyles.white410,
+                    ),
+                  ],
                 ),
-                10.ph,
-                CategorySelectionTile(
-                  onTapFunction: () {},
-                  categorySelectionModel: CategorySelectionModel(
-                    iconString: Assets.iconsInfoCircle,
-                    title: "Request Money",
-                  ),
+              ),
+              10.ph,
+              CategorySelectionTile(
+                onTapFunction: () {},
+                categorySelectionModel: CategorySelectionModel(
+                  iconString: Assets.iconsInfoCircle,
+                  title: "Request Money",
                 ),
-                CategorySelectionTile(
-                  onTapFunction: () {
-                    Get.to(
-                      () => const WithdrawalScreen(),
-                      transition: Transition.fadeIn,
-                    );
-                  },
-                  categorySelectionModel: CategorySelectionModel(
-                    iconString: Assets.iconsCash,
-                    title: "Withdrawal",
-                  ),
+              ),
+              CategorySelectionTile(
+                onTapFunction: () {
+                  Get.to(
+                    () => const WithdrawalScreen(),
+                    transition: Transition.fadeIn,
+                  );
+                },
+                categorySelectionModel: CategorySelectionModel(
+                  iconString: Assets.iconsCash,
+                  title: "Withdrawal",
                 ),
-                20.ph,
-                SizedBox(
-                  height: 28,
-                  child: Row(
-                    children: [
-                      Expanded(
-                          child: ListView.separated(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemCount:
-                            ConstantLists.walletFilterModelList.length,
-                        separatorBuilder: (context, index) => 5.pw,
-                        itemBuilder: (BuildContext context, int index) {
-                          return AnimationConfiguration.staggeredList(
-                            position: index,
-                            duration: const Duration(milliseconds: 375),
-                            child: SlideAnimation(
-                              verticalOffset: 50.0,
-                              child: FadeInAnimation(
-                                child: Obx(() {
-                                  return FilterOptionContainer(
-                                    onTapFunction: () {
-                                      walletLandingController.toggleFilter(
-                                          index: index);
-                                    },
-                                    walletFiltersModel: ConstantLists
-                                        .walletFilterModelList[index],
-                                    selectedIndex: walletLandingController
-                                        .selectedIndex.value,
-                                  );
-                                }),
-                              ),
-                            ),
-                          );
-                        },
-                      )),
-                      10.pw,
-                      InkWell(
-                        onTap: () {},
-                        borderRadius: BorderRadius.circular(5),
-                        child: SvgPicture.asset(Assets.iconsMenuIcon),
-                      ),
-                    ],
-                  ),
-                ),
-                20.ph,
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: AnimationLimiter(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: AnimationConfiguration.toStaggeredList(
+              ),
+              20.ph,
+              SizedBox(
+                height: 28,
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: ListView.separated(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: ConstantLists.walletFilterModelList.length,
+                      separatorBuilder: (context, index) => 5.pw,
+                      itemBuilder: (BuildContext context, int index) {
+                        return AnimationConfiguration.staggeredList(
+                          position: index,
                           duration: const Duration(milliseconds: 375),
-                          childAnimationBuilder: (widget) => SlideAnimation(
-                            horizontalOffset: 50.0,
+                          child: SlideAnimation(
+                            verticalOffset: 50.0,
                             child: FadeInAnimation(
-                              child: widget,
+                              child: Obx(() {
+                                return FilterOptionContainer(
+                                  onTapFunction: () {
+                                    walletLandingController.toggleFilter(
+                                        index: index);
+                                  },
+                                  walletFiltersModel: ConstantLists
+                                      .walletFilterModelList[index],
+                                  selectedIndex: walletLandingController
+                                      .selectedIndex.value,
+                                );
+                              }),
                             ),
                           ),
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 20, horizontal: 20),
-                              decoration: const BoxDecoration(
-                                color: CColors.whiteColor,
-                              ),
-                              child: ListView.separated(
-                                shrinkWrap: true,
-                                physics: const BouncingScrollPhysics(),
-                                itemCount: ConstantLists.sellerFinanceList.length,
-                                separatorBuilder: (context, index) => 15.ph,
-                                itemBuilder: (BuildContext context, int index) {
-                                  return AnimationConfiguration.staggeredList(
-                                    position: index,
-                                    duration: const Duration(milliseconds: 375),
-                                    child: SlideAnimation(
-                                      verticalOffset: 50.0,
-                                      child: FadeInAnimation(
-                                        child: TransactionTile(
-                                          sellerFinanceModel:
-                                          ConstantLists.sellerFinanceList[index],
-                                        ),
+                        );
+                      },
+                    )),
+                    10.pw,
+                    InkWell(
+                      onTap: () {},
+                      borderRadius: BorderRadius.circular(5),
+                      child: SvgPicture.asset(Assets.iconsMenuIcon),
+                    ),
+                  ],
+                ),
+              ),
+              20.ph,
+              Expanded(
+                child: SingleChildScrollView(
+                  child: AnimationLimiter(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: AnimationConfiguration.toStaggeredList(
+                        duration: const Duration(milliseconds: 375),
+                        childAnimationBuilder: (widget) => SlideAnimation(
+                          horizontalOffset: 50.0,
+                          child: FadeInAnimation(
+                            child: widget,
+                          ),
+                        ),
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 20, horizontal: 20),
+                            decoration: const BoxDecoration(
+                              color: CColors.whiteColor,
+                            ),
+                            child: ListView.separated(
+                              shrinkWrap: true,
+                              physics: const BouncingScrollPhysics(),
+                              itemCount: ConstantLists.sellerFinanceList.length,
+                              separatorBuilder: (context, index) => 15.ph,
+                              itemBuilder: (BuildContext context, int index) {
+                                return AnimationConfiguration.staggeredList(
+                                  position: index,
+                                  duration: const Duration(milliseconds: 375),
+                                  child: SlideAnimation(
+                                    verticalOffset: 50.0,
+                                    child: FadeInAnimation(
+                                      child: TransactionTile(
+                                        sellerFinanceModel: ConstantLists
+                                            .sellerFinanceList[index],
                                       ),
                                     ),
-                                  );
-                                },
-                              ),
+                                  ),
+                                );
+                              },
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
                 ),
-
-              ],
-            ),
+              ),
+            ],
           ),
-
+        ),
       ),
     );
   }

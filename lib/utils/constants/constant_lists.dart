@@ -4,10 +4,12 @@ import 'package:contro/models/qr_codes_model/qr_code_model.dart';
 import 'package:get/get.dart';
 import '../../generated/assets.dart';
 import '../../models/activity_model/activity_model.dart';
+import '../../models/analytics_model/analytics_model.dart';
 import '../../models/bottom_navigation_bar_model/bottom_navigation_bar_model.dart';
 import '../../models/category_selection_model/category_selection_model.dart';
 import '../../models/charts/column_chart_model.dart';
 import '../../models/chat_model/chat_model.dart';
+import '../../models/dashboard_overview_model/dashboard_overview_model.dart';
 import '../../models/item_model/item_model.dart';
 import '../../models/pick_up_location_model/pick_up_location_model.dart';
 import '../../models/seller_finance_model/seller_finance_model.dart';
@@ -683,5 +685,90 @@ class ConstantLists {
       title: "Central Market (Pasar Seni)",
       description: "Kuala Lumpur, 50000, Malaysia",
     ),
+  ];
+  static List<DashboardOverviewModel> dashboardOverviewList = [
+    DashboardOverviewModel(
+      index: 0,
+      iconString: Assets.iconsOpenOrdersIcon,
+      title: "Open Orders",
+      value: "128",
+    ),
+    DashboardOverviewModel(
+      index: 1,
+      iconString: Assets.iconsInTransitIcon,
+      title: "In Transit",
+      value: "85",
+    ),
+    DashboardOverviewModel(
+      index: 2,
+      iconString: Assets.iconsCompletedIcon,
+      title: "Completed",
+      value: "28",
+    ),
+    DashboardOverviewModel(
+      index: 3,
+      iconString: Assets.iconsDisputeIcon,
+      title: "Dispute",
+      value: "12",
+    ),
+  ];
+  static List<DashboardOverviewModel> revenueList = [
+    DashboardOverviewModel(
+      index: 0,
+      iconString: Assets.iconsCurrencyDollarIcon,
+      title: "Daily Revenue",
+      value: "26,800.00",
+    ),
+    DashboardOverviewModel(
+      index: 1,
+      iconString: Assets.iconsShoppingCartIcon,
+      title: "Daily Orders",
+      value: "120",
+    ),
+    DashboardOverviewModel(
+      index: 2,
+      iconString: Assets.iconsCurrencyDollarIcon,
+      title: "Total Revenue",
+      value: "600,000.00",
+    ),
+    DashboardOverviewModel(
+      index: 3,
+      iconString: Assets.iconsUsersIcon,
+      title: "Subscribers",
+      value: "8000",
+    ),
+  ];
+  static List<AnalyticsModel> analyticsList = [
+    AnalyticsModel(
+      percentage: "97.78%",
+      value: "120,055",
+      isIncoming: true,
+      percentageTwo: "12.5%",
+      transactionDescription: "Transactions success.",
+      index: 0,
+    ),
+    AnalyticsModel(
+      percentage: "88.33%",
+      value: "6 hours",
+      isIncoming: false,
+      percentageTwo: "2.5%",
+      transactionDescription: "Response rate",
+      index: 1,
+    ),
+    AnalyticsModel(
+      percentage: "94.53%",
+      value: "2189",
+      isIncoming: false,
+      percentageTwo: "1.2%",
+      transactionDescription: "Happy feedbacks",
+      index: 2,
+    ),
+  ];
+  static List<String> analyticFilter = [
+    "Daily",
+    "Weekly",
+    "Monthly",
+    "Quarterly",
+    "Yearly",
   ];
 }

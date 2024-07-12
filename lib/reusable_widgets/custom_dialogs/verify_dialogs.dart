@@ -32,6 +32,13 @@ class VerifyDialog extends StatelessWidget {
         decoration: BoxDecoration(
           color: CColors.whiteColor,
           borderRadius: BorderRadius.circular(8),
+          boxShadow: const [
+            BoxShadow(
+              offset: Offset(4, 4),
+              blurRadius: 8,
+              color: CColors.greyTwoColor,
+            ),
+          ],
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,

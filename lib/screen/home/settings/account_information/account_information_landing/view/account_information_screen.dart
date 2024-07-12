@@ -115,7 +115,7 @@ class AccountInformationLandingScreen extends StatelessWidget {
                           ),
                           width: context.width,
                           decoration: const BoxDecoration(
-                              color: CColors.greenAccentColor),
+                              color: CColors.mildGreenColor),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             crossAxisAlignment: CrossAxisAlignment.start,

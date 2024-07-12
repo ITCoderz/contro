@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
-import '../../../../generated/assets.dart';
 import '../../../../reusable_widgets/custom_background_container.dart';
 import '../../../../reusable_widgets/table_component.dart';
 import '../../../../utils/colors/app_colors.dart';
@@ -43,56 +42,51 @@ class DashboardScreen extends StatelessWidget {
                   ),
                   children: [
                     20.ph,
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Image.asset(
-                          Assets.iconsNewUserDashboardLogo,
-                          width: 24,
-                          height: 24,
-                        ),
-                        10.pw,
-                        const Text(
-                          "~WesleyBread",
-                          style: CustomTextStyles.darkGreyColor520,
-                        ),
-                      ],
+                    const Text(
+                      "Hello, WesleyBread.",
+                      style: CustomTextStyles.darkGreyColor518,
                     ).alignWidget(
                       alignment: Alignment.centerLeft,
                     ),
-                    20.ph,
+                    10.ph,
                     CustomBackgroundContainer(
+                      width: context.width,
                       radius: 8,
-                      childWidget: IntrinsicHeight(
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SummaryComponent(
-                              overviewModel: ConstantLists.summaryModelList[0],
+                      childWidget: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Text(
+                            "Overview",
+                            style: CustomTextStyles.darkGreyTwoColor513,
+                          ).alignWidget(
+                            alignment: Alignment.centerLeft,
+                          ),
+                          10.ph,
+                          GridView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 8,
+                              crossAxisCount: 2,
+                              mainAxisExtent: 80,
                             ),
-                            5.pw,
-                            const VerticalDivider(
-                              color: CColors.borderOneColor,
-                              thickness: 0.5,
-                              width: 5,
-                            ),
-                            Expanded(
-                              child: SummaryComponent(
-                                overviewModel:
-                                    ConstantLists.summaryModelList[1],
-                              ),
-                            ),
-                            const VerticalDivider(
-                              color: CColors.borderOneColor,
-                              thickness: 0.5,
-                              width: 5,
-                            ),
-                            5.pw,
-                            SummaryComponent(
-                              overviewModel: ConstantLists.summaryModelList[2],
-                            ),
-                          ],
-                        ),
+                            itemCount:
+                                ConstantLists.dashboardOverviewList.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return SlideAnimation(
+                                verticalOffset: 30.0,
+                                child: FadeInAnimation(
+                                  child: DashboardOverviewComponent(
+                                    dashboardOverviewModel: ConstantLists
+                                        .dashboardOverviewList[index],
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ],
                       ),
                     ),
                     10.ph,
@@ -104,7 +98,7 @@ class DashboardScreen extends StatelessWidget {
                         children: [
                           const Text(
                             "Sales Statistics",
-                            style: CustomTextStyles.darkGreyColor414,
+                            style: CustomTextStyles.darkGreyTwoColor513,
                           ),
                           10.ph,
                           Row(
@@ -113,7 +107,7 @@ class DashboardScreen extends StatelessWidget {
                             children: [
                               const Text(
                                 "\$468",
-                                style: CustomTextStyles.darkGreyColor630,
+                                style: CustomTextStyles.darkGreyColor625,
                               ),
                               10.pw,
                               CustomBackgroundContainer(
@@ -157,6 +151,7 @@ class DashboardScreen extends StatelessWidget {
                                     title: "Daily Orders",
                                     value: "14",
                                   ),
+                                  15.ph,
                                 ],
                               ),
                               Expanded(
@@ -170,22 +165,237 @@ class DashboardScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    20.ph,
-                    const Text(
-                      "Activity.",
-                      style: CustomTextStyles.darkGreyColor518,
-                    ).alignWidget(
-                      alignment: Alignment.centerLeft,
+                    10.ph,
+                    GridView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisSpacing: 8,
+                        mainAxisSpacing: 8,
+                        crossAxisCount: 2,
+                        mainAxisExtent: 80,
+                      ),
+                      itemCount: ConstantLists.revenueList.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return SlideAnimation(
+                          verticalOffset: 30.0,
+                          child: FadeInAnimation(
+                            child: RevenueTiles(
+                              dashboardOverviewModel:
+                                  ConstantLists.revenueList[index],
+                            ),
+                          ),
+                        );
+                      },
                     ),
                     10.ph,
-                    SizedBox(
-                      height: 340,
-                      child: TableComponent(
-                        paginationController:
-                            dashBoardController.paginationActivityController,
-                        dataList: ConstantLists.activityModelList,
+                    CustomBackgroundContainer(
+                      width: context.width,
+                      radius: 8,
+                      childWidget: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                "Overview",
+                                style: CustomTextStyles.darkGreyTwoColor513,
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  showModalBottomSheet(
+                                    elevation: 0.0,
+                                    backgroundColor: CColors.whiteColor,
+                                    enableDrag: true,
+                                    // showDragHandle: true,
+                                    isScrollControlled: true,
+                                    constraints: BoxConstraints(
+                                        maxHeight: context.height * 0.8),
+                                    shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(10),
+                                        topRight: Radius.circular(10),
+                                        bottomLeft: Radius.zero,
+                                        bottomRight: Radius.zero,
+                                      ),
+                                    ),
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return Padding(
+                                        padding: EdgeInsets.only(
+                                          bottom: MediaQuery.of(context)
+                                              .viewInsets
+                                              .bottom,
+                                        ),
+                                        child: SizedBox(
+                                          height: context.height,
+                                          width: context.width,
+                                          child: SingleChildScrollView(
+                                            child: AnimationLimiter(
+                                              child: Column(
+                                                children: AnimationConfiguration
+                                                    .toStaggeredList(
+                                                  duration: const Duration(
+                                                      milliseconds: 375),
+                                                  childAnimationBuilder:
+                                                      (widget) =>
+                                                          SlideAnimation(
+                                                    horizontalOffset: 50.0,
+                                                    child: FadeInAnimation(
+                                                      child: widget,
+                                                    ),
+                                                  ),
+                                                  children: [
+                                                    20.ph,
+                                                    GestureDetector(
+                                                      onTap: () {
+                                                        Get.back();
+                                                      },
+                                                      child: Container(
+                                                        height: 5,
+                                                        width: 60,
+                                                        decoration: BoxDecoration(
+                                                            color: CColors
+                                                                .greyTwoColor,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10)),
+                                                      ),
+                                                    ),
+                                                    20.ph,
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        IconButton(
+                                                          onPressed: () {
+                                                            Get.back();
+                                                          },
+                                                          icon: const Icon(
+                                                            Icons.close_rounded,
+                                                            color: CColors
+                                                                .darkGreyColor,
+                                                          ),
+                                                        ),
+                                                        5.pw,
+                                                        const Text(
+                                                          "Show Analytics",
+                                                          style: CustomTextStyles
+                                                              .darkGreyColor620,
+                                                        ),
+                                                      ],
+                                                    ).alignWidget(
+                                                      alignment:
+                                                          Alignment.centerLeft,
+                                                    ),
+                                                    10.ph,
+                                                    ListView.builder(
+                                                      shrinkWrap: true,
+                                                      physics:
+                                                          const NeverScrollableScrollPhysics(),
+                                                      itemCount: ConstantLists
+                                                          .analyticFilter
+                                                          .length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        return AnimationConfiguration
+                                                            .staggeredList(
+                                                          position: index,
+                                                          duration:
+                                                              const Duration(
+                                                                  milliseconds:
+                                                                      375),
+                                                          child: SlideAnimation(
+                                                            verticalOffset:
+                                                                50.0,
+                                                            child:
+                                                                FadeInAnimation(
+                                                              child:
+                                                                  AnalyticsFilterTile(
+                                                                onTapFunction:
+                                                                    () {
+                                                                  dashBoardController
+                                                                      .changeFilter(
+                                                                          value:
+                                                                              ConstantLists.analyticFilter[index]);
+                                                                },
+                                                                value: ConstantLists
+                                                                        .analyticFilter[
+                                                                    index],
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        );
+                                                      },
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  );
+                                },
+                                borderRadius: BorderRadius.circular(3),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Obx(() {
+                                        return Text(
+                                          dashBoardController
+                                              .analyticFilter.value,
+                                          style: CustomTextStyles
+                                              .darkGreyTwoColor511,
+                                        );
+                                      }),
+                                      3.ph,
+                                      const Icon(
+                                        Icons.arrow_drop_down_sharp,
+                                        color: CColors.darkGreyTwoColor,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          10.ph,
+                          GridView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 8,
+                              crossAxisCount: 3,
+                              mainAxisExtent: 160,
+                            ),
+                            itemCount: ConstantLists.analyticsList.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return SlideAnimation(
+                                verticalOffset: 30.0,
+                                child: FadeInAnimation(
+                                  child: AnalyticTile(
+                                    analyticModel:
+                                        ConstantLists.analyticsList[index],
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

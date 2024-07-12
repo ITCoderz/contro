@@ -39,20 +39,9 @@ class DashboardNewScreen extends StatelessWidget {
                   ),
                   children: [
                     20.ph,
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Image.asset(
-                          Assets.iconsNewUserDashboardLogo,
-                          width: 24,
-                          height: 24,
-                        ),
-                        10.pw,
-                        const Text(
-                          "~WesleyBread",
-                          style: CustomTextStyles.darkGreyColor520,
-                        ),
-                      ],
+                    const Text(
+                      "Hello, WesleyBread.",
+                      style: CustomTextStyles.darkGreyColor518,
                     ).alignWidget(
                       alignment: Alignment.centerLeft,
                     ),
@@ -72,7 +61,7 @@ class DashboardNewScreen extends StatelessWidget {
                         children: [
                           const Text(
                             "Welcome to Contro Instant App.",
-                            style: CustomTextStyles.white414,
+                            style: CustomTextStyles.white413,
                           ),
                           10.ph,
                           const Text(
@@ -100,7 +89,7 @@ class DashboardNewScreen extends StatelessWidget {
                         children: [
                           const Text(
                             "0/2 Complete",
-                            style: CustomTextStyles.greyTwoColor412,
+                            style: CustomTextStyles.blueSecondColor512,
                           ),
                           2.ph,
                           const Text(

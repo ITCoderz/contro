@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+import '../../../../models/dashboard_overview_model/dashboard_overview_model.dart';
 import '../../../../reusable_widgets/custom_buttons/custom_elevated_button.dart';
 import '../../../../utils/colors/app_colors.dart';
 import '../../../../utils/text_styles/text_styles.dart';
@@ -38,7 +39,7 @@ class GetStartedComponent extends StatelessWidget {
         children: [
           Text(
             title,
-            style: CustomTextStyles.darkGreyColor514,
+            style: CustomTextStyles.darkGreyColor513,
           ),
           10.ph,
           Container(
@@ -68,9 +69,8 @@ class GetStartedComponent extends StatelessWidget {
                     children: [
                       Text(
                         subTitleOne,
-                        style: CustomTextStyles.darkGreyColor414,
+                        style: CustomTextStyles.darkGreyColor413,
                       ),
-
                       Text(
                         subTitleTwo,
                         style: CustomTextStyles.greyTwoColor412,
@@ -79,7 +79,7 @@ class GetStartedComponent extends StatelessWidget {
                       CustomElevatedButton(
                         onPressedFunction: onPressedFunction,
                         buttonText: "Get Started",
-                        width:255,
+                        width: 255,
                         height: 36,
                         needShadow: false,
                       ),
@@ -94,3 +94,5 @@ class GetStartedComponent extends StatelessWidget {
     );
   }
 }
+
+

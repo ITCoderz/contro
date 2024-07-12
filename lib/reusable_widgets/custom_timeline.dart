@@ -256,7 +256,7 @@ class CustomDottedLine extends StatelessWidget {
       lineThickness: inProgress ? 1 : 2,
       dashLength: inProgress ? 4 : 2,
       dashGapLength: inProgress ? 4 : 0,
-      dashColor: inProgress ? CColors.greyColor : CColors.greenAccentColor,
+      dashColor: inProgress ? CColors.greyColor : CColors.mildGreenColor,
     ).paddingOnly(left: 10).alignWidget(
           alignment: Alignment.centerLeft,
         );
@@ -283,7 +283,7 @@ class TimeLineCircularWidget extends StatelessWidget {
           width: 22,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: inProgress ? CColors.greyColor : CColors.greenAccentColor,
+            color: inProgress ? CColors.greyColor : CColors.mildGreenColor,
             shape: BoxShape.circle,
           ),
           child: inProgress

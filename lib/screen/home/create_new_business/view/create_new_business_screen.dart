@@ -151,6 +151,10 @@ class CreateNewBusinessScreen extends StatelessWidget {
                             textEditingController:
                                 createNewBusinessController.appNameController,
                             hintText: "Instant App Name",
+                            onChangedFunction: (val) {
+                              createNewBusinessController
+                                  .enableReviewFunction();
+                            },
                           ),
                           10.ph,
                           Obx(
@@ -176,6 +180,10 @@ class CreateNewBusinessScreen extends StatelessWidget {
                                                     createNewBusinessController
                                                         .firstNameController,
                                                 hintText: "First Name",
+                                                onChangedFunction: (val) {
+                                                  createNewBusinessController
+                                                      .enableReviewFunction();
+                                                },
                                               ),
                                             ],
                                           ),
@@ -198,6 +206,10 @@ class CreateNewBusinessScreen extends StatelessWidget {
                                                     createNewBusinessController
                                                         .lastNameController,
                                                 hintText: "Last Name",
+                                                onChangedFunction: (val) {
+                                                  createNewBusinessController
+                                                      .enableReviewFunction();
+                                                },
                                               ),
                                             ],
                                           ),
@@ -231,6 +243,10 @@ class CreateNewBusinessScreen extends StatelessWidget {
                                                   createNewBusinessController
                                                       .companyNameController,
                                               hintText: "Company Name",
+                                              onChangedFunction: (val) {
+                                                createNewBusinessController
+                                                    .enableReviewFunction();
+                                              },
                                             ),
                                           ],
                                         ),
@@ -252,6 +268,10 @@ class CreateNewBusinessScreen extends StatelessWidget {
                                                       .businessRegistrationNumberController,
                                               hintText:
                                                   "Business Registration Number",
+                                              onChangedFunction: (val) {
+                                                createNewBusinessController
+                                                    .enableReviewFunction();
+                                              },
                                             ),
                                           ],
                                         ),
@@ -499,6 +519,10 @@ class CreateNewBusinessScreen extends StatelessWidget {
                             textEditingController:
                                 createNewBusinessController.emailController,
                             hintText: "Enter email",
+                            onChangedFunction: (val) {
+                              createNewBusinessController
+                                  .enableReviewFunction();
+                            },
                           ),
                           10.ph,
                           const Text(
@@ -530,6 +554,10 @@ class CreateNewBusinessScreen extends StatelessWidget {
                               ),
                             ),
                             hintText: "Enter Verification Code",
+                            onChangedFunction: (val) {
+                              createNewBusinessController
+                                  .enableReviewFunction();
+                            },
                           ),
                         ],
                       ),
@@ -551,24 +579,23 @@ class CreateNewBusinessScreen extends StatelessWidget {
           bottom: 10,
         ),
         child: Obx(() {
-          bool areAllFieldsFilled =
-              createNewBusinessController.areAllFieldsFilled();
-          debugPrint(areAllFieldsFilled.toString());
           return CustomElevatedButton(
             buttonText: "Submit for Review",
-            onPressedFunction: areAllFieldsFilled
-                ? () {
-                    Get.offAll(
-                      () => const DashboardNewScreen(),
-                      transition: Transition.fadeIn,
-                    );
-                  }
-                : null,
+            onPressedFunction:
+                createNewBusinessController.isReviewButtonEnabled.value
+                    ? () {
+                        Get.offAll(
+                          () => const DashboardNewScreen(),
+                          transition: Transition.fadeIn,
+                        );
+                      }
+                    : null,
             needShadow: false,
-            backgroundColor: areAllFieldsFilled
-                ? CColors.purpleAccentColor
-                : CColors.lightGreyColor,
-            textStyle: areAllFieldsFilled
+            backgroundColor:
+                createNewBusinessController.isReviewButtonEnabled.value
+                    ? CColors.purpleAccentColor
+                    : CColors.lightGreyColor,
+            textStyle: createNewBusinessController.isReviewButtonEnabled.value
                 ? CustomTextStyles.white414
                 : CustomTextStyles.greyTwoColor414,
           );

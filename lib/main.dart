@@ -1,4 +1,5 @@
 import 'package:contro/screen/auth/splash/view/splash_screen.dart';
+import 'package:contro/screen/home/dashboard/view/dashboard_screen.dart';
 import 'package:contro/utils/text_styles/text_styles.dart';
 import 'package:contro/utils/theme/theme_data.dart';
 import 'package:flutter/foundation.dart';
@@ -44,8 +45,8 @@ class ControApp extends StatelessWidget {
       theme: CustomThemeData.lightViewTheme,
       initialBinding: InitializingDependency(),
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
-      // home: const BusinessCategorySelectionWidget(),
+      // home: const SplashScreen(),
+      home: const DashboardScreen(),
     );
   }
 }
