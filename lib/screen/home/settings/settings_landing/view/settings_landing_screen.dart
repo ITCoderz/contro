@@ -76,6 +76,19 @@ class SettingsLandingScreen extends StatelessWidget {
                     CategorySelectionTile(
                       onTapFunction: () {
                         Get.to(
+                          () => const WalletLandingScreen(),
+                          transition: Transition.fadeIn,
+                        );
+                      },
+                      categorySelectionModel: CategorySelectionModel(
+                        iconString: Assets.iconsWalletIcon,
+                        title: "Wallet",
+                      ),
+                    ),
+                    10.ph,
+                    CategorySelectionTile(
+                      onTapFunction: () {
+                        Get.to(
                           () => const ItemLandingScreen(),
                           transition: Transition.fadeIn,
                         );
@@ -97,27 +110,14 @@ class SettingsLandingScreen extends StatelessWidget {
                         title: "QR Codes",
                       ),
                     ),
-                    10.ph,
-                    CategorySelectionTile(
-                      onTapFunction: () {
-                        Get.to(
-                          () => const WalletLandingScreen(),
-                          transition: Transition.fadeIn,
-                        );
-                      },
-                      categorySelectionModel: CategorySelectionModel(
-                        iconString: Assets.iconsWalletIcon,
-                        title: "Wallet",
-                      ),
-                    ),
-                    10.ph,
                     CategorySelectionTile(
                       onTapFunction: () {},
                       categorySelectionModel: CategorySelectionModel(
-                        iconString: Assets.iconsAppearanceIcon,
-                        title: "Appearance",
+                        iconString: Assets.iconsSpeakerphone,
+                        title: "Marketing",
                       ),
                     ),
+                    10.ph,
                     CategorySelectionTile(
                       onTapFunction: () {
                         Get.to(
@@ -130,7 +130,6 @@ class SettingsLandingScreen extends StatelessWidget {
                         title: "Themes",
                       ),
                     ),
-                    10.ph,
                     CategorySelectionTile(
                       onTapFunction: () {},
                       categorySelectionModel: CategorySelectionModel(

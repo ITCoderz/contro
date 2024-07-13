@@ -32,8 +32,8 @@ class FilterOptionContainer extends StatelessWidget {
         child: Text(
           walletFiltersModel.filterName,
           style: walletFiltersModel.index == selectedIndex
-              ? CustomTextStyles.purpleAccentColor412
-              : CustomTextStyles.greyTwoColor412,
+              ? CustomTextStyles.purpleAccentColor411
+              : CustomTextStyles.greyTwoColor411,
         ),
       ),
     );

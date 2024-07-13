@@ -125,6 +125,7 @@ class Assets {
   static const String iconsSignInAndSecurityIcon =
       'assets/icons/sign_in_and_security_icon.svg';
   static const String iconsSpeakerIcon = 'assets/icons/speaker_icon.svg';
+  static const String iconsSpeakerphone = 'assets/icons/speakerphone.svg';
   static const String iconsSuccessArrow = 'assets/icons/success_arrow.svg';
   static const String iconsTechnology = 'assets/icons/technology.svg';
   static const String iconsThemesIcon = 'assets/icons/themes_icon.svg';

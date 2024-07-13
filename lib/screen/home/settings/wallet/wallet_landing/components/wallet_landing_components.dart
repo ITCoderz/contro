@@ -36,7 +36,7 @@ class TransactionTile extends StatelessWidget {
                   children: [
                     Text(
                       "Order #${sellerFinanceModel.financeId}",
-                      style: CustomTextStyles.darkGreyColor612,
+                      style: CustomTextStyles.darkGreyTwoColor512,
                     ),
                     Text(
                       sellerFinanceModel.date,
@@ -44,7 +44,7 @@ class TransactionTile extends StatelessWidget {
                     ),
                     Text(
                       sellerFinanceModel.service,
-                      style: CustomTextStyles.greyTwoColor412,
+                      style: CustomTextStyles.lightGreyTwoColor412,
                     ),
                   ],
                 ),
@@ -53,8 +53,8 @@ class TransactionTile extends StatelessWidget {
               Text(
                 "\$ ${sellerFinanceModel.amount}",
                 style: sellerFinanceModel.isRevenue
-                    ? CustomTextStyles.greenAccentColor414
-                    : CustomTextStyles.redAccentColor414,
+                    ? CustomTextStyles.greenAccentColor412
+                    : CustomTextStyles.redAccentColor412,
               ),
             ],
           ),

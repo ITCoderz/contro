@@ -57,7 +57,7 @@ class WalletLandingScreen extends StatelessWidget {
                     5.ph,
                     const Text(
                       "RM 1,888,000.00",
-                      style: CustomTextStyles.white425,
+                      style: CustomTextStyles.white422,
                     ),
                     15.ph,
                     const Text(

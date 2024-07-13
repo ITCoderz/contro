@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import '../../../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
 import '../../../../../../utils/colors/app_colors.dart';
 import '../../../../../../utils/text_styles/text_styles.dart';
+import '../../account_information_landing/controller/account_information_controller.dart';
 import '../controller/contact_person_controller.dart';
 
 class ContactPersonScreen extends StatelessWidget {
@@ -85,8 +86,15 @@ class ContactPersonScreen extends StatelessWidget {
                     const Spacer(),
                     10.ph,
                     CustomElevatedButton(
-                      onPressedFunction: () {},
-                      buttonText: "Confirm",
+                      onPressedFunction: () {
+                        Get.find<AccountInformationLandingController>()
+                                .contactPersonController
+                                .text =
+                            contactPersonController
+                                .contactPersonController.text;
+                        Get.back();
+                      },
+                      buttonText: "Update Contact Person",
                       needShadow: false,
                       textStyle: CustomTextStyles.white414,
                     ),

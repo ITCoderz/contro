@@ -8,10 +8,10 @@ class AccountInformationLandingController extends GetxController {
   TextEditingController businessNatureController = TextEditingController();
   TextEditingController contactPersonController = TextEditingController();
 
-  bool isReadOnly=true;
+  bool isReadOnly = true;
 
-  toggleEdit(){
-    isReadOnly=!isReadOnly;
+  toggleEdit() {
+    isReadOnly = !isReadOnly;
     update();
   }
 

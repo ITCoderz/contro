@@ -56,11 +56,13 @@ class TitleContainerWidget extends StatelessWidget {
   final Widget? subtitleWidget;
 
   final Widget childWidget;
+  final double? radius;
 
   const TitleContainerWidget({
     super.key,
     required this.titleString,
     this.subtitleWidget,
+    this.radius,
     required this.childWidget,
   });
 
@@ -72,7 +74,7 @@ class TitleContainerWidget extends StatelessWidget {
         vertical: 15,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(3),
+        borderRadius: BorderRadius.circular(radius ?? 3),
         color: CColors.whiteColor,
       ),
       child: Column(

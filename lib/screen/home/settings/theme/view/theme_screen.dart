@@ -81,8 +81,8 @@ class ThemeScreen extends StatelessWidget {
                                       ),
                                       child: Container(
                                         padding: const EdgeInsets.symmetric(
-                                          horizontal: 5,
-                                          vertical: 5,
+                                          horizontal: 4,
+                                          vertical: 4,
                                         ),
                                         decoration: BoxDecoration(
                                           borderRadius:
@@ -122,7 +122,7 @@ class ThemeScreen extends StatelessWidget {
                                           const Text(
                                             "Extrabread\nDigital Print Box",
                                             style: CustomTextStyles
-                                                .darkGreyColor616,
+                                                .darkGreyColor614,
                                           ),
                                           1.ph,
                                           const Row(
@@ -137,7 +137,7 @@ class ThemeScreen extends StatelessWidget {
                                               Text(
                                                 "RM 0.00",
                                                 style: CustomTextStyles
-                                                    .greyTwoColor516,
+                                                    .greyTwoColor514,
                                               ),
                                             ],
                                           ),
@@ -151,15 +151,15 @@ class ThemeScreen extends StatelessWidget {
                                           const Text(
                                             "The description text goes here and to make it looks good, please write description for around 300 words. the text goes on and we not sure what do write but we keep writing and fgo on and go on and go on.",
                                             style: CustomTextStyles
-                                                .darkGreyColor411,
+                                                .darkGreyColor410,
                                           ),
                                           10.ph,
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Container(
-                                                width: 36,
-                                                height: 36,
+                                                width: 34,
+                                                height: 34,
                                                 alignment: Alignment.center,
                                                 decoration: const BoxDecoration(
                                                   shape: BoxShape.circle,
@@ -180,7 +180,7 @@ class ThemeScreen extends StatelessWidget {
                                                   onPressedFunction: () {},
                                                   buttonText: "Buy Now",
                                                   width: context.width,
-                                                  height: 36,
+                                                  height: 34,
                                                   needShadow: false,
                                                   backgroundColor:
                                                       CColors.pinkAccentColor,

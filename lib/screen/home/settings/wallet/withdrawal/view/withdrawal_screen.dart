@@ -52,12 +52,20 @@ class WithdrawalScreen extends StatelessWidget {
                               title: "Withdrawal",
                             ),
                             20.ph,
-                            TitleContainerWidget(
-                              titleString: "Withdrawal Amount (RM)",
+                            CustomBackgroundContainer(
+                              width: context.width,
+                              leftPadding: 10,
+                              rightPadding: 10,
+                              radius: 0,
                               childWidget: Column(
-                                mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
                                 children: [
+                                  const Text(
+                                    "Withdrawal Amount (RM)",
+                                    style: CustomTextStyles.darkGreyTwoColor414,
+                                  ),
+                                  10.ph,
                                   CustomTextField(
                                     textEditingController: withdrawalController
                                         .withdrawalAmountTextController,
@@ -72,63 +80,69 @@ class WithdrawalScreen extends StatelessWidget {
                                   5.ph,
                                   const Text(
                                     "Available Balance : RM 888,000.00",
-                                    style: CustomTextStyles.greyTwoColor412,
+                                    style:
+                                        CustomTextStyles.lightGreyTwoColor412,
                                   ),
-                                ],
-                              ),
-                            ),
-                            10.ph,
-                            TitleContainerWidget(
-                              titleString: "Bank Details",
-                              childWidget: ClipRRect(
-                                borderRadius: BorderRadius.circular(2),
-                                child: Material(
-                                  color: Colors.transparent,
-                                  child: InkWell(
-                                    onTap: () {
-                                      Get.to(() => const BankAccountScreen(),
-                                          transition: Transition.fadeIn);
-                                    },
-                                    child: Container(
-                                      padding: const EdgeInsets.only(
-                                        left: 10,
-                                        top: 5,
-                                        bottom: 5,
-                                        right: 5
-                                      ),
-                                      height: 42,
-                                      decoration: BoxDecoration(
-                                        color: CColors.scaffoldColor,
-                                        border: Border.all(
-                                          color: CColors.borderOneColor,
-                                          width: 0.5,
-                                        ),
-                                      ),
-                                      width: context.width,
-                                      child: const Center(
-                                        child: Row(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Expanded(
-                                              child: Text(
-                                                "Maybank Berhad (Account No: ********2098)",
-                                                style: CustomTextStyles
-                                                    .darkGreyColor412,
-                                              ),
+                                  20.ph,
+                                  const Text(
+                                    "Bank Details",
+                                    style: CustomTextStyles.darkGreyTwoColor414,
+                                  ),
+                                  10.ph,
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(2),
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      child: InkWell(
+                                        onTap: () {
+                                          Get.to(
+                                              () => const BankAccountScreen(),
+                                              transition: Transition.fadeIn);
+                                        },
+                                        child: Ink(
+                                          padding: const EdgeInsets.only(
+                                            left: 10,
+                                            top: 10,
+                                            bottom: 10,
+                                            right: 5,
+                                          ),
+                                          height: 70,
+                                          decoration: BoxDecoration(
+                                            color: CColors.scaffoldColor,
+                                            borderRadius:
+                                                BorderRadius.circular(2),
+                                            border: Border.all(
+                                              color: CColors.borderOneColor,
+                                              width: 0.5,
                                             ),
-
-                                            Icon(
-                                              Icons.arrow_forward_ios_rounded,
-                                              color: CColors.darkGreyColor,
-                                              size: 15,
+                                          ),
+                                          width: context.width,
+                                          child: const Center(
+                                            child: Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Expanded(
+                                                  child: Text(
+                                                    "Maybank Berhad\n(Account No: ********2098)",
+                                                    style: CustomTextStyles
+                                                        .lightGreyTwoColor412,
+                                                  ),
+                                                ),
+                                                Icon(
+                                                  Icons
+                                                      .arrow_forward_ios_rounded,
+                                                  color: CColors.darkGreyColor,
+                                                  size: 15,
+                                                ),
+                                              ],
                                             ),
-                                          ],
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ),
+                                  )
+                                ],
                               ),
                             ),
                           ],

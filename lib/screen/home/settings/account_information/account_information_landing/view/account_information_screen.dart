@@ -10,6 +10,7 @@ import '../../../../../../reusable_widgets/custom_back_title.dart';
 import '../../../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
 import '../../../../../../utils/colors/app_colors.dart';
 import '../../../../../../utils/text_styles/text_styles.dart';
+import '../../contact_person/view/contact_person_screen.dart';
 import '../controller/account_information_controller.dart';
 
 class AccountInformationLandingScreen extends StatelessWidget {
@@ -49,36 +50,69 @@ class AccountInformationLandingScreen extends StatelessWidget {
                           title: "Account Information.",
                         ),
                         20.ph,
-                        TitleContainerWidget(
-                          titleString: "Company Name",
-                          childWidget: CustomTextField(
-                            textEditingController: accountInformationController
-                                .companyNameController,
-                            hintText: "Enter Contact Person Name",
-                            readOnly: accountInformationController.isReadOnly,
-                            fillColor: CColors.scaffoldColor,
-                          ),
-                        ),
-                        10.ph,
-                        TitleContainerWidget(
-                          titleString: "Business Registration Number",
-                          childWidget: CustomTextField(
-                            textEditingController: accountInformationController
-                                .businessRegistrationNumberController,
-                            hintText: "Enter Business Registration Number",
-                            readOnly: accountInformationController.isReadOnly,
-                            fillColor: CColors.scaffoldColor,
-                          ),
-                        ),
-                        10.ph,
-                        TitleContainerWidget(
-                          titleString: "Business Nature",
-                          childWidget: CustomTextField(
-                            textEditingController: accountInformationController
-                                .businessNatureController,
-                            hintText: "Enter Business Nature",
-                            readOnly: accountInformationController.isReadOnly,
-                            fillColor: CColors.scaffoldColor,
+                        CustomBackgroundContainer(
+                          leftPadding: 10,
+                          rightPadding: 10,
+                          radius: 0,
+                          width: context.width,
+                          childWidget: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Company Name",
+                                style: CustomTextStyles.darkGreyColor413,
+                              ),
+                              10.ph,
+                              CustomTextField(
+                                textEditingController:
+                                    accountInformationController
+                                        .companyNameController,
+                                hintText: "Enter Contact Person Name",
+                                readOnly:
+                                    accountInformationController.isReadOnly,
+                                fillColor: CColors.scaffoldColor,
+                                borderRadius: 6,
+                                textStyle:
+                                    CustomTextStyles.lightGreyTwoColor412,
+                              ),
+                              15.ph,
+                              const Text(
+                                "Business Registration Number",
+                                style: CustomTextStyles.darkGreyColor413,
+                              ),
+                              10.ph,
+                              CustomTextField(
+                                textEditingController:
+                                    accountInformationController
+                                        .businessRegistrationNumberController,
+                                hintText: "Enter Business Registration Number",
+                                readOnly:
+                                    accountInformationController.isReadOnly,
+                                fillColor: CColors.scaffoldColor,
+                                borderRadius: 6,
+                                textStyle:
+                                    CustomTextStyles.lightGreyTwoColor412,
+                              ),
+                              15.ph,
+                              const Text(
+                                "Business Registration Number",
+                                style: CustomTextStyles.darkGreyColor413,
+                              ),
+                              10.ph,
+                              CustomTextField(
+                                textEditingController:
+                                    accountInformationController
+                                        .businessRegistrationNumberController,
+                                hintText: "Business Nature",
+                                readOnly:
+                                    accountInformationController.isReadOnly,
+                                fillColor: CColors.scaffoldColor,
+                                textStyle:
+                                    CustomTextStyles.lightGreyTwoColor412,
+                                borderRadius: 6,
+                              ),
+                            ],
                           ),
                         ),
                         10.ph,
@@ -86,7 +120,10 @@ class AccountInformationLandingScreen extends StatelessWidget {
                           titleString: "Contact Person",
                           subtitleWidget: InkWell(
                             onTap: () {
-                              accountInformationController.toggleEdit();
+                              Get.to(
+                                () => const ContactPersonScreen(),
+                                transition: Transition.fadeIn,
+                              );
                             },
                             child: const Padding(
                               padding: EdgeInsets.symmetric(
@@ -104,6 +141,8 @@ class AccountInformationLandingScreen extends StatelessWidget {
                             hintText: "Enter Contact Person",
                             readOnly: accountInformationController.isReadOnly,
                             fillColor: CColors.scaffoldColor,
+                            borderRadius: 6,
+                            textStyle: CustomTextStyles.lightGreyTwoColor412,
                           ),
                         ),
                         10.ph,

@@ -148,7 +148,7 @@ class CategorySelectionTile extends StatelessWidget {
                   Expanded(
                     child: Text(
                       categorySelectionModel.title,
-                      style: CustomTextStyles.darkGreyColor414,
+                      style: CustomTextStyles.darkGreyColor413,
                     ),
                   ),
                   20.pw,
