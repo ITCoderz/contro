@@ -60,11 +60,17 @@ class Assets {
       'assets/icons/contro_splash_two_icon.svg';
   static const String iconsCurrencyDollarIcon =
       'assets/icons/currency_dollar_icon.svg';
+  static const String iconsDeleteDialogIcon =
+      'assets/icons/delete_dialog_icon.svg';
+  static const String iconsDeleteSlidableIcon =
+      'assets/icons/delete_slidable_icon.svg';
   static const String iconsDeleteVariationIcon =
       'assets/icons/delete_variation_icon.svg';
   static const String iconsDeleteVariationIconTwo =
       'assets/icons/delete_variation_icon_two.svg';
   static const String iconsDisputeIcon = 'assets/icons/dispute_icon.svg';
+  static const String iconsEditSlidableIcon =
+      'assets/icons/edit_slidable_icon.svg';
   static const String iconsFailureArrow = 'assets/icons/failure_arrow.svg';
   static const String iconsFinancial = 'assets/icons/financial.svg';
   static const String iconsGalleryIcon = 'assets/icons/gallery_icon.svg';
@@ -99,6 +105,8 @@ class Assets {
   static const String iconsOpenOrdersIcon = 'assets/icons/open_orders_icon.svg';
   static const String iconsPaymentAndSubscriptionsIcon =
       'assets/icons/payment_and_subscriptions_icon.svg';
+  static const String iconsPhoneNumberEditDialogIcon =
+      'assets/icons/phone_number_edit_dialog_icon.svg';
   static const String iconsPickImageIcon = 'assets/icons/pick_image_icon.svg';
   static const String iconsProductAndServicesIcon =
       'assets/icons/product_and_services_icon.svg';
@@ -127,6 +135,8 @@ class Assets {
   static const String iconsSpeakerIcon = 'assets/icons/speaker_icon.svg';
   static const String iconsSpeakerphone = 'assets/icons/speakerphone.svg';
   static const String iconsSuccessArrow = 'assets/icons/success_arrow.svg';
+  static const String iconsSuccessDialogIcon =
+      'assets/icons/success_dialog_icon.svg';
   static const String iconsTechnology = 'assets/icons/technology.svg';
   static const String iconsThemesIcon = 'assets/icons/themes_icon.svg';
   static const String iconsTruckIcon = 'assets/icons/truck_icon.svg';

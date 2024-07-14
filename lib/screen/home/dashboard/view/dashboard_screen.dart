@@ -10,7 +10,6 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
 import '../../../../reusable_widgets/custom_background_container.dart';
-import '../../../../reusable_widgets/table_component.dart';
 import '../../../../utils/colors/app_colors.dart';
 
 class DashboardScreen extends StatelessWidget {

@@ -56,6 +56,22 @@ class ActivityDetailScreen extends StatelessWidget {
                   children: [
                     Row(
                       children: [
+                        Expanded(
+                          child: Text(
+                            "Order ID: #${activityModel.orderId}",
+                            style: CustomTextStyles.darkGreyTwoColor412,
+                          ),
+                        ),
+                        10.pw,
+                        Text(
+                          activityModel.created!,
+                          style: CustomTextStyles.blueThreeColor412,
+                        ),
+                      ],
+                    ),
+                    10.ph,
+                    Row(
+                      children: [
                         Image.asset(
                           Assets.imagesActivityItemImage,
                           height: 50,
@@ -94,7 +110,7 @@ class ActivityDetailScreen extends StatelessWidget {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(6),
                                         color: activityModel.status == "Open"
-                                            ? CColors.yellowAccentColor
+                                            ? CColors.orangeColor
                                             : activityModel.status ==
                                                     "In Transit"
                                                 ? CColors.blueSecondColor
@@ -216,20 +232,6 @@ class ActivityDetailScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Order No",
-                          style: CustomTextStyles.darkGreyColor512,
-                        ),
-                        Text(
-                          "#102938",
-                          style: CustomTextStyles.darkGreyColor412,
-                        ),
-                      ],
-                    ),
-                    5.ph,
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
                           "Order time",
                           style: CustomTextStyles.darkGreyColor412,
                         ),
@@ -300,30 +302,33 @@ class ActivityDetailScreen extends StatelessWidget {
           bottom: 10,
         ),
         child: CustomElevatedButton(
-          buttonText: activityModel.activityStatus ==
-                      "An order is confirmed." ||
-                  activityModel.activityStatus == "Preparing order."
-              ? "Print Packing List"
-              : activityModel.activityStatus == "Order is ready for delivery."
-                  ? "Print Shipping Label"
-                  : activityModel.activityStatus == "Order is out for delivery."
-                      ? "Track Order"
-                      : activityModel.activityStatus == "Order is delivered."
-                          ? "Marked as Complete"
-                          : activityModel.activityStatus == "Order is complete."
-                              ? "Leave a Review"
-                              : "",
+          buttonText: activityModel.status == "Dispute"
+              ? "View Dispute"
+              : activityModel.activityStatus == "An order is confirmed."
+                  ? "Add Payment Receipt"
+                  : activityModel.activityStatus ==
+                          "Payment has been completed."
+                      ? "Print Packing List"
+                      : activityModel.activityStatus ==
+                              "The order is being processed now."
+                          ? "Print Shipping Label"
+                          : activityModel.activityStatus ==
+                                  "The order is on its way."
+                              ? "Check Status"
+                              : activityModel.activityStatus ==
+                                      "The order has been delivered."
+                                  ? "Check Status"
+                                  : activityModel.activityStatus ==
+                                          "Order is complete."
+                                      ? "Leave a Review"
+                                      : "",
           onPressedFunction: () {
-            if (activityModel.activityStatus == "An order is confirmed." ||
-                activityModel.activityStatus == "Preparing order.") {
-            } else if (activityModel.activityStatus ==
-                "Order is ready for delivery.") {
-            } else if (activityModel.activityStatus ==
-                "Order is out for delivery.") {
-            } else if (activityModel.activityStatus == "Order is delivered.") {
-            } else if (activityModel.activityStatus == "Order is complete.") {}
+            if (activityModel.activityStatus == "Order is complete.") {}
           },
           needShadow: false,
+          backgroundColor: activityModel.status == "Dispute"
+              ? CColors.redAccentTwoColor
+              : null,
         ),
       ),
     );

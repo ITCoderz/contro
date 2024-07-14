@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 
 import '../../../../../generated/assets.dart';
 import '../../../../../reusable_widgets/bottom_nav_bar/reusable_bottom_navbar.dart';
+import '../../../../../reusable_widgets/custom_dialogs/delete_dialog.dart';
 import '../../messages_screen/view/messages_screen.dart';
 import '../component/chat_landing_components.dart';
 import '../controller/chat_landing_controller.dart';
@@ -72,14 +73,25 @@ class ChatLandingScreen extends StatelessWidget {
                           child: FadeInAnimation(
                             child: ChatLandingBubble(
                               chatModel: ConstantLists.chatList[index],
+                              valueKey: index,
+                              deleteFunction: (context) {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => DeleteDialog(
+                                    isForDeleteChat: true,
+                                    onPressedFunction: () {
+                                      Get.back();
+                                    },
+                                  ),
+                                );
+                              },
                               onTapFunction: () {
-                                  Get.to(
-                                      () => MessagesScreen(
-                                            chatModel:
-                                                ConstantLists.chatList[index],
-                                          ),
-                                      transition: Transition.fadeIn);
-
+                                Get.to(
+                                    () => MessagesScreen(
+                                          chatModel:
+                                              ConstantLists.chatList[index],
+                                        ),
+                                    transition: Transition.fadeIn);
                               },
                             ),
                           ),

@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import '../../../../../../reusable_widgets/custom_back_title.dart';
 import '../../../../../../reusable_widgets/custom_background_container.dart';
 import '../../../../../../reusable_widgets/custom_buttons/custom_elevated_button.dart';
+import '../../../../../../reusable_widgets/custom_dialogs/verify_dialogs.dart';
 import '../../../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
 import '../../../../../../utils/text_styles/text_styles.dart';
 
@@ -49,66 +50,58 @@ class EditEmailScreen extends StatelessWidget {
                               title: "Email.",
                             ),
                             20.ph,
-                            TitleContainerWidget(
-                              titleString: "Enter New Email Address",
-                              childWidget: CustomTextField(
-                                textEditingController:
-                                    editEmailController.emailTextController,
-                                hintText: "Email Address",
-                                keyboardType: TextInputType.emailAddress,
+                            CustomBackgroundContainer(
+                              leftPadding: 10,
+                              rightPadding: 10,
+                              childWidget: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    "Enter New Email Address",
+                                    style: CustomTextStyles.darkGreyColor412,
+                                  ),
+                                  10.ph,
+                                  CustomTextField(
+                                    textEditingController:
+                                        editEmailController.emailTextController,
+                                    hintText: "Email Address",
+                                    keyboardType: TextInputType.emailAddress,
+                                    borderRadius: 6,
+                                  ),
+                                  20.ph,
+                                  const Text(
+                                    "Verification Code",
+                                    style: CustomTextStyles.darkGreyColor412,
+                                  ),
+                                  10.ph,
+                                  CustomTextField(
+                                    textEditingController:
+                                        editEmailController.codeTextController,
+                                    hintText: "Verification Code",
+                                    needSuffix: true,
+                                    suffixMinWidth: 85,
+                                    borderRadius: 6,
+                                    suffixWidget: InkWell(
+                                      onTap: () {
+                                        showDialog(
+                                          context: context,
+                                          builder: (context) => VerifyDialog(
+                                            confirmFunction: () {
+                                              Get.back();
+                                            },
+                                          ),
+                                        );
+                                      },
+                                      child: const Text(
+                                        "Send Code",
+                                        style: CustomTextStyles.blueTwoColor412,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            10.ph,
-                            TitleContainerWidget(
-                              titleString: "Verification Code",
-                              childWidget: CustomTextField(
-                                textEditingController:
-                                    editEmailController.codeTextController,
-                                hintText: "Verification Code",
-                                needSuffix: true,
-                                suffixMinWidth: 85,
-                                suffixWidget: InkWell(
-                                  onTap: () {
-                                    editEmailController.toggleViewText();
-                                  },
-                                  child: const Text(
-                                    "Send Code",
-                                    style: CustomTextStyles.blueTwoColor414,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            10.ph,
-                            Obx(() {
-                              return Visibility(
-                                visible: editEmailController.viewText.value,
-                                child: Text.rich(
-                                  TextSpan(
-                                    children: [
-                                      const TextSpan(
-                                        text:
-                                            "Verification code has been emailed to ",
-                                        style:
-                                            CustomTextStyles.redAccentColor410,
-                                      ),
-                                      TextSpan(
-                                        text: editEmailController
-                                            .emailTextController.text,
-                                        style:
-                                            CustomTextStyles.darkGreyColor410,
-                                      ),
-                                      const TextSpan(
-                                        text:
-                                            "\nVerification code will expired in 5 minutes",
-                                        style:
-                                            CustomTextStyles.redAccentColor410,
-                                      ),
-                                    ],
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              );
-                            }),
                           ],
                         ),
                       ),
@@ -116,8 +109,10 @@ class EditEmailScreen extends StatelessWidget {
                     10.ph,
                     const Spacer(),
                     CustomElevatedButton(
-                      onPressedFunction: () {},
-                      buttonText: "Confirm",
+                      onPressedFunction: () {
+                        Get.back();
+                      },
+                      buttonText: "Update Email",
                       needShadow: false,
                       textStyle: CustomTextStyles.white414,
                     ),

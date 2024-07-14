@@ -214,61 +214,61 @@ class ConstantLists {
       created: "24/04/2023",
       price: "\$ 660.80",
       status: "Open",
-      activityStatus: "Preparing order.",
+      activityStatus: "An order is confirmed.",
     ),
     ActivityModel(
         orderId: "3499889",
         created: "24/03/2021",
         price: "\$ 628.80",
         status: "In Transit",
-        activityStatus: ""),
+        activityStatus: "Payment has been completed."),
     ActivityModel(
       orderId: "3499889",
       created: "24/03/2021",
       price: "\$ 662.80",
       status: "Complete",
-      activityStatus: "Order is complete.",
+      activityStatus: "The order is being processed now.",
     ),
     ActivityModel(
       orderId: "3499889",
       created: "24/03/2022",
       price: "\$ 668.80",
       status: "Dispute",
-      activityStatus: "Preparing order.",
+      activityStatus: "The order is on its way.",
     ),
     ActivityModel(
       orderId: "3499889",
       created: "21/03/2020",
       price: "\$ 668.80",
       status: "In Transit",
-      activityStatus: "Order is ready for delivery.",
+      activityStatus: "The order has been delivered.",
     ),
     ActivityModel(
       orderId: "3499889",
       created: "24/03/2024",
       price: "\$ 668.80",
       status: "Cancelled",
-      activityStatus: "Order is out for delivery.",
+      activityStatus: "The order has been delivered.",
     ),
     ActivityModel(
       orderId: "3499889",
       created: "24/03/2024",
       price: "\$ 668.80",
       status: "Open",
-      activityStatus: "Order is delivered.",
+      activityStatus: "The order has been delivered.",
     ),
     ActivityModel(
         orderId: "3499889",
         created: "24/03/2024",
         price: "\$ 668.80",
         status: "In Transit",
-        activityStatus: "Order is out for delivery."),
+        activityStatus: "The order is on its way."),
     ActivityModel(
       orderId: "3499889",
       created: "24/03/2024",
       price: "\$ 668.80",
       status: "Complete",
-      activityStatus: "Order is complete.",
+      activityStatus: "The order is being processed now.",
     ),
     ActivityModel(
       orderId: "3499889",
@@ -289,7 +289,7 @@ class ConstantLists {
       created: "24/03/2024",
       price: "\$ 668.80",
       status: "Cancelled",
-      activityStatus: "Preparing order.",
+      activityStatus: "The order has been delivered.",
     ),
   ];
   static List<SellerFinanceModel> sellerFinanceList = [
@@ -436,6 +436,42 @@ class ConstantLists {
       index: 1,
     ),
   ];
+  static List<WalletFiltersModel> filterListFour = [
+    WalletFiltersModel(
+      filterName: "All",
+      index: 0,
+    ),
+    WalletFiltersModel(
+      filterName: "Revenue",
+      index: 1,
+    ),
+    WalletFiltersModel(
+      filterName: "Expenditure",
+      index: 2,
+    ),
+    WalletFiltersModel(
+      filterName: "Others",
+      index: 3,
+    ),
+  ];
+  static List<WalletFiltersModel> filterListFive = [
+    WalletFiltersModel(
+      filterName: "Order ID",
+      index: 0,
+    ),
+    WalletFiltersModel(
+      filterName: "Date",
+      index: 1,
+    ),
+    WalletFiltersModel(
+      filterName: "Method",
+      index: 2,
+    ),
+    WalletFiltersModel(
+      filterName: "Type",
+      index: 3,
+    ),
+  ];
   static List<WalletFiltersModel> itemFilterList = [
     WalletFiltersModel(
       filterName: "All",
@@ -452,19 +488,19 @@ class ConstantLists {
   ];
   static List<BankAccountModel> bankAccountModelList = [
     BankAccountModel(
-      assetImage: Assets.imagesHsbcBank,
-      bankName: "HSBC Bank",
-      accountNumber: "(Account No: ****** **2098)",
-    ),
-    BankAccountModel(
       assetImage: Assets.imagesCityBank,
       bankName: "Citibank",
-      accountNumber: "(Account No: ****** **2098)",
+      accountNumber: "**** **** **** 2098",
     ),
     BankAccountModel(
       assetImage: Assets.imagesMaybank,
       bankName: "Maybank",
-      accountNumber: "(Account No: ****** **2098)",
+      accountNumber: "**** **** **** 2098",
+    ),
+    BankAccountModel(
+      assetImage: Assets.imagesHsbcBank,
+      bankName: "HSBC Bank",
+      accountNumber: "**** **** **** 2098",
     ),
   ];
   static List<ChatModel> chatList = [

@@ -8,10 +8,12 @@ import 'package:get/get.dart';
 import '../../../../../../generated/assets.dart';
 import '../../../../../../reusable_widgets/custom_back_title.dart';
 import '../../../../../../reusable_widgets/custom_buttons/custom_elevated_button.dart';
+import '../../../../../../reusable_widgets/custom_dialogs/delete_dialog.dart';
 import '../../../../../../utils/colors/app_colors.dart';
 import '../../../../../../utils/constants/constant_lists.dart';
 import '../../../../../../utils/text_styles/text_styles.dart';
 import '../../add_bank_account/view/add_bank_account_screen.dart';
+import '../../edit_bank/view/edit_bank_account_screen.dart';
 import '../component/bank_account_components.dart';
 
 class BankAccountScreen extends StatelessWidget {
@@ -54,9 +56,29 @@ class BankAccountScreen extends StatelessWidget {
                               verticalOffset: 50.0,
                               child: FadeInAnimation(
                                 child: BankAccountComponents(
+                                  valueKey: index,
                                   bankAccountModel:
                                       ConstantLists.bankAccountModelList[index],
                                   onTapFunction: () {},
+                                  editFunction: (context) {
+                                    Get.to(
+                                      () => EditBankAccountScreen(
+                                        bankAccountModel: ConstantLists
+                                            .bankAccountModelList[index],
+                                      ),
+                                      transition: Transition.fadeIn,
+                                    );
+                                  },
+                                  deleteFunction: (context) {
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) => DeleteDialog(
+                                        onPressedFunction: () {
+                                          Get.back();
+                                        },
+                                      ),
+                                    );
+                                  },
                                 ),
                               ),
                             ),

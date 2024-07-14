@@ -1,30 +1,49 @@
-import 'package:contro/reusable_widgets/custom_background_container.dart';
+import 'package:contro/screen/home/settings/wallet/edit_bank/controller/edit_bank_account_controller.dart';
+import 'package:contro/utils/colors/app_colors.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
+import '../../../../../../models/bank_account_model/bank_account_model.dart';
 import '../../../../../../reusable_widgets/custom_back_title.dart';
+import '../../../../../../reusable_widgets/custom_background_container.dart';
 import '../../../../../../reusable_widgets/custom_buttons/custom_elevated_button.dart';
-import '../../../../../../reusable_widgets/custom_dialogs/success_dialogs.dart';
+import '../../../../../../reusable_widgets/custom_text_fields/custom_formatter.dart';
 import '../../../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
-import '../../../../../../utils/colors/app_colors.dart';
 import '../../../../../../utils/text_styles/text_styles.dart';
-import '../../bank_account/view/bank_account_screen.dart';
-import '../controller/withdrawal_controller.dart';
 
-class WithdrawalScreen extends StatelessWidget {
-  const WithdrawalScreen({super.key});
+class EditBankAccountScreen extends StatefulWidget {
+  final BankAccountModel bankAccountModel;
+
+  const EditBankAccountScreen({
+    super.key,
+    required this.bankAccountModel,
+  });
+
+  @override
+  State<EditBankAccountScreen> createState() => _EditBankAccountScreenState();
+}
+
+class _EditBankAccountScreenState extends State<EditBankAccountScreen> {
+  final editBankAccountController = Get.find<EditBankAccountController>();
+
+  @override
+  void initState() {
+    editBankAccountController.initializeBankAccountModel(
+      bankAccountModel: widget.bankAccountModel,
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final withdrawalController = Get.find<WithdrawalController>();
     return Scaffold(
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.only(
-            left: 10,
-            right: 10,
+            left: 20,
+            right: 20,
             bottom: 20,
           ),
           height: context.height,
@@ -50,87 +69,70 @@ class WithdrawalScreen extends StatelessWidget {
                           children: [
                             5.ph,
                             const CustomBackTitle(
-                              title: "Withdrawal",
+                              title: "Edit Bank Account",
+                              hasCrossIcon: true,
                             ),
                             20.ph,
                             CustomBackgroundContainer(
-                              width: context.width,
                               leftPadding: 10,
                               rightPadding: 10,
                               radius: 0,
                               childWidget: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   const Text(
-                                    "Withdrawal Amount (RM)",
-                                    style: CustomTextStyles.darkGreyTwoColor414,
-                                  ),
-                                  10.ph,
-                                  CustomTextField(
-                                    textEditingController: withdrawalController
-                                        .withdrawalAmountTextController,
-                                    hintText: "0.00",
-                                    keyboardType: TextInputType.number,
-                                    needSuffix: true,
-                                    suffixWidget: const Text(
-                                      "Max",
-                                      style: CustomTextStyles.blueTwoColor512,
-                                    ),
-                                  ),
-                                  5.ph,
-                                  const Text(
-                                    "Available Balance : RM 888,000.00",
-                                    style:
-                                        CustomTextStyles.lightGreyTwoColor412,
-                                  ),
-                                  20.ph,
-                                  const Text(
-                                    "Bank Details",
-                                    style: CustomTextStyles.darkGreyTwoColor414,
+                                    "Bank",
+                                    style: CustomTextStyles.darkGreyColor412,
                                   ),
                                   10.ph,
                                   ClipRRect(
-                                    borderRadius: BorderRadius.circular(2),
+                                    borderRadius: BorderRadius.circular(6),
                                     child: Material(
                                       color: Colors.transparent,
                                       child: InkWell(
-                                        onTap: () {
-                                          Get.to(
-                                              () => const BankAccountScreen(),
-                                              transition: Transition.fadeIn);
-                                        },
+                                        onTap: () {},
                                         child: Ink(
                                           padding: const EdgeInsets.only(
                                             left: 10,
-                                            top: 10,
-                                            bottom: 10,
+                                            top: 5,
+                                            bottom: 5,
                                             right: 5,
                                           ),
-                                          height: 70,
+                                          height: 42,
                                           decoration: BoxDecoration(
                                             color: CColors.scaffoldColor,
-                                            borderRadius:
-                                                BorderRadius.circular(2),
                                             border: Border.all(
                                               color: CColors.borderOneColor,
                                               width: 0.5,
                                             ),
                                           ),
                                           width: context.width,
-                                          child: const Center(
+                                          child: Center(
                                             child: Row(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.center,
                                               children: [
                                                 Expanded(
-                                                  child: Text(
-                                                    "Maybank Berhad\n(Account No: ********2098)",
-                                                    style: CustomTextStyles
-                                                        .lightGreyTwoColor412,
+                                                  child: Row(
+                                                    children: [
+                                                      Image.asset(
+                                                        widget.bankAccountModel
+                                                            .assetImage,
+                                                        height: 25,
+                                                      ),
+                                                      5.pw,
+                                                      Text(
+                                                        widget.bankAccountModel
+                                                            .bankName,
+                                                        style: CustomTextStyles
+                                                            .darkGreyColor412,
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
-                                                Icon(
+                                                10.pw,
+                                                const Icon(
                                                   Icons
                                                       .arrow_forward_ios_rounded,
                                                   color: CColors.darkGreyColor,
@@ -142,10 +144,42 @@ class WithdrawalScreen extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                  )
+                                  ),
+                                  20.ph,
+                                  const Text(
+                                    "Account Name",
+                                    style: CustomTextStyles.darkGreyColor412,
+                                  ),
+                                  10.ph,
+                                  CustomTextField(
+                                    textEditingController:
+                                        editBankAccountController
+                                            .accountNameController,
+                                    hintText: "Enter Account Name",
+                                    borderRadius: 6,
+                                  ),
+                                  20.ph,
+                                  const Text(
+                                    "Account Number",
+                                    style: CustomTextStyles.darkGreyColor412,
+                                  ),
+                                  10.ph,
+                                  CustomTextField(
+                                    textEditingController:
+                                        editBankAccountController
+                                            .accountNumberController,
+                                    hintText: "Enter Account Number",
+                                    borderRadius: 6,
+                                    inputFormatters: [
+                                      MaskedTextInputFormatter(
+                                          mask: "xxxx xxxx xxxx xxxx",
+                                          separator: " "),
+                                    ],
+                                  ),
                                 ],
                               ),
                             ),
+                            10.ph,
                           ],
                         ),
                       ),
@@ -155,17 +189,9 @@ class WithdrawalScreen extends StatelessWidget {
                     10.ph,
                     CustomElevatedButton(
                       onPressedFunction: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => WithdrawalSuccessDialog(
-                            onPressedFunction: () {
-                              Get.back();
-                              Get.back();
-                            },
-                          ),
-                        );
+                        Get.back();
                       },
-                      buttonText: "Withdraw",
+                      buttonText: "Update Bank Account",
                       needShadow: false,
                       textStyle: CustomTextStyles.white414,
                     ),

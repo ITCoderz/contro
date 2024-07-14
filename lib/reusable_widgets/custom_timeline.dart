@@ -23,16 +23,16 @@ class TimeLineComponent extends StatelessWidget {
         TimeLineCircularWidget(
           inProgress: activityModel.activityStatus == "An order is confirmed."
               ? false
-              : activityModel.activityStatus == "Preparing order."
+              : activityModel.activityStatus == "Payment has been completed."
                   ? false
                   : activityModel.activityStatus ==
-                          "Order is ready for delivery."
+                          "The order is being processed now."
                       ? false
                       : activityModel.activityStatus ==
-                              "Order is out for delivery."
+                              "The order is on its way."
                           ? false
                           : activityModel.activityStatus ==
-                                  "Order is delivered."
+                                  "The order has been delivered."
                               ? false
                               : activityModel.activityStatus ==
                                       "Order is complete."
@@ -43,16 +43,16 @@ class TimeLineComponent extends StatelessWidget {
         CustomDottedLine(
           inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Preparing order."
+              : activityModel.activityStatus == "Payment has been completed."
                   ? false
                   : activityModel.activityStatus ==
-                          "Order is ready for delivery."
+                          "The order is being processed now."
                       ? false
                       : activityModel.activityStatus ==
-                              "Order is out for delivery."
+                              "The order is on its way."
                           ? false
                           : activityModel.activityStatus ==
-                                  "Order is delivered."
+                                  "The order has been delivered."
                               ? false
                               : activityModel.activityStatus ==
                                       "Order is complete."
@@ -62,36 +62,36 @@ class TimeLineComponent extends StatelessWidget {
         TimeLineCircularWidget(
           inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Preparing order."
+              : activityModel.activityStatus == "Payment has been completed."
                   ? false
                   : activityModel.activityStatus ==
-                          "Order is ready for delivery."
+                          "The order is being processed now."
                       ? false
                       : activityModel.activityStatus ==
-                              "Order is out for delivery."
+                              "The order is on its way."
                           ? false
                           : activityModel.activityStatus ==
-                                  "Order is delivered."
+                                  "The order has been delivered."
                               ? false
                               : activityModel.activityStatus ==
                                       "Order is complete."
                                   ? false
                                   : true,
-          status: "Preparing order.",
+          status: "Payment has been completed.",
         ),
         CustomDottedLine(
           inProgress: activityModel.activityStatus == "An order is confirmed."
               ? false
-              : activityModel.activityStatus == "Preparing order."
+              : activityModel.activityStatus == "Payment has been completed."
                   ? true
                   : activityModel.activityStatus ==
-                          "Order is ready for delivery."
+                          "The order is being processed now."
                       ? false
                       : activityModel.activityStatus ==
-                              "Order is out for delivery."
+                              "The order is on its way."
                           ? false
                           : activityModel.activityStatus ==
-                                  "Order is delivered."
+                                  "The order has been delivered."
                               ? false
                               : activityModel.activityStatus ==
                                       "Order is complete."
@@ -101,36 +101,36 @@ class TimeLineComponent extends StatelessWidget {
         TimeLineCircularWidget(
           inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Preparing order."
+              : activityModel.activityStatus == "Payment has been completed."
                   ? true
                   : activityModel.activityStatus ==
-                          "Order is ready for delivery."
+                          "The order is being processed now."
                       ? false
                       : activityModel.activityStatus ==
-                              "Order is out for delivery."
+                              "The order is on its way."
                           ? false
                           : activityModel.activityStatus ==
-                                  "Order is delivered."
+                                  "The order has been delivered."
                               ? false
                               : activityModel.activityStatus ==
                                       "Order is complete."
                                   ? false
                                   : true,
-          status: "Order is ready for delivery.",
+          status: "The order is being processed now.",
         ),
         CustomDottedLine(
           inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Preparing order."
+              : activityModel.activityStatus == "Payment has been completed."
                   ? true
                   : activityModel.activityStatus ==
-                          "Order is ready for delivery."
+                          "The order is being processed now."
                       ? true
                       : activityModel.activityStatus ==
-                              "Order is out for delivery."
+                              "The order is on its way."
                           ? false
                           : activityModel.activityStatus ==
-                                  "Order is delivered."
+                                  "The order has been delivered."
                               ? false
                               : activityModel.activityStatus ==
                                       "Order is complete."
@@ -140,36 +140,36 @@ class TimeLineComponent extends StatelessWidget {
         TimeLineCircularWidget(
           inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Preparing order."
+              : activityModel.activityStatus == "Payment has been completed."
                   ? true
                   : activityModel.activityStatus ==
-                          "Order is ready for delivery."
+                          "The order is being processed now."
                       ? true
                       : activityModel.activityStatus ==
-                              "Order is out for delivery."
+                              "The order is on its way."
                           ? false
                           : activityModel.activityStatus ==
-                                  "Order is delivered."
+                                  "The order has been delivered."
                               ? false
                               : activityModel.activityStatus ==
                                       "Order is complete."
                                   ? false
                                   : true,
-          status: "Order is out for delivery.",
+          status: "The order is on its way.",
         ),
         CustomDottedLine(
           inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Preparing order."
+              : activityModel.activityStatus == "Payment has been completed."
                   ? true
                   : activityModel.activityStatus ==
-                          "Order is ready for delivery."
+                          "The order is being processed now."
                       ? true
                       : activityModel.activityStatus ==
-                              "Order is out for delivery."
+                              "The order is on its way."
                           ? true
                           : activityModel.activityStatus ==
-                                  "Order is delivered."
+                                  "The order has been delivered."
                               ? false
                               : activityModel.activityStatus ==
                                       "Order is complete."
@@ -179,36 +179,36 @@ class TimeLineComponent extends StatelessWidget {
         TimeLineCircularWidget(
           inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Preparing order."
+              : activityModel.activityStatus == "Payment has been completed."
                   ? true
                   : activityModel.activityStatus ==
-                          "Order is ready for delivery."
+                          "The order is being processed now."
                       ? true
                       : activityModel.activityStatus ==
-                              "Order is out for delivery."
+                              "The order is on its way."
                           ? true
                           : activityModel.activityStatus ==
-                                  "Order is delivered."
+                                  "The order has been delivered."
                               ? false
                               : activityModel.activityStatus ==
                                       "Order is complete."
                                   ? false
                                   : true,
-          status: "Order is delivered.",
+          status: "The order has been delivered.",
         ),
         CustomDottedLine(
           inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Preparing order."
+              : activityModel.activityStatus == "Payment has been completed."
                   ? true
                   : activityModel.activityStatus ==
-                          "Order is ready for delivery."
+                          "The order is being processed now."
                       ? true
                       : activityModel.activityStatus ==
-                              "Order is out for delivery."
+                              "The order is on its way."
                           ? true
                           : activityModel.activityStatus ==
-                                  "Order is delivered."
+                                  "The order has been delivered."
                               ? true
                               : activityModel.activityStatus ==
                                       "Order is complete."
@@ -218,16 +218,16 @@ class TimeLineComponent extends StatelessWidget {
         TimeLineCircularWidget(
           inProgress: activityModel.activityStatus == "An order is confirmed."
               ? true
-              : activityModel.activityStatus == "Preparing order."
+              : activityModel.activityStatus == "Payment has been completed."
                   ? true
                   : activityModel.activityStatus ==
-                          "Order is ready for delivery."
+                          "The order is being processed now."
                       ? true
                       : activityModel.activityStatus ==
-                              "Order is out for delivery."
+                              "The order is on its way."
                           ? true
                           : activityModel.activityStatus ==
-                                  "Order is delivered."
+                                  "The order has been delivered."
                               ? true
                               : activityModel.activityStatus ==
                                       "Order is complete."

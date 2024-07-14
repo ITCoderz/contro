@@ -52,117 +52,100 @@ class AddBankAccountScreen extends StatelessWidget {
                               hasCrossIcon: true,
                             ),
                             20.ph,
-                            TitleContainerWidget(
-                                titleString: "Payment Type",
-                                childWidget: ClipRRect(
-                                  borderRadius: BorderRadius.circular(2),
-                                  child: Material(
-                                    color: Colors.transparent,
-                                    child: InkWell(
-                                      onTap: () {},
-                                      child: Container(
-                                        padding: const EdgeInsets.only(
+                            CustomBackgroundContainer(
+                              leftPadding: 10,
+                              rightPadding: 10,
+                              radius: 0,
+                              childWidget: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    "Bank",
+                                    style: CustomTextStyles.darkGreyColor412,
+                                  ),
+                                  10.ph,
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(6),
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      child: InkWell(
+                                        onTap: () {},
+                                        child: Ink(
+                                          padding: const EdgeInsets.only(
                                             left: 10,
                                             top: 5,
                                             bottom: 5,
-                                            right: 5),
-                                        height: 42,
-                                        decoration: BoxDecoration(
-                                          color: CColors.scaffoldColor,
-                                          border: Border.all(
-                                            color: CColors.borderOneColor,
-                                            width: 0.5,
+                                            right: 5,
                                           ),
-                                        ),
-                                        width: context.width,
-                                        child: const Center(
-                                          child: Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Expanded(
-                                                child: Text(
-                                                  "Payment Type",
-                                                  style: CustomTextStyles
-                                                      .darkGreyColor412,
+                                          height: 42,
+                                          decoration: BoxDecoration(
+                                            color: CColors.scaffoldColor,
+                                            border: Border.all(
+                                              color: CColors.borderOneColor,
+                                              width: 0.5,
+                                            ),
+                                          ),
+                                          width: context.width,
+                                          child: Center(
+                                            child: Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                const Expanded(
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: [
+                                                      Text(
+                                                        "Payment Type",
+                                                        style: CustomTextStyles
+                                                            .darkGreyColor412,
+                                                      ),
+                                                    ],
+                                                  ),
                                                 ),
-                                              ),
-                                              Icon(
-                                                Icons.arrow_forward_ios_rounded,
-                                                color: CColors.darkGreyColor,
-                                                size: 15,
-                                              ),
-                                            ],
+                                                10.pw,
+                                                const Icon(
+                                                  Icons
+                                                      .arrow_forward_ios_rounded,
+                                                  color: CColors.darkGreyColor,
+                                                  size: 15,
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),
                                     ),
                                   ),
-                                )),
-                            10.ph,
-                            TitleContainerWidget(
-                                titleString: "Bank Name",
-                                childWidget: ClipRRect(
-                                  borderRadius: BorderRadius.circular(2),
-                                  child: Material(
-                                    color: Colors.transparent,
-                                    child: InkWell(
-                                      onTap: () {},
-                                      child: Container(
-                                        padding: const EdgeInsets.only(
-                                            left: 10,
-                                            top: 5,
-                                            bottom: 5,
-                                            right: 5),
-                                        height: 42,
-                                        decoration: BoxDecoration(
-                                          color: CColors.scaffoldColor,
-                                          border: Border.all(
-                                            color: CColors.borderOneColor,
-                                            width: 0.5,
-                                          ),
-                                        ),
-                                        width: context.width,
-                                        child: const Center(
-                                          child: Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Expanded(
-                                                child: Text(
-                                                  "Choose a bank",
-                                                  style: CustomTextStyles
-                                                      .darkGreyColor412,
-                                                ),
-                                              ),
-                                              Icon(
-                                                Icons.arrow_forward_ios_rounded,
-                                                color: CColors.darkGreyColor,
-                                                size: 15,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
+                                  20.ph,
+                                  const Text(
+                                    "Account Name",
+                                    style: CustomTextStyles.darkGreyColor412,
                                   ),
-                                )),
-                            10.ph,
-                            TitleContainerWidget(
-                              titleString: "Account Name",
-                              childWidget: CustomTextField(
-                                textEditingController: addBankAccountController
-                                    .accountNameController,
-                                hintText: "Enter Account Name",
-                              ),
-                            ),
-                            10.ph,
-                            TitleContainerWidget(
-                              titleString: "Account Number",
-                              childWidget: CustomTextField(
-                                textEditingController: addBankAccountController
-                                    .accountNumberController,
-                                hintText: "Enter Account Number",
+                                  10.ph,
+                                  CustomTextField(
+                                    textEditingController:
+                                        addBankAccountController
+                                            .accountNameController,
+                                    hintText: "Enter Account Name",
+                                    borderRadius: 6,
+                                  ),
+                                  20.ph,
+                                  const Text(
+                                    "Account Number",
+                                    style: CustomTextStyles.darkGreyColor412,
+                                  ),
+                                  10.ph,
+                                  CustomTextField(
+                                    textEditingController:
+                                        addBankAccountController
+                                            .accountNumberController,
+                                    hintText: "Enter Account Number",
+                                    borderRadius: 6,
+                                  ),
+                                ],
                               ),
                             ),
                             10.ph,
@@ -174,8 +157,10 @@ class AddBankAccountScreen extends StatelessWidget {
                     const Spacer(),
                     10.ph,
                     CustomElevatedButton(
-                      onPressedFunction: () {},
-                      buttonText: "Done",
+                      onPressedFunction: () {
+                        Get.back();
+                      },
+                      buttonText: "Add Account Name",
                       needShadow: false,
                       textStyle: CustomTextStyles.white414,
                     ),

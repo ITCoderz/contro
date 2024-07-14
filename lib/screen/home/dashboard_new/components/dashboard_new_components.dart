@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../../../models/dashboard_overview_model/dashboard_overview_model.dart';
 import '../../../../reusable_widgets/custom_buttons/custom_elevated_button.dart';
 import '../../../../utils/colors/app_colors.dart';
 import '../../../../utils/text_styles/text_styles.dart';
@@ -94,5 +93,3 @@ class GetStartedComponent extends StatelessWidget {
     );
   }
 }
-
-

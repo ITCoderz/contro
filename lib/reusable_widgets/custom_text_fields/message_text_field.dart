@@ -22,6 +22,7 @@ class MessageTextField extends StatelessWidget {
   final int? maxLength;
   final Color? fillColor;
   final TextStyle? textStyle;
+  final double? borderRadius;
 
   const MessageTextField({
     super.key,
@@ -43,6 +44,7 @@ class MessageTextField extends StatelessWidget {
     this.textAlign,
     this.maxLength,
     this.textStyle,
+    this.borderRadius,
     required this.textEditingController,
   });
 
@@ -81,37 +83,37 @@ class MessageTextField extends StatelessWidget {
             horizontal: horizontalPadding ?? 10,
             vertical: verticalPadding ?? 10,
           ),
-          enabledBorder: const OutlineInputBorder(
+          enabledBorder: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(
-              Radius.circular(6),
+              Radius.circular(borderRadius ?? 6),
             ),
           ),
-          focusedBorder: const OutlineInputBorder(
+          focusedBorder: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(
-              Radius.circular(6),
+              Radius.circular(borderRadius ?? 6),
             ),
           ),
-          border: const OutlineInputBorder(
+          border: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(
-              Radius.circular(6),
+              Radius.circular(borderRadius ?? 6),
             ),
           ),
-          errorBorder: const OutlineInputBorder(
+          errorBorder: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(
               Radius.circular(
-                6,
+                borderRadius ?? 6,
               ),
             ),
           ),
-          focusedErrorBorder: const OutlineInputBorder(
+          focusedErrorBorder: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(
               Radius.circular(
-                6,
+                borderRadius ?? 6,
               ),
             ),
           ),

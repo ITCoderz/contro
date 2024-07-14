@@ -71,7 +71,7 @@ class ClientMessageBubble extends StatelessWidget {
                         )
                       : Text(
                           messagesModel.messages,
-                          style: CustomTextStyles.darkGreyColor414,
+                          style: CustomTextStyles.darkGreyColor412,
                         ),
             ),
           ),
@@ -123,7 +123,7 @@ class UserMessageBubble extends StatelessWidget {
                         5.pw,
                         Text(
                           messagesModel.messages,
-                          style: CustomTextStyles.white414,
+                          style: CustomTextStyles.white412,
                         ),
                       ],
                     )
@@ -134,7 +134,7 @@ class UserMessageBubble extends StatelessWidget {
                         )
                       : Text(
                           messagesModel.messages,
-                          style: CustomTextStyles.white414,
+                          style: CustomTextStyles.white412,
                         ),
             ),
           ),

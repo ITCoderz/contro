@@ -6,4 +6,16 @@ class WalletLandingController extends GetxController {
   toggleFilter({required int index}) {
     selectedIndex.value = index;
   }
+
+  final selectedTransactionTypeIndex = 0.obs;
+
+  toggleTransactionType({required int index}) {
+    selectedTransactionTypeIndex.value = index;
+  }
+
+  final selectedSortedByIndex = 0.obs;
+
+  toggleSortedByFilter({required int index}) {
+    selectedSortedByIndex.value = index;
+  }
 }

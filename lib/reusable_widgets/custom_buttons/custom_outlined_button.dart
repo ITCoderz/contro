@@ -6,11 +6,18 @@ import '../../utils/text_styles/text_styles.dart';
 class CustomOutlinedButton extends StatelessWidget {
   final Function()? onPressedFunction;
   final String buttonText;
+  final TextStyle? textStyle;
+  final Color? borderColor;
+  final double? width, height;
 
   const CustomOutlinedButton({
     super.key,
     required this.onPressedFunction,
     required this.buttonText,
+    this.textStyle,
+    this.borderColor,
+    this.width,
+    this.height,
   });
 
   @override
@@ -18,9 +25,13 @@ class CustomOutlinedButton extends StatelessWidget {
     return OutlinedButton(
       onPressed: onPressedFunction,
       style: ElevatedButton.styleFrom(
-        fixedSize: const Size(220, 48),
-        side: const BorderSide(
-          color: CColors.purpleAccentColor,
+        fixedSize: Size(
+          width ?? 220,
+          height ?? 48,
+        ),
+        padding: EdgeInsets.zero,
+        side: BorderSide(
+          color: borderColor ?? CColors.purpleAccentColor,
         ),
         elevation: 0.0,
         backgroundColor: Colors.transparent,
@@ -30,7 +41,7 @@ class CustomOutlinedButton extends StatelessWidget {
       ),
       child: Text(
         buttonText,
-        style: CustomTextStyles.purpleAccentColor414,
+        style: textStyle ?? CustomTextStyles.purpleAccentColor414,
       ),
     );
   }

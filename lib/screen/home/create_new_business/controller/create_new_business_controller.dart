@@ -15,11 +15,6 @@ class CreateNewBusinessController extends GetxController {
   TextEditingController businessNatureController = TextEditingController();
   final isReviewButtonEnabled = false.obs;
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
   enableReviewFunction() {
     if (isIndividualSelected.value) {
       if (appNameController.text.isNotEmpty &&

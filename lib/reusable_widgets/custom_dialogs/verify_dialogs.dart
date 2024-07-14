@@ -11,10 +11,12 @@ import '../../generated/assets.dart';
 
 class VerifyDialog extends StatelessWidget {
   final Function()? confirmFunction;
+  final bool isForPhone;
 
   const VerifyDialog({
     super.key,
     required this.confirmFunction,
+    this.isForPhone = false,
   });
 
   @override
@@ -67,7 +69,9 @@ class VerifyDialog extends StatelessWidget {
             ),
             30.ph,
             SvgPicture.asset(
-              Assets.iconsVerifyItsYouIcon,
+              isForPhone
+                  ? Assets.iconsPhoneNumberEditDialogIcon
+                  : Assets.iconsVerifyItsYouIcon,
             ),
             20.ph,
             const Text(
@@ -75,13 +79,15 @@ class VerifyDialog extends StatelessWidget {
               style: CustomTextStyles.darkGreyTwoColor620,
             ),
             10.ph,
-            const Text(
-              "Verification code has been emailed to",
+            Text(
+              isForPhone
+                  ? "Verification code has been sent to"
+                  : "Verification code has been emailed to",
               style: CustomTextStyles.darkGreyTwoColor410,
             ),
             10.ph,
-            const Text(
-              "wesley@contro.me",
+            Text(
+              isForPhone ? "+6012 762 5557" : "wesley@contro.me",
               style: CustomTextStyles.blueThreeColor512,
             ),
             30.ph,

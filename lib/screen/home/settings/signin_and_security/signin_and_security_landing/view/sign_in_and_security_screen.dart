@@ -52,64 +52,87 @@ class SignInAndSecurityScreen extends StatelessWidget {
                               title: "Sign in & Security",
                             ),
                             20.ph,
-                            TitleContainerWidget(
-                              titleString: "Phone Number",
-                              subtitleWidget: InkWell(
-                                onTap: () {
-                                  Get.to(
-                                    () => const EditPhoneNumberScreen(),
-                                    transition: Transition.fadeIn,
-                                  );
-                                },
-                                child: const Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 5,
+                            CustomBackgroundContainer(
+                              leftPadding: 10,
+                              rightPadding: 10,
+                              childWidget: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      const Text(
+                                        "Phone Number",
+                                        style:
+                                            CustomTextStyles.darkGreyColor412,
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          Get.to(
+                                            () => const EditPhoneNumberScreen(),
+                                            transition: Transition.fadeIn,
+                                          );
+                                        },
+                                        child: const Text(
+                                          "Edit",
+                                          style:
+                                              CustomTextStyles.blueTwoColor412,
+                                        ),
+                                      )
+                                    ],
                                   ),
-                                  child: Text(
-                                    "Edit",
-                                    style: CustomTextStyles.blueTwoColor414,
+                                  10.ph,
+                                  CustomTextField(
+                                    textEditingController:
+                                        signInAndSecurityController
+                                            .phoneNumberController,
+                                    hintText: "",
+                                    readOnly: true,
+                                    keyboardType: TextInputType.phone,
+                                    textStyle: CustomTextStyles.greyTwoColor412,
+                                    fillColor: CColors.scaffoldColor,
+                                    borderRadius: 6,
                                   ),
-                                ),
-                              ),
-                              childWidget: CustomTextField(
-                                textEditingController:
-                                    signInAndSecurityController
-                                        .phoneNumberController,
-                                hintText: "",
-                                readOnly: true,
-                                keyboardType: TextInputType.phone,
-                                textStyle: CustomTextStyles.greyTwoColor412,
-                                fillColor: CColors.scaffoldColor,
-                              ),
-                            ),
-                            10.ph,
-                            TitleContainerWidget(
-                              titleString: "Email",
-                              subtitleWidget: InkWell(
-                                onTap: () {
-                                  Get.to(
-                                    () => const EditEmailScreen(),
-                                    transition: Transition.fadeIn,
-                                  );
-                                },
-                                child: const Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 5,
+                                  20.ph,
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      const Text(
+                                        "Email",
+                                        style:
+                                            CustomTextStyles.darkGreyColor412,
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          Get.to(
+                                            () => const EditEmailScreen(),
+                                            transition: Transition.fadeIn,
+                                          );
+                                        },
+                                        child: const Text(
+                                          "Edit",
+                                          style:
+                                              CustomTextStyles.blueTwoColor412,
+                                        ),
+                                      )
+                                    ],
                                   ),
-                                  child: Text(
-                                    "Edit",
-                                    style: CustomTextStyles.blueTwoColor414,
+                                  10.ph,
+                                  CustomTextField(
+                                    textEditingController:
+                                        signInAndSecurityController
+                                            .emailController,
+                                    hintText: "",
+                                    readOnly: true,
+                                    keyboardType: TextInputType.emailAddress,
+                                    textStyle: CustomTextStyles.greyTwoColor412,
+                                    fillColor: CColors.scaffoldColor,
+                                    borderRadius: 6,
                                   ),
-                                ),
-                              ),
-                              childWidget: CustomTextField(
-                                textEditingController:
-                                    signInAndSecurityController.emailController,
-                                hintText: "",
-                                readOnly: true,
-                                keyboardType: TextInputType.emailAddress,
-                                textStyle: CustomTextStyles.greyTwoColor412,
-                                fillColor: CColors.scaffoldColor,
+                                ],
                               ),
                             ),
                             10.ph,
@@ -135,7 +158,7 @@ class SignInAndSecurityScreen extends StatelessWidget {
                                           child: Text(
                                             "Face ID & Passcode",
                                             style: CustomTextStyles
-                                                .darkGreyColor414,
+                                                .darkGreyColor412,
                                           ),
                                         ),
                                         20.pw,

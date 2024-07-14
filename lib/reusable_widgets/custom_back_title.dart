@@ -25,7 +25,7 @@ class CustomBackTitle extends StatelessWidget {
         ),
         Text(
           title,
-          style: CustomTextStyles.darkGreyColor622,
+          style: CustomTextStyles.darkGreyColor618,
         ),
       ],
     );

@@ -21,7 +21,7 @@ class FilterButtonComponent extends StatelessWidget {
     return GestureDetector(
       onTap: onTapFunction,
       child: Container(
-        height: 48,
+        height: 40,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
@@ -38,8 +38,8 @@ class FilterButtonComponent extends StatelessWidget {
           child: Text(
             title,
             style: itemIndex == selectedIndex
-                ? CustomTextStyles.purpleAccentColor614
-                : CustomTextStyles.darkGreyColor414,
+                ? CustomTextStyles.purpleAccentColor612
+                : CustomTextStyles.darkGreyColor412,
           ),
         ),
       ),

@@ -31,6 +31,7 @@ import '../screen/home/settings/signin_and_security/signin_and_security_landing/
 import '../screen/home/settings/theme/controller/theme_controller.dart';
 import '../screen/home/settings/wallet/add_bank_account/controller/add_bank_account_controller.dart';
 import '../screen/home/settings/wallet/bank_account/controller/bank_account_controller.dart';
+import '../screen/home/settings/wallet/edit_bank/controller/edit_bank_account_controller.dart';
 import '../screen/home/settings/wallet/wallet_landing/controller/wallet_landing_controller.dart';
 import '../screen/home/settings/wallet/withdrawal/controller/withdrawal_controller.dart';
 
@@ -167,6 +168,10 @@ class InitializingDependency implements Bindings {
     );
     Get.lazyPut(
       () => AddLocationController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => EditBankAccountController(),
       fenix: true,
     );
   }
