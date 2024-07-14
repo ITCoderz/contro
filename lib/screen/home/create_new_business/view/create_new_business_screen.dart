@@ -151,6 +151,7 @@ class CreateNewBusinessScreen extends StatelessWidget {
                             textEditingController:
                                 createNewBusinessController.appNameController,
                             hintText: "Instant App Name",
+                            borderRadius: 6,
                             onChangedFunction: (val) {
                               createNewBusinessController
                                   .enableReviewFunction();
@@ -180,6 +181,7 @@ class CreateNewBusinessScreen extends StatelessWidget {
                                                     createNewBusinessController
                                                         .firstNameController,
                                                 hintText: "First Name",
+                                                borderRadius: 6,
                                                 onChangedFunction: (val) {
                                                   createNewBusinessController
                                                       .enableReviewFunction();
@@ -206,6 +208,7 @@ class CreateNewBusinessScreen extends StatelessWidget {
                                                     createNewBusinessController
                                                         .lastNameController,
                                                 hintText: "Last Name",
+                                                borderRadius: 6,
                                                 onChangedFunction: (val) {
                                                   createNewBusinessController
                                                       .enableReviewFunction();
@@ -243,6 +246,7 @@ class CreateNewBusinessScreen extends StatelessWidget {
                                                   createNewBusinessController
                                                       .companyNameController,
                                               hintText: "Company Name",
+                                              borderRadius: 6,
                                               onChangedFunction: (val) {
                                                 createNewBusinessController
                                                     .enableReviewFunction();
@@ -268,6 +272,7 @@ class CreateNewBusinessScreen extends StatelessWidget {
                                                       .businessRegistrationNumberController,
                                               hintText:
                                                   "Business Registration Number",
+                                              borderRadius: 6,
                                               onChangedFunction: (val) {
                                                 createNewBusinessController
                                                     .enableReviewFunction();
@@ -292,6 +297,7 @@ class CreateNewBusinessScreen extends StatelessWidget {
                             hintText: "Select Business Nature",
                             readOnly: true,
                             needSuffix: true,
+                            borderRadius: 6,
                             suffixWidget: IconButton(
                               onPressed: () {
                                 showModalBottomSheet(
@@ -466,7 +472,6 @@ class CreateNewBusinessScreen extends StatelessWidget {
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  25.ph,
                                   SvgPicture.asset(
                                     Assets.iconsCloudUploadIcon,
                                     height: 70,
@@ -519,6 +524,7 @@ class CreateNewBusinessScreen extends StatelessWidget {
                             textEditingController:
                                 createNewBusinessController.emailController,
                             hintText: "Enter email",
+                            borderRadius: 6,
                             onChangedFunction: (val) {
                               createNewBusinessController
                                   .enableReviewFunction();
@@ -535,6 +541,7 @@ class CreateNewBusinessScreen extends StatelessWidget {
                                 .verificationCodeController,
                             suffixMinWidth: 90,
                             needSuffix: true,
+                            borderRadius: 6,
                             suffixWidget: TextButton(
                               onPressed: () {
                                 showDialog(
