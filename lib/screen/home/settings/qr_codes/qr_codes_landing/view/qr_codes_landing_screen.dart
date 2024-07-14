@@ -1,6 +1,8 @@
 import 'package:contro/reusable_widgets/bottom_nav_bar/reusable_bottom_navbar.dart';
+import 'package:contro/reusable_widgets/custom_dialogs/delete_dialog.dart';
 import 'package:contro/screen/home/settings/qr_codes/create_qr_code/view/create_qr_code_screen.dart';
 import 'package:contro/screen/home/settings/qr_codes/qr_codes_landing/components/qr_codes_landing_components.dart';
+import 'package:contro/utils/alignment/widget_alignment.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -9,12 +11,13 @@ import 'package:get/get.dart';
 
 import '../../../../../../generated/assets.dart';
 import '../../../../../../reusable_widgets/custom_buttons/custom_elevated_button.dart';
+import '../../../../../../reusable_widgets/filter_button_component.dart';
 import '../../../../../../reusable_widgets/filter_option_container.dart';
 import '../../../../../../utils/colors/app_colors.dart';
 import '../../../../../../utils/constants/constant_lists.dart';
 import '../../../../../../utils/text_styles/text_styles.dart';
+import '../../edit_qr_code/view/edit_qr_code_screen.dart';
 import '../../qr_filter/view/qr_filter_options.dart';
-import '../../qr_filter/view/qr_filter_screen.dart';
 import '../controller/qr_codes_landing_controller.dart';
 
 class QrCodesLandingScreen extends StatelessWidget {
@@ -93,9 +96,220 @@ class QrCodesLandingScreen extends StatelessWidget {
                       10.pw,
                       InkWell(
                         onTap: () {
-                          Get.to(
-                            () => const QrFilterScreen(),
-                            transition: Transition.downToUp,
+                          // Get.to(
+                          //   () => const QrFilterScreen(),
+                          //   transition: Transition.downToUp,
+                          // );
+                          showModalBottomSheet(
+                            elevation: 0.0,
+                            backgroundColor: CColors.whiteColor,
+                            enableDrag: true,
+                            // showDragHandle: true,
+                            isScrollControlled: true,
+                            // constraints:
+                            //     BoxConstraints(maxHeight: context.height * 0.8),
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
+                                bottomLeft: Radius.zero,
+                                bottomRight: Radius.zero,
+                              ),
+                            ),
+                            context: context,
+                            builder: (BuildContext context) {
+                              return Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 20, left: 20, right: 20, bottom: 20),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        Get.back();
+                                      },
+                                      child: Container(
+                                        height: 5,
+                                        width: 60,
+                                        decoration: BoxDecoration(
+                                            color: CColors.greyTwoColor,
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
+                                      ),
+                                    ),
+                                    5.ph,
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        IconButton(
+                                          onPressed: () {
+                                            Get.back();
+                                          },
+                                          icon: const Icon(
+                                            Icons.close_rounded,
+                                            color: CColors.darkGreyColor,
+                                          ),
+                                        ),
+                                        5.pw,
+                                        const Text(
+                                          "Filter.",
+                                          style:
+                                              CustomTextStyles.darkGreyColor620,
+                                        ),
+                                      ],
+                                    ).alignWidget(
+                                      alignment: Alignment.centerLeft,
+                                    ),
+                                    10.ph,
+                                    Container(
+                                      width: context.width,
+                                      padding: const EdgeInsets.symmetric(
+                                        vertical: 10,
+                                        horizontal: 10,
+                                      ),
+                                      decoration: const BoxDecoration(
+                                        color: CColors.whiteColor,
+                                      ),
+                                      child: SingleChildScrollView(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            const Text(
+                                              "QR Status",
+                                              style: CustomTextStyles
+                                                  .darkGreyColor414,
+                                            ),
+                                            10.ph,
+                                            AnimationLimiter(
+                                              child: GridView.builder(
+                                                shrinkWrap: true,
+                                                physics:
+                                                    const NeverScrollableScrollPhysics(),
+                                                gridDelegate:
+                                                    const SliverGridDelegateWithFixedCrossAxisCount(
+                                                  crossAxisSpacing: 10,
+                                                  mainAxisSpacing: 10,
+                                                  crossAxisCount: 3,
+                                                  mainAxisExtent: 40,
+                                                ),
+                                                itemCount: ConstantLists
+                                                    .activitiesFilterListThree
+                                                    .length,
+                                                itemBuilder:
+                                                    (BuildContext context,
+                                                        int index) {
+                                                  return Obx(
+                                                    () => FilterButtonComponent(
+                                                      title: ConstantLists
+                                                          .activitiesFilterListThree[
+                                                              index]
+                                                          .filterName,
+                                                      itemIndex: ConstantLists
+                                                          .activitiesFilterListThree[
+                                                              index]
+                                                          .index,
+                                                      selectedIndex:
+                                                          qrCodeLandingController
+                                                              .selectedQrIndex
+                                                              .value,
+                                                      onTapFunction: () {
+                                                        qrCodeLandingController
+                                                            .toggleQrFilter(
+                                                                index: index);
+                                                      },
+                                                    ),
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                            10.ph,
+                                            const Text(
+                                              "Sorted by",
+                                              style: CustomTextStyles
+                                                  .darkGreyColor414,
+                                            ),
+                                            10.ph,
+                                            AnimationLimiter(
+                                              child: GridView.builder(
+                                                shrinkWrap: true,
+                                                physics:
+                                                    const NeverScrollableScrollPhysics(),
+                                                gridDelegate:
+                                                    const SliverGridDelegateWithFixedCrossAxisCount(
+                                                  crossAxisSpacing: 10,
+                                                  mainAxisSpacing: 10,
+                                                  crossAxisCount: 3,
+                                                  mainAxisExtent: 40,
+                                                ),
+                                                itemCount: ConstantLists
+                                                    .activitiesFilterListFive
+                                                    .length,
+                                                itemBuilder:
+                                                    (BuildContext context,
+                                                        int index) {
+                                                  return Obx(
+                                                    () => FilterButtonComponent(
+                                                      title: ConstantLists
+                                                          .activitiesFilterListFive[
+                                                              index]
+                                                          .filterName,
+                                                      itemIndex: ConstantLists
+                                                          .activitiesFilterListFive[
+                                                              index]
+                                                          .index,
+                                                      selectedIndex:
+                                                          qrCodeLandingController
+                                                              .selectedSortedByIndex
+                                                              .value,
+                                                      onTapFunction: () {
+                                                        qrCodeLandingController
+                                                            .toggleSortedByFilter(
+                                                                index: index);
+                                                      },
+                                                    ),
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    10.ph,
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: CustomElevatedButton(
+                                            onPressedFunction: () {
+                                              Get.back();
+                                            },
+                                            buttonText: "Cancel",
+                                            needShadow: false,
+                                            textStyle: CustomTextStyles
+                                                .darkGreyColor414,
+                                            backgroundColor:
+                                                CColors.borderOneColor,
+                                          ),
+                                        ),
+                                        15.pw,
+                                        Expanded(
+                                          child: CustomElevatedButton(
+                                            onPressedFunction: () {
+                                              Get.back();
+                                            },
+                                            buttonText: "Confirm",
+                                            needShadow: false,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
                           );
                         },
                         borderRadius: BorderRadius.circular(5),
@@ -142,6 +356,28 @@ class QrCodesLandingScreen extends StatelessWidget {
                                           Get.to(
                                             () => const QrFilterOptionsScreen(),
                                             transition: Transition.downToUp,
+                                          );
+                                        },
+                                        valueKey: index,
+                                        shareFunction: (context) {},
+                                        editFunction: (context) {
+                                          Get.to(
+                                            () => EditQrCodeScreen(
+                                              qrCodesModel: ConstantLists
+                                                  .qrCodeModelList[index],
+                                            ),
+                                            transition: Transition.fadeIn,
+                                          );
+                                        },
+                                        deleteFunction: (context) {
+                                          showDialog(
+                                            context: context,
+                                            builder: (context) => DeleteDialog(
+                                              onPressedFunction: () {
+                                                Get.back();
+                                              },
+                                              isForQrCode: true,
+                                            ),
                                           );
                                         },
                                       ),

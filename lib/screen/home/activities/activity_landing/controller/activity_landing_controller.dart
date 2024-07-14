@@ -13,4 +13,16 @@ class ActivityLandingController extends GetxController {
   toggleRefreshed() {
     isRefreshed.value = true;
   }
+
+  final selectedActivityStatusIndex = 0.obs;
+
+  toggleActivityStatusType({required int index}) {
+    selectedActivityStatusIndex.value = index;
+  }
+
+  final selectedSortedByIndex = 0.obs;
+
+  toggleSortedByFilter({required int index}) {
+    selectedSortedByIndex.value = index;
+  }
 }

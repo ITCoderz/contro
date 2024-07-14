@@ -45,8 +45,8 @@ class ControApp extends StatelessWidget {
       theme: CustomThemeData.lightViewTheme,
       initialBinding: InitializingDependency(),
       debugShowCheckedModeBanner: false,
-      // home: const SplashScreen(),
-      home: const DashboardScreen(),
+      home: const SplashScreen(),
+      // home: const DashboardScreen(),
     );
   }
 }

@@ -23,4 +23,16 @@ class QrCodesLandingController extends GetxController {
       (index) => ValueNotifier<bool>(false),
     );
   }
+
+  final selectedQrIndex = 0.obs;
+
+  toggleQrFilter({required int index}) {
+    selectedQrIndex.value = index;
+  }
+
+  final selectedSortedByIndex = 0.obs;
+
+  toggleSortedByFilter({required int index}) {
+    selectedSortedByIndex.value = index;
+  }
 }

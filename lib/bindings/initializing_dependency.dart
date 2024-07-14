@@ -23,6 +23,7 @@ import '../screen/home/settings/account_information/account_information_landing/
 import '../screen/home/settings/account_information/contact_person/controller/contact_person_controller.dart';
 import '../screen/home/settings/qr_codes/connect_to/controller/connect_to_controller.dart';
 import '../screen/home/settings/qr_codes/create_qr_code/controller/create_qr_code_controller.dart';
+import '../screen/home/settings/qr_codes/edit_qr_code/controller/edit_qr_code_controller.dart';
 import '../screen/home/settings/qr_codes/qr_codes_landing/controller/qr_codes_landing_controller.dart';
 import '../screen/home/settings/qr_codes/qr_filter/controller/qr_filter_controller.dart';
 import '../screen/home/settings/settings_landing/controller/settings_landing_controller.dart';
@@ -172,6 +173,10 @@ class InitializingDependency implements Bindings {
     );
     Get.lazyPut(
       () => EditBankAccountController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => EditQrCodeController(),
       fenix: true,
     );
   }

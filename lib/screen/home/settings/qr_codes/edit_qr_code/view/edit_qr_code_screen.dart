@@ -1,4 +1,3 @@
-import 'package:contro/screen/home/settings/qr_codes/create_qr_code/controller/create_qr_code_controller.dart';
 import 'package:contro/utils/alignment/widget_alignment.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:flutter/material.dart';
@@ -7,20 +6,40 @@ import 'package:get/get.dart';
 
 import '../../../../../../generated/assets.dart';
 import '../../../../../../models/category_selection_model/category_selection_model.dart';
+import '../../../../../../models/qr_codes_model/qr_code_model.dart';
 import '../../../../../../reusable_widgets/custom_background_container.dart';
 import '../../../../../../reusable_widgets/custom_buttons/custom_elevated_button.dart';
 import '../../../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
 import '../../../../../../utils/colors/app_colors.dart';
 import '../../../../../../utils/text_styles/text_styles.dart';
-import '../../connect_to/view/connect_to_screen.dart';
-import '../components/create_qr_code_components.dart';
+import '../../create_qr_code/components/create_qr_code_components.dart';
+import '../controller/edit_qr_code_controller.dart';
 
-class CreateQrCodeScreen extends StatelessWidget {
-  const CreateQrCodeScreen({super.key});
+class EditQrCodeScreen extends StatefulWidget {
+  final QrCodesModel qrCodesModel;
+
+  const EditQrCodeScreen({
+    super.key,
+    required this.qrCodesModel,
+  });
+
+  @override
+  State<EditQrCodeScreen> createState() => _EditQrCodeScreenState();
+}
+
+class _EditQrCodeScreenState extends State<EditQrCodeScreen> {
+  final editQrCodeController = Get.find<EditQrCodeController>();
+
+  @override
+  void initState() {
+    editQrCodeController.initializeVariables(
+      qrCodesModel: widget.qrCodesModel,
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final createQrCodeController = Get.find<CreateQrCodeController>();
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -68,7 +87,7 @@ class CreateQrCodeScreen extends StatelessWidget {
                         ),
                         1.pw,
                         const Text(
-                          "Create QR Code.",
+                          "Edit QR Code.",
                           style: CustomTextStyles.darkGreyColor618,
                         ),
                       ],
@@ -93,7 +112,7 @@ class CreateQrCodeScreen extends StatelessWidget {
                           10.ph,
                           CustomTextField(
                             textEditingController:
-                                createQrCodeController.qrCodeNameController,
+                                editQrCodeController.qrCodeNameController,
                             hintText: "Enter QR Code Name",
                             borderRadius: 6,
                           ),
@@ -184,7 +203,7 @@ class CreateQrCodeScreen extends StatelessWidget {
                                             10.ph,
                                             ConnectToTile(
                                               onTapFunction: () {
-                                                createQrCodeController
+                                                editQrCodeController
                                                     .changeConnectToString(
                                                         value: "Instant App");
                                                 Get.back();
@@ -200,7 +219,7 @@ class CreateQrCodeScreen extends StatelessWidget {
                                             10.ph,
                                             ConnectToTile(
                                               onTapFunction: () {
-                                                createQrCodeController
+                                                editQrCodeController
                                                     .changeConnectToString(
                                                         value: "Product");
                                                 Get.back();
@@ -216,7 +235,7 @@ class CreateQrCodeScreen extends StatelessWidget {
                                             10.ph,
                                             ConnectToTile(
                                               onTapFunction: () {
-                                                createQrCodeController
+                                                editQrCodeController
                                                     .changeConnectToString(
                                                         value: "Service");
                                                 Get.back();
@@ -232,7 +251,7 @@ class CreateQrCodeScreen extends StatelessWidget {
                                             10.ph,
                                             ConnectToTile(
                                               onTapFunction: () {
-                                                createQrCodeController
+                                                editQrCodeController
                                                     .changeConnectToString(
                                                         value: "Location");
                                                 Get.back();
@@ -248,7 +267,7 @@ class CreateQrCodeScreen extends StatelessWidget {
                                             10.ph,
                                             ConnectToTile(
                                               onTapFunction: () {
-                                                createQrCodeController
+                                                editQrCodeController
                                                     .changeConnectToString(
                                                         value: "Chat");
                                                 Get.back();
@@ -294,7 +313,7 @@ class CreateQrCodeScreen extends StatelessWidget {
                                     children: [
                                       Obx(() {
                                         return Text(
-                                          createQrCodeController
+                                          editQrCodeController
                                               .connectToString.value,
                                           style:
                                               CustomTextStyles.darkGreyColor412,
@@ -319,7 +338,7 @@ class CreateQrCodeScreen extends StatelessWidget {
                           10.ph,
                           CustomTextField(
                             textEditingController:
-                                createQrCodeController.dateControllerController,
+                                editQrCodeController.dateControllerController,
                             hintText: "Select Date",
                             readOnly: true,
                             fillColor: CColors.scaffoldColor,
@@ -356,7 +375,7 @@ class CreateQrCodeScreen extends StatelessWidget {
           ),
         ),
         child: CustomElevatedButton(
-          buttonText: "Create QR Code",
+          buttonText: "Update QR Code",
           onPressedFunction: () {
             Get.back();
           },

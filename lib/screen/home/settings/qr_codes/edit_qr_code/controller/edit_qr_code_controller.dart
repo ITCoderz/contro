@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
+import '../../../../../../models/qr_codes_model/qr_code_model.dart';
 import '../../../../../../utils/colors/app_colors.dart';
 
-class CreateQrCodeController extends GetxController {
+class EditQrCodeController extends GetxController {
   TextEditingController qrCodeNameController = TextEditingController();
   TextEditingController dateControllerController = TextEditingController();
   final connectToString = "Instant App".obs;
+
   selectDate({required BuildContext context}) async {
     DateTime? pickedDate = await showDatePicker(
       context: context,
@@ -39,11 +41,11 @@ class CreateQrCodeController extends GetxController {
     }
   }
 
-  @override
-  void onInit() {
+  initializeVariables({required QrCodesModel qrCodesModel}) {
     dateControllerController.text = DateFormat('dd/MM/yyyy').format(
       DateTime.now(),
     );
+    qrCodeNameController.text = qrCodesModel.title;
     super.onInit();
   }
 

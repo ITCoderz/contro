@@ -436,6 +436,20 @@ class ConstantLists {
       index: 1,
     ),
   ];
+  static List<WalletFiltersModel> activitiesFilterListFive = [
+    WalletFiltersModel(
+      filterName: "Date",
+      index: 0,
+    ),
+    WalletFiltersModel(
+      filterName: "Title",
+      index: 1,
+    ),
+    WalletFiltersModel(
+      filterName: "Views",
+      index: 2,
+    ),
+  ];
   static List<WalletFiltersModel> filterListFour = [
     WalletFiltersModel(
       filterName: "All",
@@ -470,6 +484,32 @@ class ConstantLists {
     WalletFiltersModel(
       filterName: "Type",
       index: 3,
+    ),
+  ];
+  static List<WalletFiltersModel> filterListSeven = [
+    WalletFiltersModel(
+      filterName: "All",
+      index: 0,
+    ),
+    WalletFiltersModel(
+      filterName: "Open Orders",
+      index: 1,
+    ),
+    WalletFiltersModel(
+      filterName: "In Transit",
+      index: 2,
+    ),
+    WalletFiltersModel(
+      filterName: "Complete",
+      index: 3,
+    ),
+    WalletFiltersModel(
+      filterName: "Dispute",
+      index: 4,
+    ),
+    WalletFiltersModel(
+      filterName: "Cancelled",
+      index: 5,
     ),
   ];
   static List<WalletFiltersModel> itemFilterList = [

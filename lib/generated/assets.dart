@@ -68,6 +68,8 @@ class Assets {
       'assets/icons/delete_variation_icon.svg';
   static const String iconsDeleteVariationIconTwo =
       'assets/icons/delete_variation_icon_two.svg';
+  static const String iconsDisatifactionIcon =
+      'assets/icons/disatifaction_icon.svg';
   static const String iconsDisputeIcon = 'assets/icons/dispute_icon.svg';
   static const String iconsEditSlidableIcon =
       'assets/icons/edit_slidable_icon.svg';
@@ -76,6 +78,7 @@ class Assets {
   static const String iconsGalleryIcon = 'assets/icons/gallery_icon.svg';
   static const String iconsHair = 'assets/icons/hair.svg';
   static const String iconsHandStop = 'assets/icons/hand_stop.svg';
+  static const String iconsHappyIcon = 'assets/icons/happy_icon.svg';
   static const String iconsInTransitIcon = 'assets/icons/in_transit_icon.svg';
   static const String iconsInfoCircle = 'assets/icons/info_circle.svg';
   static const String iconsLanguagesIcon = 'assets/icons/languages_icon.svg';
@@ -91,6 +94,7 @@ class Assets {
       'assets/icons/message_record_icon.svg';
   static const String iconsMessagesCirclePlus =
       'assets/icons/messages_circle_plus.svg';
+  static const String iconsModerateIcon = 'assets/icons/moderate_icon.svg';
   static const String iconsMovieIcon = 'assets/icons/movie_icon.svg';
   static const String iconsNewBusinessCoorporateSelected =
       'assets/icons/new_business_coorporate_selected.svg';
@@ -122,12 +126,16 @@ class Assets {
   static const String iconsQrCodeShare = 'assets/icons/qr_code_share.svg';
   static const String iconsQrcodeIcon = 'assets/icons/qrcode_icon.svg';
   static const String iconsRealEstate = 'assets/icons/real_estate.svg';
+  static const String iconsReviewDialogIcon =
+      'assets/icons/review_dialog_icon.svg';
   static const String iconsSearchIcon = 'assets/icons/search_icon.svg';
   static const String iconsServiceAnnouncement =
       'assets/icons/service_announcement.svg';
   static const String iconsServiceConnectIcon =
       'assets/icons/service_connect_icon.svg';
   static const String iconsServiceIcon = 'assets/icons/service_icon.svg';
+  static const String iconsShareSlidableIcon =
+      'assets/icons/share_slidable_icon.svg';
   static const String iconsShoppingCartIcon =
       'assets/icons/shopping_cart_icon.svg';
   static const String iconsSignInAndSecurityIcon =

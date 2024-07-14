@@ -604,6 +604,18 @@ class CustomTextStyles {
     color: CColors.darkGreyTwoColor,
     fontFamily: 'SfProText',
   );
+  static const TextStyle darkGreyTwoColor614 = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 14,
+    color: CColors.darkGreyTwoColor,
+    fontFamily: 'SfProText',
+  );
+  static const TextStyle darkGreyTwoColor514 = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 14,
+    color: CColors.darkGreyTwoColor,
+    fontFamily: 'SfProText',
+  );
   static const TextStyle darkGreyColor511 = TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 11,
