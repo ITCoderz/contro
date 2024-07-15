@@ -86,7 +86,7 @@ class TitleContainerWidget extends StatelessWidget {
             children: [
               Text(
                 titleString,
-                style: CustomTextStyles.darkGreyColor414,
+                style: CustomTextStyles.darkGreyColor412,
               ),
               subtitleWidget ?? const SizedBox.shrink()
             ],

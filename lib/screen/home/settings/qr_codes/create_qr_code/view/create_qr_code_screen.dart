@@ -12,7 +12,6 @@ import '../../../../../../reusable_widgets/custom_buttons/custom_elevated_button
 import '../../../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
 import '../../../../../../utils/colors/app_colors.dart';
 import '../../../../../../utils/text_styles/text_styles.dart';
-import '../../connect_to/view/connect_to_screen.dart';
 import '../components/create_qr_code_components.dart';
 
 class CreateQrCodeScreen extends StatelessWidget {

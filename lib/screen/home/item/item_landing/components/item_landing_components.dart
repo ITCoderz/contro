@@ -2,7 +2,10 @@ import 'package:contro/utils/gaps/gaps.dart';
 import 'package:contro/utils/text_styles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_switch/flutter_advanced_switch.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../../../../../utils/colors/app_colors.dart';
+import '../../../../../generated/assets.dart';
 import '../../../../../models/item_model/item_model.dart';
 
 class ItemsLandingComponents extends StatelessWidget {
@@ -10,6 +13,8 @@ class ItemsLandingComponents extends StatelessWidget {
   final Function(dynamic)? onChangedFunction;
   final Function()? optionOnPressed;
   final bool value;
+  final int valueKey;
+  final Function(BuildContext)? shareFunction, editFunction, deleteFunction;
 
   const ItemsLandingComponents({
     super.key,
@@ -17,48 +22,120 @@ class ItemsLandingComponents extends StatelessWidget {
     required this.onChangedFunction,
     required this.value,
     required this.optionOnPressed,
+    required this.valueKey,
+    required this.shareFunction,
+    required this.editFunction,
+    required this.deleteFunction,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Image.asset(
-          itemModel.imageAsset,
-          height: 50,
-          width: 50,
-        ),
-        10.pw,
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                itemModel.name,
-                style: CustomTextStyles.darkGreyColor412,
-              ),
-              Text(
-                itemModel.reference,
-                style: CustomTextStyles.greyTwoColor412,
-              ),
-              const Text(
-                "Packaging Products",
-                style: CustomTextStyles.pinkAccentColor412,
-              ),
-              Text(
-                "\$ ${itemModel.amount}",
-                style: CustomTextStyles.darkGreyColor412,
-              ),
-            ],
+    return Slidable(
+      key: ValueKey(valueKey),
+      endActionPane: ActionPane(
+        motion: const ScrollMotion(),
+        extentRatio: 0.8,
+        children: [
+          CustomSlidableAction(
+            onPressed: editFunction,
+            backgroundColor: CColors.orangeColor,
+            padding: EdgeInsets.zero,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SvgPicture.asset(
+                  Assets.iconsShareSlidableIcon,
+                  height: 14,
+                  width: 14,
+                ),
+                5.pw,
+                const Text(
+                  "Share",
+                  style: CustomTextStyles.white412,
+                ),
+              ],
+            ),
           ),
-        ),
-        10.pw,
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Row(
+          CustomSlidableAction(
+            onPressed: editFunction,
+            backgroundColor: CColors.blueTwoColor,
+            padding: EdgeInsets.zero,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SvgPicture.asset(
+                  Assets.iconsEditSlidableIcon,
+                  height: 14,
+                  width: 14,
+                ),
+                5.pw,
+                const Text(
+                  "Edit",
+                  style: CustomTextStyles.white412,
+                ),
+              ],
+            ),
+          ),
+          CustomSlidableAction(
+            onPressed: deleteFunction,
+            backgroundColor: CColors.redAccentColor,
+            padding: EdgeInsets.zero,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SvgPicture.asset(
+                  Assets.iconsDeleteSlidableIcon,
+                  height: 14,
+                  width: 14,
+                ),
+                5.pw,
+                const Text(
+                  "Delete",
+                  style: CustomTextStyles.white412,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            itemModel.imageAsset,
+            height: 50,
+            width: 50,
+          ),
+          10.pw,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  itemModel.name,
+                  style: CustomTextStyles.darkGreyColor412,
+                ),
+                Text(
+                  itemModel.reference,
+                  style: CustomTextStyles.greyTwoColor412,
+                ),
+                const Text(
+                  "Packaging Products",
+                  style: CustomTextStyles.orangeAccentColor412,
+                ),
+                Text(
+                  "\$ ${itemModel.amount}",
+                  style: CustomTextStyles.darkGreyColor412,
+                ),
+              ],
+            ),
+          ),
+          10.pw,
+          Padding(
+            padding: const EdgeInsets.only(
+              bottom: 50,
+            ),
+            child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 AdvancedSwitch(
@@ -77,28 +154,9 @@ class ItemsLandingComponents extends StatelessWidget {
                 ),
               ],
             ),
-            15.ph,
-            Container(
-              height: 20,
-              width: 20,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: CColors.scaffoldColor,
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child: IconButton(
-                onPressed: optionOnPressed,
-                padding: EdgeInsets.zero,
-                icon: const Icon(
-                  Icons.more_horiz_rounded,
-                  color: CColors.darkGreyColor,
-                  size: 13,
-                ),
-              ),
-            )
-          ],
-        ),
-      ],
+          ),
+        ],
+      ),
     );
   }
 }

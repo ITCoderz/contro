@@ -1,14 +1,14 @@
-import 'package:contro/reusable_widgets/custom_text_fields/message_text_field.dart';
-import 'package:contro/screen/home/item/add_location/component/add_location_component.dart';
+import 'package:contro/reusable_widgets/custom_background_container.dart';
 import 'package:contro/screen/home/item/add_location/controller/add_location_controller.dart';
-import 'package:contro/utils/constants/constant_lists.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:contro/utils/text_styles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
-
+import '../../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
 import '../../../../../utils/colors/app_colors.dart';
+import '../../../../../reusable_widgets/custom_back_title.dart';
+import '../../../../../reusable_widgets/custom_buttons/custom_elevated_button.dart';
 
 class AddLocationScreen extends StatelessWidget {
   const AddLocationScreen({super.key});
@@ -19,129 +19,194 @@ class AddLocationScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.only(
-            left: 20,
-            right: 20,
-            bottom: 20,
-          ),
           height: context.height,
           width: context.width,
-          child: AnimationLimiter(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                10.ph,
-                Row(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+          ),
+          child: SingleChildScrollView(
+            child: AnimationLimiter(
+              child: Column(
+                children: AnimationConfiguration.toStaggeredList(
+                  duration: const Duration(milliseconds: 375),
+                  childAnimationBuilder: (widget) => SlideAnimation(
+                    horizontalOffset: 50.0,
+                    child: FadeInAnimation(
+                      child: widget,
+                    ),
+                  ),
                   children: [
-                    Expanded(
-                      child: MessageTextField(
-                        textEditingController:
-                            addLocationController.searchLocationController,
-                        hintText: "Search Location",
+                    10.ph,
+                    const CustomBackTitle(
+                      title: "Add Address.",
+                    ),
+                    20.ph,
+                    CustomBackgroundContainer(
+                      leftPadding: 10,
+                      rightPadding: 10,
+                      topPadding: 15,
+                      bottomPadding: 15,
+                      radius: 0,
+                      width: context.width,
+                      childWidget: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Contact Person Name",
+                            style: CustomTextStyles.darkGreyColor412,
+                          ),
+                          10.ph,
+                          CustomTextField(
+                            textEditingController: addLocationController
+                                .contactPersonNameController,
+                            hintText: "Name",
+                            borderRadius: 6,
+                          ),
+                          20.ph,
+                          const Text(
+                            "Contact Number",
+                            style: CustomTextStyles.darkGreyColor412,
+                          ),
+                          10.ph,
+                          CustomTextField(
+                            textEditingController:
+                                addLocationController.contactNumberController,
+                            hintText: "Mobile",
+                            borderRadius: 6,
+                          ),
+                          20.ph,
+                          const Text(
+                            "Address",
+                            style: CustomTextStyles.darkGreyColor412,
+                          ),
+                          10.ph,
+                          CustomTextField(
+                            textEditingController:
+                                addLocationController.buildingNameController,
+                            hintText: "Building Name (Optional)",
+                            borderRadius: 6,
+                          ),
+                          10.ph,
+                          CustomTextField(
+                            textEditingController:
+                                addLocationController.unitNumberController,
+                            hintText: "Unit Number",
+                            borderRadius: 6,
+                          ),
+                          10.ph,
+                          CustomTextField(
+                            textEditingController:
+                                addLocationController.streetNameController,
+                            hintText: "Street Name",
+                            borderRadius: 6,
+                          ),
+                          10.ph,
+                          Row(
+                            children: [
+                              Expanded(
+                                child: CustomTextField(
+                                  textEditingController:
+                                      addLocationController.cityController,
+                                  hintText: "City",
+                                  borderRadius: 6,
+                                ),
+                              ),
+                              10.pw,
+                              Expanded(
+                                child: CustomTextField(
+                                  textEditingController:
+                                      addLocationController.postCodeController,
+                                  hintText: "Postcode",
+                                  borderRadius: 6,
+                                ),
+                              ),
+                            ],
+                          ),
+                          10.ph,
+                          Row(
+                            children: [
+                              Expanded(
+                                child: CustomTextField(
+                                  textEditingController:
+                                      addLocationController.stateController,
+                                  hintText: "State",
+                                  borderRadius: 6,
+                                ),
+                              ),
+                              10.pw,
+                              Expanded(
+                                child: CustomTextField(
+                                  textEditingController:
+                                      addLocationController.countryController,
+                                  hintText: "Country",
+                                  borderRadius: 6,
+                                ),
+                              ),
+                            ],
+                          ),
+                          20.ph,
+                        ],
                       ),
                     ),
-                    10.pw,
-                    InkWell(
-                      onTap: () {
-                        Get.back();
-                      },
-                      child: const Text(
-                        "Cancel",
-                        style: CustomTextStyles.darkGreyColor414,
+                    10.ph,
+                    CustomBackgroundContainer(
+                      leftPadding: 10,
+                      rightPadding: 10,
+                      topPadding: 15,
+                      bottomPadding: 15,
+                      radius: 0,
+                      width: context.width,
+                      childWidget: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Label As",
+                            style: CustomTextStyles.darkGreyColor412,
+                          ),
+                          10.ph,
+                          CustomTextField(
+                            textEditingController:
+                                addLocationController.labelNameController,
+                            hintText: "Label Name",
+                            borderRadius: 6,
+                          ),
+                        ],
                       ),
-                    )
+                    ),
+                    40.ph,
                   ],
                 ),
-                10.ph,
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 15,
-                    horizontal: 15,
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: CColors.darkGreyColor,
-                  ),
-                  child: Row(
-                    children: [
-                      const Expanded(
-                        child: Text(
-                          "To find nearby places, please turn on location services.",
-                          style: CustomTextStyles.white412,
-                        ),
-                      ),
-                      15.pw,
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                            fixedSize: const Size(80, 33),
-                            padding: EdgeInsets.zero,
-                            backgroundColor: CColors.redAccentColor),
-                        child: const Text(
-                          "Turn On",
-                          style: CustomTextStyles.white412,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                15.ph,
-                Obx(() {
-                  return Row(
-                    children: [
-                      Expanded(
-                        child: CustomTabComponent(
-                          title: "For you",
-                          isSelected:
-                              addLocationController.selectedIndex.value == 0,
-                          onTapFunction: () {
-                            addLocationController.toggleSelectedIndex(index: 0);
-                          },
-                        ),
-                      ),
-                      Expanded(
-                        child: CustomTabComponent(
-                          title: "Browse",
-                          isSelected:
-                              addLocationController.selectedIndex.value == 1,
-                          onTapFunction: () {
-                            addLocationController.toggleSelectedIndex(index: 1);
-                          },
-                        ),
-                      ),
-                    ],
-                  );
-                }),
-                10.ph,
-                Expanded(
-                  child: ListView.separated(
-                    shrinkWrap: true,
-                    itemCount: ConstantLists.locationList.length,
-                    separatorBuilder: (context, index) => 12.ph,
-                    itemBuilder: (BuildContext context, int index) {
-                      return AnimationConfiguration.staggeredList(
-                        position: index,
-                        duration: const Duration(milliseconds: 375),
-                        child: SlideAnimation(
-                          verticalOffset: 50.0,
-                          child: FadeInAnimation(
-                            child: AddLocationComponent(
-                              onTapFunction: () {},
-                              pickUpLocationModel:
-                                  ConstantLists.locationList[index],
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 68,
+        padding: const EdgeInsets.only(
+          top: 10,
+          left: 20,
+          right: 20,
+          bottom: 10,
+        ),
+        decoration: const BoxDecoration(
+          color: CColors.whiteColor,
+          border: Border(
+            top: BorderSide(
+              color: CColors.lightGreyColor,
+            ),
+          ),
+        ),
+        child: CustomElevatedButton(
+          onPressedFunction: () {
+            Get.back();
+          },
+          buttonText: "Save Address",
+          needShadow: false,
+          textStyle: CustomTextStyles.white414,
+          backgroundColor: CColors.purpleAccentColor,
         ),
       ),
     );

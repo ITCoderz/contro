@@ -450,6 +450,16 @@ class ConstantLists {
       index: 2,
     ),
   ];
+  static List<WalletFiltersModel> activitiesFilterListSix = [
+    WalletFiltersModel(
+      filterName: "Date",
+      index: 0,
+    ),
+    WalletFiltersModel(
+      filterName: "Views",
+      index: 1,
+    ),
+  ];
   static List<WalletFiltersModel> filterListFour = [
     WalletFiltersModel(
       filterName: "All",

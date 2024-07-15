@@ -25,4 +25,22 @@ class ActivityLandingController extends GetxController {
   toggleSortedByFilter({required int index}) {
     selectedSortedByIndex.value = index;
   }
+
+  final selectedItemStatusIndex = 0.obs;
+
+  toggleItemStatusIndex({required int index}) {
+    selectedItemStatusIndex.value = index;
+  }
+
+  final selectedItemTypeIndex = 0.obs;
+
+  toggleItemTypeIndex({required int index}) {
+    selectedItemTypeIndex.value = index;
+  }
+
+  final selectedSortedByFilterIndex = 0.obs;
+
+  toggleSortedByFilterIndex({required int index}) {
+    selectedSortedByFilterIndex.value = index;
+  }
 }

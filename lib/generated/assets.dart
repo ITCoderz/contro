@@ -33,6 +33,8 @@ class Assets {
       'assets/icons/activity_search_icon.svg';
   static const String iconsAddBankIcon = 'assets/icons/add_bank_icon.svg';
   static const String iconsAeroplaneIcon = 'assets/icons/aeroplane_icon.svg';
+  static const String iconsAiGenerativeIcon =
+      'assets/icons/ai_generative_icon.svg';
   static const String iconsAppearanceIcon = 'assets/icons/appearance_icon.svg';
   static const String iconsArrowDown = 'assets/icons/arrow_down.svg';
   static const String iconsArrowDownLeftCircle =

@@ -26,12 +26,15 @@ class SetPickUpDeliveryComponents extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         children: [
-          SvgPicture.asset(assetIcon),
+          SvgPicture.asset(
+            assetIcon,
+            height: 22,
+          ),
           10.pw,
           Expanded(
             child: Text(
               title,
-              style: CustomTextStyles.darkGreyColor414,
+              style: CustomTextStyles.darkGreyColor413,
             ),
           ),
           10.pw,
@@ -40,8 +43,8 @@ class SetPickUpDeliveryComponents extends StatelessWidget {
             activeColor: CColors.purpleAccentColor,
             inactiveColor: Colors.grey,
             borderRadius: const BorderRadius.all(Radius.circular(100)),
-            width: 36,
-            height: 20,
+            width: 33,
+            height: 18,
             onChanged: onChangedFunction,
           ),
         ],

@@ -11,7 +11,7 @@ import '../../../../../reusable_widgets/custom_buttons/custom_elevated_button.da
 import '../../../../../reusable_widgets/custom_buttons/custom_outlined_button.dart';
 import '../../../../../utils/colors/app_colors.dart';
 import '../../../../../utils/text_styles/text_styles.dart';
-import '../../set_pick_up_delivery/view/set_pick_up_delivery_screen.dart';
+import '../../add_new_item/controller/add_new_item_controller.dart';
 import '../controller/set_price_and_inventory_controller.dart';
 
 class SetPriceAndInventoryScreen extends StatelessWidget {
@@ -49,8 +49,11 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                         horizontal: 15,
                         vertical: 15,
                       ),
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         color: CColors.whiteColor,
+                        borderRadius: BorderRadius.circular(
+                          2,
+                        ),
                       ),
                       child: Column(
                         children: [
@@ -59,14 +62,19 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                             children: [
                               const Text(
                                 "Option + Option",
-                                style: CustomTextStyles.darkGreyColor414,
+                                style: CustomTextStyles.darkGreyTwoColor413,
                               ),
                               20.pw,
                               InkWell(
                                 onTap: () {},
                                 borderRadius: BorderRadius.circular(2),
                                 child: SvgPicture.asset(
-                                    Assets.iconsDeleteVariationIcon),
+                                  Assets.iconsDeleteVariationIcon,
+                                  colorFilter: const ColorFilter.mode(
+                                    CColors.lightGreyTwoColor,
+                                    BlendMode.srcIn,
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -76,7 +84,7 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                             children: [
                               const Text(
                                 "Price (RM)",
-                                style: CustomTextStyles.darkGreyColor414,
+                                style: CustomTextStyles.darkGreyTwoColor413,
                               ),
                               20.pw,
                               Expanded(
@@ -97,7 +105,7 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                             children: [
                               const Text(
                                 "Inventory",
-                                style: CustomTextStyles.darkGreyColor414,
+                                style: CustomTextStyles.darkGreyTwoColor413,
                               ),
                               20.pw,
                               Expanded(
@@ -118,7 +126,7 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                             children: [
                               const Text(
                                 "SKU (Original)",
-                                style: CustomTextStyles.darkGreyColor414,
+                                style: CustomTextStyles.darkGreyTwoColor413,
                               ),
                               20.pw,
                               Expanded(
@@ -143,8 +151,11 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                         horizontal: 15,
                         vertical: 15,
                       ),
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         color: CColors.whiteColor,
+                        borderRadius: BorderRadius.circular(
+                          2,
+                        ),
                       ),
                       child: Column(
                         children: [
@@ -153,14 +164,19 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                             children: [
                               const Text(
                                 "Option + Option",
-                                style: CustomTextStyles.darkGreyColor414,
+                                style: CustomTextStyles.darkGreyTwoColor413,
                               ),
                               20.pw,
                               InkWell(
                                 onTap: () {},
                                 borderRadius: BorderRadius.circular(2),
                                 child: SvgPicture.asset(
-                                    Assets.iconsDeleteVariationIcon),
+                                  Assets.iconsDeleteVariationIcon,
+                                  colorFilter: const ColorFilter.mode(
+                                    CColors.lightGreyTwoColor,
+                                    BlendMode.srcIn,
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -170,7 +186,7 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                             children: [
                               const Text(
                                 "Price (RM)",
-                                style: CustomTextStyles.darkGreyColor414,
+                                style: CustomTextStyles.darkGreyTwoColor413,
                               ),
                               20.pw,
                               Expanded(
@@ -191,7 +207,7 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                             children: [
                               const Text(
                                 "Inventory",
-                                style: CustomTextStyles.darkGreyColor414,
+                                style: CustomTextStyles.darkGreyTwoColor413,
                               ),
                               20.pw,
                               Expanded(
@@ -212,7 +228,7 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                             children: [
                               const Text(
                                 "SKU (Original)",
-                                style: CustomTextStyles.darkGreyColor414,
+                                style: CustomTextStyles.darkGreyTwoColor413,
                               ),
                               20.pw,
                               Expanded(
@@ -237,8 +253,11 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                         horizontal: 15,
                         vertical: 15,
                       ),
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         color: CColors.whiteColor,
+                        borderRadius: BorderRadius.circular(
+                          2,
+                        ),
                       ),
                       child: Column(
                         children: [
@@ -247,14 +266,19 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                             children: [
                               const Text(
                                 "Option + Option",
-                                style: CustomTextStyles.darkGreyColor414,
+                                style: CustomTextStyles.darkGreyTwoColor413,
                               ),
                               20.pw,
                               InkWell(
                                 onTap: () {},
                                 borderRadius: BorderRadius.circular(2),
                                 child: SvgPicture.asset(
-                                    Assets.iconsDeleteVariationIcon),
+                                  Assets.iconsDeleteVariationIcon,
+                                  colorFilter: const ColorFilter.mode(
+                                    CColors.lightGreyTwoColor,
+                                    BlendMode.srcIn,
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -264,7 +288,7 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                             children: [
                               const Text(
                                 "Price (RM)",
-                                style: CustomTextStyles.darkGreyColor414,
+                                style: CustomTextStyles.darkGreyTwoColor413,
                               ),
                               20.pw,
                               Expanded(
@@ -285,7 +309,7 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                             children: [
                               const Text(
                                 "Inventory",
-                                style: CustomTextStyles.darkGreyColor414,
+                                style: CustomTextStyles.darkGreyTwoColor413,
                               ),
                               20.pw,
                               Expanded(
@@ -306,7 +330,7 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
                             children: [
                               const Text(
                                 "SKU (Original)",
-                                style: CustomTextStyles.darkGreyColor414,
+                                style: CustomTextStyles.darkGreyTwoColor413,
                               ),
                               20.pw,
                               Expanded(
@@ -360,10 +384,12 @@ class SetPriceAndInventoryScreen extends StatelessWidget {
             Expanded(
               child: CustomElevatedButton(
                 onPressedFunction: () {
-                  Get.to(
-                    () => const SetPickUpDeliveryScreen(),
-                    transition: Transition.fadeIn,
-                  );
+                  Get.find<AddNewItemController>().multipleVariations.value =
+                      true;
+                  Get.find<AddNewItemController>()
+                      .toggleEnableSubmitForReview();
+                  Get.back();
+                  Get.back();
                 },
                 buttonText: "Done",
                 needShadow: false,

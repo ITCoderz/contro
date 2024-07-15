@@ -126,7 +126,7 @@ class ItemCategorySelectionTile extends StatelessWidget {
           child: Ink(
             padding: const EdgeInsets.symmetric(
               horizontal: 20,
-              vertical: 15,
+              vertical: 5,
             ),
             decoration: const BoxDecoration(
               color: CColors.whiteColor,

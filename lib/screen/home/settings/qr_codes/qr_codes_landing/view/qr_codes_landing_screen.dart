@@ -172,110 +172,108 @@ class QrCodesLandingScreen extends StatelessWidget {
                                       decoration: const BoxDecoration(
                                         color: CColors.whiteColor,
                                       ),
-                                      child: SingleChildScrollView(
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            const Text(
-                                              "QR Status",
-                                              style: CustomTextStyles
-                                                  .darkGreyColor414,
-                                            ),
-                                            10.ph,
-                                            AnimationLimiter(
-                                              child: GridView.builder(
-                                                shrinkWrap: true,
-                                                physics:
-                                                    const NeverScrollableScrollPhysics(),
-                                                gridDelegate:
-                                                    const SliverGridDelegateWithFixedCrossAxisCount(
-                                                  crossAxisSpacing: 10,
-                                                  mainAxisSpacing: 10,
-                                                  crossAxisCount: 3,
-                                                  mainAxisExtent: 40,
-                                                ),
-                                                itemCount: ConstantLists
-                                                    .activitiesFilterListThree
-                                                    .length,
-                                                itemBuilder:
-                                                    (BuildContext context,
-                                                        int index) {
-                                                  return Obx(
-                                                    () => FilterButtonComponent(
-                                                      title: ConstantLists
-                                                          .activitiesFilterListThree[
-                                                              index]
-                                                          .filterName,
-                                                      itemIndex: ConstantLists
-                                                          .activitiesFilterListThree[
-                                                              index]
-                                                          .index,
-                                                      selectedIndex:
-                                                          qrCodeLandingController
-                                                              .selectedQrIndex
-                                                              .value,
-                                                      onTapFunction: () {
-                                                        qrCodeLandingController
-                                                            .toggleQrFilter(
-                                                                index: index);
-                                                      },
-                                                    ),
-                                                  );
-                                                },
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          const Text(
+                                            "QR Status",
+                                            style: CustomTextStyles
+                                                .darkGreyColor414,
+                                          ),
+                                          10.ph,
+                                          AnimationLimiter(
+                                            child: GridView.builder(
+                                              shrinkWrap: true,
+                                              physics:
+                                                  const NeverScrollableScrollPhysics(),
+                                              gridDelegate:
+                                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                                crossAxisSpacing: 10,
+                                                mainAxisSpacing: 10,
+                                                crossAxisCount: 3,
+                                                mainAxisExtent: 40,
                                               ),
-                                            ),
-                                            10.ph,
-                                            const Text(
-                                              "Sorted by",
-                                              style: CustomTextStyles
-                                                  .darkGreyColor414,
-                                            ),
-                                            10.ph,
-                                            AnimationLimiter(
-                                              child: GridView.builder(
-                                                shrinkWrap: true,
-                                                physics:
-                                                    const NeverScrollableScrollPhysics(),
-                                                gridDelegate:
-                                                    const SliverGridDelegateWithFixedCrossAxisCount(
-                                                  crossAxisSpacing: 10,
-                                                  mainAxisSpacing: 10,
-                                                  crossAxisCount: 3,
-                                                  mainAxisExtent: 40,
-                                                ),
-                                                itemCount: ConstantLists
-                                                    .activitiesFilterListFive
-                                                    .length,
-                                                itemBuilder:
-                                                    (BuildContext context,
-                                                        int index) {
-                                                  return Obx(
-                                                    () => FilterButtonComponent(
-                                                      title: ConstantLists
-                                                          .activitiesFilterListFive[
-                                                              index]
-                                                          .filterName,
-                                                      itemIndex: ConstantLists
-                                                          .activitiesFilterListFive[
-                                                              index]
-                                                          .index,
-                                                      selectedIndex:
-                                                          qrCodeLandingController
-                                                              .selectedSortedByIndex
-                                                              .value,
-                                                      onTapFunction: () {
+                                              itemCount: ConstantLists
+                                                  .activitiesFilterListThree
+                                                  .length,
+                                              itemBuilder:
+                                                  (BuildContext context,
+                                                      int index) {
+                                                return Obx(
+                                                  () => FilterButtonComponent(
+                                                    title: ConstantLists
+                                                        .activitiesFilterListThree[
+                                                            index]
+                                                        .filterName,
+                                                    itemIndex: ConstantLists
+                                                        .activitiesFilterListThree[
+                                                            index]
+                                                        .index,
+                                                    selectedIndex:
                                                         qrCodeLandingController
-                                                            .toggleSortedByFilter(
-                                                                index: index);
-                                                      },
-                                                    ),
-                                                  );
-                                                },
-                                              ),
+                                                            .selectedQrIndex
+                                                            .value,
+                                                    onTapFunction: () {
+                                                      qrCodeLandingController
+                                                          .toggleQrFilter(
+                                                              index: index);
+                                                    },
+                                                  ),
+                                                );
+                                              },
                                             ),
-                                          ],
-                                        ),
+                                          ),
+                                          10.ph,
+                                          const Text(
+                                            "Sorted by",
+                                            style: CustomTextStyles
+                                                .darkGreyColor414,
+                                          ),
+                                          10.ph,
+                                          AnimationLimiter(
+                                            child: GridView.builder(
+                                              shrinkWrap: true,
+                                              physics:
+                                                  const NeverScrollableScrollPhysics(),
+                                              gridDelegate:
+                                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                                crossAxisSpacing: 10,
+                                                mainAxisSpacing: 10,
+                                                crossAxisCount: 3,
+                                                mainAxisExtent: 40,
+                                              ),
+                                              itemCount: ConstantLists
+                                                  .activitiesFilterListFive
+                                                  .length,
+                                              itemBuilder:
+                                                  (BuildContext context,
+                                                      int index) {
+                                                return Obx(
+                                                  () => FilterButtonComponent(
+                                                    title: ConstantLists
+                                                        .activitiesFilterListFive[
+                                                            index]
+                                                        .filterName,
+                                                    itemIndex: ConstantLists
+                                                        .activitiesFilterListFive[
+                                                            index]
+                                                        .index,
+                                                    selectedIndex:
+                                                        qrCodeLandingController
+                                                            .selectedSortedByIndex
+                                                            .value,
+                                                    onTapFunction: () {
+                                                      qrCodeLandingController
+                                                          .toggleSortedByFilter(
+                                                              index: index);
+                                                    },
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                     10.ph,

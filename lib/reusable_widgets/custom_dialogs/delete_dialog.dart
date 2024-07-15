@@ -12,13 +12,15 @@ import '../custom_buttons/custom_outlined_button.dart';
 
 class DeleteDialog extends StatelessWidget {
   final Function()? onPressedFunction;
-  final bool isForDeleteChat, isForQrCode;
+  final bool isForDeleteChat, isForQrCode, isForItem, isForAddress;
 
   const DeleteDialog({
     super.key,
     required this.onPressedFunction,
     this.isForDeleteChat = false,
     this.isForQrCode = false,
+    this.isForItem = false,
+    this.isForAddress = false,
   });
 
   @override
@@ -79,7 +81,11 @@ class DeleteDialog extends StatelessWidget {
                   ? "Delete the Chat?"
                   : isForQrCode
                       ? "Delete the QR Code?"
-                      : "Delete the Bank Account?",
+                      : isForItem
+                          ? "Delete the Item?"
+                          : isForAddress
+                              ? "Delete the Address?"
+                              : "Delete the Bank Account?",
               style: CustomTextStyles.darkGreyTwoColor618,
             ),
             const Text(

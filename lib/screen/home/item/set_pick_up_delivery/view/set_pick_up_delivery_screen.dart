@@ -1,3 +1,4 @@
+import 'package:contro/reusable_widgets/custom_dialogs/delete_dialog.dart';
 import 'package:contro/screen/home/item/add_location/view/add_location_screen.dart';
 import 'package:contro/screen/home/item/set_pick_up_delivery/components/set_pick_up_delivery_components.dart';
 import 'package:contro/utils/gaps/gaps.dart';
@@ -139,7 +140,18 @@ class SetPickUpDeliveryScreen extends StatelessWidget {
                                               .description,
                                           isEditing: setPickUpDeliveryController
                                               .isEditing.value,
-                                          removeFunction: () {},
+                                          removeFunction: () {
+                                            showDialog(
+                                              context: context,
+                                              builder: (context) =>
+                                                  DeleteDialog(
+                                                onPressedFunction: () {
+                                                  Get.back();
+                                                },
+                                                isForAddress: true,
+                                              ),
+                                            );
+                                          },
                                         ),
                                       ),
                                     ),
@@ -155,46 +167,42 @@ class SetPickUpDeliveryScreen extends StatelessWidget {
                     Obx(() {
                       return Visibility(
                         visible: setPickUpDeliveryController.isEditing.value,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(2),
-                          child: Material(
-                            color: Colors.transparent,
-                            child: InkWell(
-                              onTap: () {
-                                Get.to(
-                                  () => const AddLocationScreen(),
-                                  transition: Transition.fadeIn,
-                                );
-                              },
-                              child: Ink(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 15,
-                                  vertical: 10,
-                                ),
-                                decoration: const BoxDecoration(
-                                  color: CColors.whiteColor,
-                                ),
-                                width: context.width,
-                                child: Center(
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      SvgPicture.asset(
-                                        Assets.iconsAddBankIcon,
-                                        width: 33,
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            onTap: () {
+                              Get.to(
+                                () => const AddLocationScreen(),
+                                transition: Transition.fadeIn,
+                              );
+                            },
+                            child: Ink(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 15,
+                                vertical: 10,
+                              ),
+                              decoration: const BoxDecoration(
+                                color: CColors.whiteColor,
+                              ),
+                              width: context.width,
+                              child: Center(
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    SvgPicture.asset(
+                                      Assets.iconsAddBankIcon,
+                                      width: 33,
+                                    ),
+                                    10.pw,
+                                    const Expanded(
+                                      child: Text(
+                                        "Add Location",
+                                        style:
+                                            CustomTextStyles.darkGreyColor414,
+                                        textAlign: TextAlign.left,
                                       ),
-                                      10.pw,
-                                      const Expanded(
-                                        child: Text(
-                                          "Add Location",
-                                          style:
-                                              CustomTextStyles.darkGreyColor414,
-                                          textAlign: TextAlign.left,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -227,7 +235,9 @@ class SetPickUpDeliveryScreen extends StatelessWidget {
         ),
         child: Obx(() {
           return CustomElevatedButton(
-            onPressedFunction: () {},
+            onPressedFunction: () {
+              Get.back();
+            },
             buttonText: "Done",
             needShadow: false,
             textStyle: setPickUpDeliveryController.isEditing.value

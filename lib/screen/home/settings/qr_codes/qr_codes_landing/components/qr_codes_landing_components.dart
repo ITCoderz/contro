@@ -38,7 +38,7 @@ class QrCodesLandingComponents extends StatelessWidget {
         extentRatio: 0.8,
         children: [
           CustomSlidableAction(
-            onPressed: editFunction,
+            onPressed: shareFunction,
             backgroundColor: CColors.orangeColor,
             padding: EdgeInsets.zero,
             child: Row(

@@ -11,7 +11,6 @@ import '../../../../../generated/assets.dart';
 import '../../../../../reusable_widgets/bottom_nav_bar/reusable_bottom_navbar.dart';
 import '../../../../../reusable_widgets/filter_button_component.dart';
 import '../../../../../reusable_widgets/filter_option_container.dart';
-import '../../../../../reusable_widgets/table_component.dart';
 import '../../../../../utils/colors/app_colors.dart';
 import '../../../../../utils/constants/constant_lists.dart';
 import '../../../../../utils/text_styles/text_styles.dart';

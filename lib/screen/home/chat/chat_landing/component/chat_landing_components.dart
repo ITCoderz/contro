@@ -3,7 +3,6 @@ import 'package:contro/utils/text_styles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 
 import '../../../../../generated/assets.dart';
 import '../../../../../models/chat_model/chat_model.dart';

@@ -41,24 +41,31 @@ class VariationComponent extends StatelessWidget {
             children: [
               const Text(
                 "Variation Name",
-                style: CustomTextStyles.darkGreyColor414,
+                style: CustomTextStyles.darkGreyColor412,
               ),
               InkWell(
                 onTap: removeVariations,
                 borderRadius: BorderRadius.circular(2),
-                child: SvgPicture.asset(Assets.iconsDeleteVariationIcon),
+                child: SvgPicture.asset(
+                  Assets.iconsDeleteVariationIcon,
+                  colorFilter: const ColorFilter.mode(
+                    CColors.lightGreyTwoColor,
+                    BlendMode.srcIn,
+                  ),
+                ),
               ),
             ],
           ),
           10.ph,
           CustomTextField(
             textEditingController: TextEditingController(),
-            hintText: "Enter Variation (eg. Colour, Size, Flavours, etc.) ",
+            hintText: "Enter Variation",
+            borderRadius: 6,
           ),
           10.ph,
           const Text(
             "Option",
-            style: CustomTextStyles.darkGreyColor414,
+            style: CustomTextStyles.darkGreyColor412,
           ),
           10.ph,
           Column(
@@ -70,6 +77,7 @@ class VariationComponent extends StatelessWidget {
                   hintText: "Enter Option",
                   needSuffix: true,
                   suffixMinWidth: 50,
+                  borderRadius: 6,
                   suffixWidget: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -77,6 +85,10 @@ class VariationComponent extends StatelessWidget {
                         onTap: galleryOptionFunction,
                         child: SvgPicture.asset(
                           Assets.iconsVariationGalleryIcon,
+                          colorFilter: const ColorFilter.mode(
+                            CColors.lightGreyTwoColor,
+                            BlendMode.srcIn,
+                          ),
                         ),
                       ),
                       5.pw,
@@ -84,6 +96,10 @@ class VariationComponent extends StatelessWidget {
                         onTap: optionDeletedFunction,
                         child: SvgPicture.asset(
                           Assets.iconsDeleteVariationIconTwo,
+                          colorFilter: const ColorFilter.mode(
+                            CColors.lightGreyTwoColor,
+                            BlendMode.srcIn,
+                          ),
                         ),
                       ),
                     ],
@@ -94,43 +110,40 @@ class VariationComponent extends StatelessWidget {
             ],
           ),
           10.ph,
-          ClipRRect(
-            borderRadius: BorderRadius.circular(2),
-            child: Material(
-              color: Colors.transparent,
-              child: InkWell(
-                onTap: addOptionFunction,
-                child: Ink(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 15,
-                    vertical: 10,
-                  ),
-                  decoration: const BoxDecoration(
-                    color: CColors.scaffoldColor,
-                  ),
-                  width: context.width,
-                  child: Center(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SvgPicture.asset(
-                          Assets.iconsAddBankIcon,
-                          width: 25,
-                          colorFilter: const ColorFilter.mode(
-                            CColors.greyTwoColor,
-                            BlendMode.srcIn,
-                          ),
+          Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: addOptionFunction,
+              child: Ink(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                  vertical: 10,
+                ),
+                decoration: const BoxDecoration(
+                  color: CColors.scaffoldColor,
+                ),
+                width: context.width,
+                child: Center(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        Assets.iconsAddBankIcon,
+                        width: 25,
+                        colorFilter: const ColorFilter.mode(
+                          CColors.greyTwoColor,
+                          BlendMode.srcIn,
                         ),
-                        10.pw,
-                        const Expanded(
-                          child: Text(
-                            "Add Option",
-                            style: CustomTextStyles.greyTwoColor412,
-                            textAlign: TextAlign.left,
-                          ),
+                      ),
+                      10.pw,
+                      const Expanded(
+                        child: Text(
+                          "Add Option",
+                          style: CustomTextStyles.greyTwoColor412,
+                          textAlign: TextAlign.left,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
