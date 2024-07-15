@@ -113,7 +113,7 @@ class ActivityDetailScreen extends StatelessWidget {
                                                           "In Transit"
                                                       ? CColors.blueSecondColor
                                                       : activityModel.status ==
-                                                              "Complete"
+                                                              "Completed"
                                                           ? CColors
                                                               .greenAccentTwoColor
                                                           : CColors

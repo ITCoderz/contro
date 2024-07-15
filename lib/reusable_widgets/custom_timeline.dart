@@ -81,7 +81,7 @@ class TimeLineComponent extends StatelessWidget {
         ),
         CustomDottedLine(
           inProgress: activityModel.activityStatus == "An order is confirmed."
-              ? false
+              ? true
               : activityModel.activityStatus == "Payment has been completed."
                   ? true
                   : activityModel.activityStatus ==
