@@ -1,3 +1,4 @@
+import 'package:contro/utils/alignment/widget_alignment.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:contro/utils/text_styles/text_styles.dart';
 import 'package:flutter/material.dart';
@@ -87,10 +88,41 @@ class ChatLandingBubble extends StatelessWidget {
                           height: 25,
                         ),
                       )
-                    : Image.asset(
-                        chatModel.image,
-                        height: 40,
-                        width: 40,
+                    : SizedBox(
+                        height: 45,
+                        width: 45,
+                        child: Stack(
+                          children: [
+                            Image.asset(
+                              chatModel.image,
+                              height: 45,
+                              width: 45,
+                            ),
+                            if (valueKey == 1)
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 3),
+                                child: Container(
+                                  height: 18,
+                                  width: 18,
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    color: CColors.redBadgeColor,
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: CColors.whiteColor,
+                                      width: 2,
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    "3",
+                                    style: CustomTextStyles.white509,
+                                  ),
+                                ),
+                              ).alignWidget(
+                                alignment: Alignment.bottomRight,
+                              ),
+                          ],
+                        ),
                       ),
                 10.pw,
                 Expanded(

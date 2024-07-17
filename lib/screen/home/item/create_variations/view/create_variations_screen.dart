@@ -45,6 +45,7 @@ class CreateVariationsScreen extends StatelessWidget {
                       title: "Create Variations",
                       hasCrossIcon: true,
                     ),
+                    10.ph,
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(6),

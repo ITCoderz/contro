@@ -46,6 +46,7 @@ class EditPhoneNumberScreen extends StatelessWidget {
                             ),
                           ),
                           children: [
+                            10.ph,
                             const CustomBackTitle(
                               title: "Phone Number.",
                             ),

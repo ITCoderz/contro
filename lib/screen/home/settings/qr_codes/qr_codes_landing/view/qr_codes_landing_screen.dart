@@ -41,12 +41,23 @@ class QrCodesLandingScreen extends StatelessWidget {
             children: [
               10.ph,
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: const Icon(
+                      Icons.arrow_back_ios_rounded,
+                      size: 17,
+                      color: CColors.darkGreyColor,
+                    ),
+                  ),
+                  10.pw,
                   const Text(
                     "QR Codes.",
                     style: CustomTextStyles.darkGreyColor622,
                   ),
+                  const Spacer(),
                   InkWell(
                     onTap: () {},
                     borderRadius: BorderRadius.circular(5),

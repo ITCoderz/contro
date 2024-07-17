@@ -39,33 +39,21 @@ class CreateQrCodeScreen extends StatelessWidget {
                     ),
                   ),
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        Get.back();
-                      },
-                      child: Container(
-                        height: 5,
-                        width: 60,
-                        decoration: BoxDecoration(
-                            color: CColors.greyTwoColor,
-                            borderRadius: BorderRadius.circular(10)),
-                      ),
-                    ),
-                    5.ph,
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        IconButton(
-                          onPressed: () {
+                        10.ph,
+                        InkWell(
+                          onTap: () {
                             Get.back();
                           },
-                          icon: const Icon(
+                          child: const Icon(
                             Icons.close_rounded,
                             color: CColors.darkGreyColor,
                           ),
                         ),
-                        1.pw,
+                        10.pw,
                         const Text(
                           "Create QR Code.",
                           style: CustomTextStyles.darkGreyColor618,
@@ -161,16 +149,17 @@ class CreateQrCodeScreen extends StatelessWidget {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.center,
                                               children: [
-                                                IconButton(
-                                                  onPressed: () {
+                                                InkWell(
+                                                  onTap: () {
                                                     Get.back();
                                                   },
-                                                  icon: const Icon(
+                                                  child: const Icon(
                                                     Icons.close_rounded,
                                                     color:
                                                         CColors.darkGreyColor,
                                                   ),
                                                 ),
+                                                10.pw,
                                                 const Text(
                                                   "Connect.",
                                                   style: CustomTextStyles

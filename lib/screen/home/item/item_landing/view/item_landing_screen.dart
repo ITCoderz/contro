@@ -41,15 +41,16 @@ class ItemLandingScreen extends StatelessWidget {
               10.ph,
               Row(
                 children: [
-                  IconButton(
-                    onPressed: () {
+                  InkWell(
+                    onTap: () {
                       Get.back();
                     },
-                    icon: const Icon(
+                    child: const Icon(
                       Icons.arrow_back_ios_rounded,
                       size: 17,
                     ),
                   ),
+                  10.pw,
                   const Text(
                     "Item.",
                     style: CustomTextStyles.darkGreyColor620,

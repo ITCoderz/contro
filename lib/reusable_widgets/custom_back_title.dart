@@ -1,3 +1,4 @@
+import 'package:contro/utils/gaps/gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,15 +15,16 @@ class CustomBackTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        IconButton(
-          onPressed: () {
+        InkWell(
+          onTap: () {
             Get.back();
           },
-          icon: Icon(
+          child: Icon(
             hasCrossIcon ? Icons.close_rounded : Icons.arrow_back_ios_rounded,
             size: hasCrossIcon ? 20 : 17,
           ),
         ),
+        10.pw,
         Text(
           title,
           style: CustomTextStyles.darkGreyColor618,

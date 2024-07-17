@@ -36,7 +36,6 @@ class MessagesScreen extends StatelessWidget {
                 10.ph,
                 Row(
                   children: [
-                    5.pw,
                     IconButton(
                       onPressed: () {
                         Get.back();
@@ -50,13 +49,17 @@ class MessagesScreen extends StatelessWidget {
                     Expanded(
                       child: Row(
                         children: [
-                          chatModel.image.contains('svg')? SvgPicture.asset( chatModel.image,
-                            height: 32,
-                            width: 32,) :   Image.asset(
-                            chatModel.image,
-                            height: 32,
-                            width: 32,
-                          ),
+                          chatModel.image.contains('svg')
+                              ? SvgPicture.asset(
+                                  chatModel.image,
+                                  height: 32,
+                                  width: 32,
+                                )
+                              : Image.asset(
+                                  chatModel.image,
+                                  height: 32,
+                                  width: 32,
+                                ),
                           10.pw,
                           Expanded(
                             child: Text(

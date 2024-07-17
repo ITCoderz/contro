@@ -47,6 +47,7 @@ class AddNewItemScreen extends StatelessWidget {
                   children: [
                     10.ph,
                     const CustomBackTitle(title: "Add New Item"),
+                    10.ph,
                     TitleContainerWidget(
                       titleString: "Media",
                       radius: 0,

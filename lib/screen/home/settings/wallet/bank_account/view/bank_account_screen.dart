@@ -37,6 +37,7 @@ class BankAccountScreen extends StatelessWidget {
               SliverList(
                 delegate: SliverChildListDelegate(
                   [
+                    10.ph,
                     const CustomBackTitle(
                       title: "Bank Account",
                       hasCrossIcon: true,

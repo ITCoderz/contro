@@ -46,6 +46,7 @@ class EditEmailScreen extends StatelessWidget {
                             ),
                           ),
                           children: [
+                            10.ph,
                             const CustomBackTitle(
                               title: "Email.",
                             ),

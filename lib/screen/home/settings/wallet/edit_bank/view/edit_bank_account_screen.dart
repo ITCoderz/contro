@@ -67,7 +67,7 @@ class _EditBankAccountScreenState extends State<EditBankAccountScreen> {
                             ),
                           ),
                           children: [
-                            5.ph,
+                            10.ph,
                             const CustomBackTitle(
                               title: "Edit Bank Account",
                               hasCrossIcon: true,

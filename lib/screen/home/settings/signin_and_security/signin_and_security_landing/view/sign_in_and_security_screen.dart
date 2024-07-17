@@ -47,7 +47,7 @@ class SignInAndSecurityScreen extends StatelessWidget {
                             ),
                           ),
                           children: [
-                            5.ph,
+                            10.ph,
                             const CustomBackTitle(
                               title: "Sign in & Security",
                             ),

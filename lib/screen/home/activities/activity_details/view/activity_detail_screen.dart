@@ -38,7 +38,7 @@ class ActivityDetailScreen extends StatelessWidget {
           width: context.width,
           child: Column(
             children: [
-              5.ph,
+              10.ph,
               const CustomBackTitle(
                 title: "Activity Details.",
               ),

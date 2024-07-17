@@ -36,7 +36,7 @@ class ChatLandingScreen extends StatelessWidget {
               children: [
                 10.ph,
                 const Text(
-                  "Contro Chat.",
+                  "Chat.",
                   style: CustomTextStyles.darkGreyColor622,
                 ),
                 20.ph,

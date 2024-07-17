@@ -38,6 +38,7 @@ class WalletLandingScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              10.ph,
               const CustomBackTitle(
                 title: "Wallet.",
               ),

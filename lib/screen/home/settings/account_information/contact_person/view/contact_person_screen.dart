@@ -46,7 +46,7 @@ class ContactPersonScreen extends StatelessWidget {
                             ),
                           ),
                           children: [
-                            5.ph,
+                            10.ph,
                             const CustomBackTitle(
                               title: "Contact Person.",
                             ),

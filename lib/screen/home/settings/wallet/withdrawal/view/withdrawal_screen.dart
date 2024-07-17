@@ -48,7 +48,7 @@ class WithdrawalScreen extends StatelessWidget {
                             ),
                           ),
                           children: [
-                            5.ph,
+                            10.ph,
                             const CustomBackTitle(
                               title: "Withdrawal",
                             ),

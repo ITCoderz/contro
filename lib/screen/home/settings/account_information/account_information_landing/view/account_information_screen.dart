@@ -45,7 +45,7 @@ class AccountInformationLandingScreen extends StatelessWidget {
                         ),
                       ),
                       children: [
-                        5.ph,
+                        10.ph,
                         const CustomBackTitle(
                           title: "Account Information.",
                         ),
