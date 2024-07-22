@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../create_variations/view/create_variations_screen.dart';
 
@@ -15,6 +18,24 @@ class AddNewItemController extends GetxController {
   TextEditingController inventoryTextController = TextEditingController();
   TextEditingController priceRmFromTextController = TextEditingController();
   TextEditingController priceRmToTextController = TextEditingController();
+  List<File> images = [];
+  ImagePicker imagePicker = ImagePicker();
+
+  getMultipleImages() async {
+    final pickedImages = await imagePicker.pickMultiImage();
+    if (pickedImages.isNotEmpty) {
+      for (var xFileImage in pickedImages) {
+        images.add(File(xFileImage.path));
+      }
+
+      update();
+    }
+  }
+
+  removeImage({required int index}) {
+    images.removeAt(index);
+    update();
+  }
 
   changeCategoryString({required String val}) {
     categoryString.value = val;

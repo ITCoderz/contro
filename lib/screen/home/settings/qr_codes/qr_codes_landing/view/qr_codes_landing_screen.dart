@@ -333,68 +333,56 @@ class QrCodesLandingScreen extends StatelessWidget {
                 () {
                   return qrCodeLandingController.isRefreshed.value
                       ? Expanded(
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                              vertical: 10,
-                            ),
-                            decoration: const BoxDecoration(
-                              color: CColors.whiteColor,
-                            ),
-                            child: ListView.separated(
-                              shrinkWrap: true,
-                              itemCount: ConstantLists.qrCodeModelList.length,
-                              physics: const NeverScrollableScrollPhysics(),
-                              separatorBuilder: (context, index) =>
-                                  const Divider(
-                                color: CColors.borderOneColor,
-                              ),
-                              itemBuilder: (BuildContext context, int index) {
-                                return AnimationConfiguration.staggeredList(
-                                  position: index,
-                                  duration: const Duration(milliseconds: 375),
-                                  child: SlideAnimation(
-                                    verticalOffset: 50.0,
-                                    child: FadeInAnimation(
-                                      child: QrCodesLandingComponents(
-                                        qrCodesModel: ConstantLists
-                                            .qrCodeModelList[index],
-                                        onChangedFunction: (val) {},
-                                        value: false,
-                                        optionOnPressed: () {
-                                          Get.to(
-                                            () => const QrFilterOptionsScreen(),
-                                            transition: Transition.downToUp,
-                                          );
-                                        },
-                                        valueKey: index,
-                                        shareFunction: (context) {},
-                                        editFunction: (context) {
-                                          Get.to(
-                                            () => EditQrCodeScreen(
-                                              qrCodesModel: ConstantLists
-                                                  .qrCodeModelList[index],
-                                            ),
-                                            transition: Transition.fadeIn,
-                                          );
-                                        },
-                                        deleteFunction: (context) {
-                                          showDialog(
-                                            context: context,
-                                            builder: (context) => DeleteDialog(
-                                              onPressedFunction: () {
-                                                Get.back();
-                                              },
-                                              isForQrCode: true,
-                                            ),
-                                          );
-                                        },
-                                      ),
+                          child: ListView.separated(
+                            shrinkWrap: true,
+                            itemCount: ConstantLists.qrCodeModelList.length,
+                            physics: const NeverScrollableScrollPhysics(),
+                            separatorBuilder: (context, index) => 1.ph,
+                            itemBuilder: (BuildContext context, int index) {
+                              return AnimationConfiguration.staggeredList(
+                                position: index,
+                                duration: const Duration(milliseconds: 375),
+                                child: SlideAnimation(
+                                  verticalOffset: 50.0,
+                                  child: FadeInAnimation(
+                                    child: QrCodesLandingComponents(
+                                      qrCodesModel:
+                                          ConstantLists.qrCodeModelList[index],
+                                      onChangedFunction: (val) {},
+                                      value: false,
+                                      optionOnPressed: () {
+                                        Get.to(
+                                          () => const QrFilterOptionsScreen(),
+                                          transition: Transition.downToUp,
+                                        );
+                                      },
+                                      valueKey: index,
+                                      shareFunction: (context) {},
+                                      editFunction: (context) {
+                                        Get.to(
+                                          () => EditQrCodeScreen(
+                                            qrCodesModel: ConstantLists
+                                                .qrCodeModelList[index],
+                                          ),
+                                          transition: Transition.fadeIn,
+                                        );
+                                      },
+                                      deleteFunction: (context) {
+                                        showDialog(
+                                          context: context,
+                                          builder: (context) => DeleteDialog(
+                                            onPressedFunction: () {
+                                              Get.back();
+                                            },
+                                            isForQrCode: true,
+                                          ),
+                                        );
+                                      },
                                     ),
                                   ),
-                                );
-                              },
-                            ),
+                                ),
+                              );
+                            },
                           ),
                         )
                       : Expanded(

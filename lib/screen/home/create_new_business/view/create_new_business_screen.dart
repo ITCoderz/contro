@@ -298,153 +298,145 @@ class CreateNewBusinessScreen extends StatelessWidget {
                             readOnly: true,
                             needSuffix: true,
                             borderRadius: 6,
-                            suffixWidget: IconButton(
-                              onPressed: () {
-                                showModalBottomSheet(
-                                  elevation: 0.0,
-                                  backgroundColor: CColors.whiteColor,
-                                  enableDrag: true,
-                                  // showDragHandle: true,
-                                  isScrollControlled: true,
-                                  constraints: BoxConstraints(
-                                      maxHeight: context.height * 0.8),
-                                  shape: const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(10),
-                                      topRight: Radius.circular(10),
-                                      bottomLeft: Radius.zero,
-                                      bottomRight: Radius.zero,
-                                    ),
+                            onTap: () {
+                              showModalBottomSheet(
+                                elevation: 0.0,
+                                backgroundColor: CColors.whiteColor,
+                                enableDrag: true,
+                                // showDragHandle: true,
+                                isScrollControlled: true,
+                                constraints: BoxConstraints(
+                                    maxHeight: context.height * 0.8),
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(10),
+                                    bottomLeft: Radius.zero,
+                                    bottomRight: Radius.zero,
                                   ),
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return Padding(
-                                      padding: EdgeInsets.only(
-                                        bottom: MediaQuery.of(context)
-                                            .viewInsets
-                                            .bottom,
-                                      ),
-                                      child: Container(
-                                        height: context.height,
-                                        width: context.width,
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 20, horizontal: 20),
-                                        child: SingleChildScrollView(
-                                          child: AnimationLimiter(
-                                            child: Column(
-                                              children: AnimationConfiguration
-                                                  .toStaggeredList(
-                                                duration: const Duration(
-                                                    milliseconds: 375),
-                                                childAnimationBuilder:
-                                                    (widget) => SlideAnimation(
-                                                  horizontalOffset: 50.0,
-                                                  child: FadeInAnimation(
-                                                    child: widget,
+                                ),
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return Padding(
+                                    padding: EdgeInsets.only(
+                                      bottom: MediaQuery.of(context)
+                                          .viewInsets
+                                          .bottom,
+                                    ),
+                                    child: Container(
+                                      height: context.height,
+                                      width: context.width,
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 20, horizontal: 20),
+                                      child: SingleChildScrollView(
+                                        child: AnimationLimiter(
+                                          child: Column(
+                                            children: AnimationConfiguration
+                                                .toStaggeredList(
+                                              duration: const Duration(
+                                                  milliseconds: 375),
+                                              childAnimationBuilder: (widget) =>
+                                                  SlideAnimation(
+                                                horizontalOffset: 50.0,
+                                                child: FadeInAnimation(
+                                                  child: widget,
+                                                ),
+                                              ),
+                                              children: [
+                                                GestureDetector(
+                                                  onTap: () {
+                                                    Get.back();
+                                                  },
+                                                  child: Container(
+                                                    height: 5,
+                                                    width: 60,
+                                                    decoration: BoxDecoration(
+                                                        color: CColors
+                                                            .greyTwoColor,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10)),
                                                   ),
                                                 ),
-                                                children: [
-                                                  GestureDetector(
-                                                    onTap: () {
-                                                      Get.back();
-                                                    },
-                                                    child: Container(
-                                                      height: 5,
-                                                      width: 60,
-                                                      decoration: BoxDecoration(
-                                                          color: CColors
-                                                              .greyTwoColor,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      10)),
+                                                20.ph,
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                    IconButton(
+                                                      onPressed: () {
+                                                        Get.back();
+                                                      },
+                                                      icon: const Icon(
+                                                        Icons.close_rounded,
+                                                        color: CColors
+                                                            .darkGreyColor,
+                                                      ),
                                                     ),
-                                                  ),
-                                                  20.ph,
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      IconButton(
-                                                        onPressed: () {
-                                                          Get.back();
-                                                        },
-                                                        icon: const Icon(
-                                                          Icons.close_rounded,
-                                                          color: CColors
-                                                              .darkGreyColor,
-                                                        ),
-                                                      ),
-                                                      5.pw,
-                                                      const Text(
-                                                        "Category.",
-                                                        style: CustomTextStyles
-                                                            .darkGreyColor620,
-                                                      ),
-                                                    ],
-                                                  ).alignWidget(
-                                                    alignment:
-                                                        Alignment.centerLeft,
-                                                  ),
-                                                  10.ph,
-                                                  ListView.builder(
-                                                    shrinkWrap: true,
-                                                    physics:
-                                                        const NeverScrollableScrollPhysics(),
-                                                    itemCount: ConstantLists
-                                                        .categorySelectionList
-                                                        .length,
-                                                    itemBuilder:
-                                                        (BuildContext context,
-                                                            int index) {
-                                                      return AnimationConfiguration
-                                                          .staggeredList(
-                                                        position: index,
-                                                        duration:
-                                                            const Duration(
-                                                                milliseconds:
-                                                                    375),
-                                                        child: SlideAnimation(
-                                                          verticalOffset: 50.0,
+                                                    5.pw,
+                                                    const Text(
+                                                      "Category.",
+                                                      style: CustomTextStyles
+                                                          .darkGreyColor620,
+                                                    ),
+                                                  ],
+                                                ).alignWidget(
+                                                  alignment:
+                                                      Alignment.centerLeft,
+                                                ),
+                                                10.ph,
+                                                ListView.builder(
+                                                  shrinkWrap: true,
+                                                  physics:
+                                                      const NeverScrollableScrollPhysics(),
+                                                  itemCount: ConstantLists
+                                                      .categorySelectionList
+                                                      .length,
+                                                  itemBuilder:
+                                                      (BuildContext context,
+                                                          int index) {
+                                                    return AnimationConfiguration
+                                                        .staggeredList(
+                                                      position: index,
+                                                      duration: const Duration(
+                                                          milliseconds: 375),
+                                                      child: SlideAnimation(
+                                                        verticalOffset: 50.0,
+                                                        child: FadeInAnimation(
                                                           child:
-                                                              FadeInAnimation(
-                                                            child:
-                                                                CategorySelectionTile(
-                                                              onTapFunction:
-                                                                  () {
-                                                                createNewBusinessController.addBusinessCategory(
-                                                                    ConstantLists
+                                                              CategorySelectionTile(
+                                                            onTapFunction: () {
+                                                              createNewBusinessController
+                                                                  .addBusinessCategory(ConstantLists
+                                                                      .categorySelectionList[
+                                                                          index]
+                                                                      .title);
+                                                            },
+                                                            categorySelectionModel:
+                                                                ConstantLists
                                                                         .categorySelectionList[
-                                                                            index]
-                                                                        .title);
-                                                              },
-                                                              categorySelectionModel:
-                                                                  ConstantLists
-                                                                          .categorySelectionList[
-                                                                      index],
-                                                            ),
+                                                                    index],
                                                           ),
                                                         ),
-                                                      );
-                                                    },
-                                                  ),
-                                                ],
-                                              ),
+                                                      ),
+                                                    );
+                                                  },
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
                                       ),
-                                    );
-                                  },
-                                );
-                              },
-                              icon: const Icon(
-                                Icons.arrow_forward_ios_rounded,
-                                size: 12,
-                              ),
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                            suffixWidget: const Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              size: 12,
                             ),
                           ),
                           15.ph,
@@ -459,54 +451,101 @@ class CreateNewBusinessScreen extends StatelessWidget {
                             dashPattern: const [6, 3],
                             color: CColors.greyTwoColor.withOpacity(0.3),
                             strokeWidth: 1.5,
-                            child: Container(
-                              width: context.width,
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 15,
-                                vertical: 20,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: CColors.scaffoldColor,
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  SvgPicture.asset(
-                                    Assets.iconsCloudUploadIcon,
-                                    height: 70,
-                                    colorFilter: const ColorFilter.mode(
-                                      CColors.greyTwoColor,
-                                      BlendMode.srcIn,
-                                    ),
-                                  ),
-                                  5.ph,
-                                  const Text(
-                                    "*Upload a clear copy of your valid passport and recent bank statement",
-                                    style: CustomTextStyles.darkGreyTwoColor412,
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  10.ph,
-                                  Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      const Text(
-                                        "Note:",
-                                        style: CustomTextStyles.greyTwoColor410,
-                                      ),
-                                      2.pw,
-                                      const Expanded(
-                                        child: Text(
-                                          "File must not be more than 10MB in JPG, JPEG, PNG or PDF format.",
-                                          style:
-                                              CustomTextStyles.greyTwoColor410,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                            child: GestureDetector(
+                              onTap: () {
+                                if (createNewBusinessController
+                                    .images.isEmpty) {
+                                  createNewBusinessController
+                                      .getMultipleImages();
+                                }
+                              },
+                              child: Container(
+                                width: context.width,
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 15,
+                                  vertical: 20,
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  color: CColors.scaffoldColor,
+                                ),
+                                child: GetBuilder<CreateNewBusinessController>(
+                                  builder: (controller) {
+                                    return controller.images.isEmpty
+                                        ? Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              SvgPicture.asset(
+                                                Assets.iconsCloudUploadIcon,
+                                                height: 70,
+                                                colorFilter:
+                                                    const ColorFilter.mode(
+                                                  CColors.greyTwoColor,
+                                                  BlendMode.srcIn,
+                                                ),
+                                              ),
+                                              5.ph,
+                                              const Text(
+                                                "*Upload a clear copy of your valid passport and recent bank statement",
+                                                style: CustomTextStyles
+                                                    .darkGreyTwoColor412,
+                                                textAlign: TextAlign.center,
+                                              ),
+                                              10.ph,
+                                              Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  const Text(
+                                                    "Note:",
+                                                    style: CustomTextStyles
+                                                        .greyTwoColor410,
+                                                  ),
+                                                  2.pw,
+                                                  const Expanded(
+                                                    child: Text(
+                                                      "File must not be more than 10MB in JPG, JPEG, PNG or PDF format.",
+                                                      style: CustomTextStyles
+                                                          .greyTwoColor410,
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          )
+                                        : GridView.builder(
+                                            shrinkWrap: true,
+                                            physics:
+                                                const NeverScrollableScrollPhysics(),
+                                            gridDelegate:
+                                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                              crossAxisSpacing: 10,
+                                              mainAxisSpacing: 10,
+                                              crossAxisCount: 2,
+                                              mainAxisExtent: 150,
+                                            ),
+                                            itemCount: controller.images.length,
+                                            itemBuilder: (BuildContext context,
+                                                int index) {
+                                              return SlideAnimation(
+                                                verticalOffset: 30.0,
+                                                child: FadeInAnimation(
+                                                  child: ImagePreviewComponent(
+                                                    image: controller
+                                                        .images[index],
+                                                    removeFunction: () {
+                                                      controller.removeImage(
+                                                          index: index);
+                                                    },
+                                                  ),
+                                                ),
+                                              );
+                                            },
+                                          );
+                                  },
+                                ),
                               ),
                             ),
                           ),

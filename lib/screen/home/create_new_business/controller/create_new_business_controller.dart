@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class CreateNewBusinessController extends GetxController {
   final isIndividualSelected = true.obs;
@@ -14,6 +17,25 @@ class CreateNewBusinessController extends GetxController {
   TextEditingController verificationCodeController = TextEditingController();
   TextEditingController businessNatureController = TextEditingController();
   final isReviewButtonEnabled = false.obs;
+  List<File> images = [];
+  ImagePicker imagePicker = ImagePicker();
+
+  getMultipleImages() async {
+    final pickedImages = await imagePicker.pickMultiImage();
+    if (pickedImages.isNotEmpty) {
+      for (var xFileImage in pickedImages) {
+        images.add(File(xFileImage.path));
+      }
+
+      update();
+      debugPrint(images.length.toString());
+    }
+  }
+
+  removeImage({required int index}) {
+    images.removeAt(index);
+    update();
+  }
 
   enableReviewFunction() {
     if (isIndividualSelected.value) {

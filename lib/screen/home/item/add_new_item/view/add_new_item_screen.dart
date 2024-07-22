@@ -15,6 +15,7 @@ import '../../../../../reusable_widgets/custom_buttons/custom_elevated_button.da
 import '../../../../../reusable_widgets/custom_text_fields/custom_text_field.dart';
 import '../../../../../utils/colors/app_colors.dart';
 import '../../../../../utils/text_styles/text_styles.dart';
+import '../../../create_new_business/components/create_new_business_components.dart';
 import '../../item_filters/view/item_category_screen.dart';
 import '../../set_pick_up_delivery/view/set_pick_up_delivery_screen.dart';
 import '../components/add_new_item_components.dart';
@@ -57,39 +58,81 @@ class AddNewItemScreen extends StatelessWidget {
                         dashPattern: const [6, 3],
                         color: CColors.greyTwoColor.withOpacity(0.3),
                         strokeWidth: 1.5,
-                        child: Container(
-                          width: context.width,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 15,
-                            vertical: 20,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: CColors.scaffoldColor,
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SvgPicture.asset(
-                                Assets.iconsCloudUploadIcon,
-                                height: 70,
-                                colorFilter: const ColorFilter.mode(
-                                  CColors.greyTwoColor,
-                                  BlendMode.srcIn,
-                                ),
-                              ),
-                              5.ph,
-                              const Text(
-                                "*Upload a clear copy of your valid passport and recent bank statement",
-                                style: CustomTextStyles.darkGreyTwoColor412,
-                                textAlign: TextAlign.center,
-                              ),
-                              10.ph,
-                              const Text(
-                                "Note: File must not be more than 10MB .",
-                                style: CustomTextStyles.greyTwoColor410,
-                              ),
-                            ],
+                        child: GestureDetector(
+                          onTap: () {
+                            if (addNewItemController.images.isEmpty) {
+                              addNewItemController.getMultipleImages();
+                            }
+                          },
+                          child: Container(
+                            width: context.width,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 15,
+                              vertical: 20,
+                            ),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: CColors.scaffoldColor,
+                            ),
+                            child: GetBuilder<AddNewItemController>(
+                              builder: (controller) {
+                                return controller.images.isEmpty
+                                    ? Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          SvgPicture.asset(
+                                            Assets.iconsCloudUploadIcon,
+                                            height: 70,
+                                            colorFilter: const ColorFilter.mode(
+                                              CColors.greyTwoColor,
+                                              BlendMode.srcIn,
+                                            ),
+                                          ),
+                                          5.ph,
+                                          const Text(
+                                            "*Upload a clear copy of your valid passport and recent bank statement",
+                                            style: CustomTextStyles
+                                                .darkGreyTwoColor412,
+                                            textAlign: TextAlign.center,
+                                          ),
+                                          10.ph,
+                                          const Text(
+                                            "Note: File must not be more than 10MB .",
+                                            style: CustomTextStyles
+                                                .greyTwoColor410,
+                                          ),
+                                        ],
+                                      )
+                                    : GridView.builder(
+                                        shrinkWrap: true,
+                                        physics:
+                                            const NeverScrollableScrollPhysics(),
+                                        gridDelegate:
+                                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                          crossAxisSpacing: 10,
+                                          mainAxisSpacing: 10,
+                                          crossAxisCount: 2,
+                                          mainAxisExtent: 150,
+                                        ),
+                                        itemCount: controller.images.length,
+                                        itemBuilder:
+                                            (BuildContext context, int index) {
+                                          return SlideAnimation(
+                                            verticalOffset: 30.0,
+                                            child: FadeInAnimation(
+                                              child: ImagePreviewComponent(
+                                                image: controller.images[index],
+                                                removeFunction: () {
+                                                  controller.removeImage(
+                                                      index: index);
+                                                },
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      );
+                              },
+                            ),
                           ),
                         ),
                       ),

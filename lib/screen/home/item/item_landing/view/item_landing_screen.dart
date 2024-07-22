@@ -386,59 +386,47 @@ class ItemLandingScreen extends StatelessWidget {
                 () {
                   return activityLandingController.isRefreshed.value
                       ? Expanded(
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                              vertical: 10,
-                            ),
-                            decoration: const BoxDecoration(
-                              color: CColors.whiteColor,
-                            ),
-                            child: ListView.separated(
-                              shrinkWrap: true,
-                              itemCount: ConstantLists.itemModelList.length,
-                              separatorBuilder: (context, index) =>
-                                  const Divider(
-                                color: CColors.borderOneColor,
-                              ),
-                              itemBuilder: (BuildContext context, int index) {
-                                return AnimationConfiguration.staggeredList(
-                                  position: index,
-                                  duration: const Duration(milliseconds: 375),
-                                  child: SlideAnimation(
-                                    verticalOffset: 50.0,
-                                    child: FadeInAnimation(
-                                      child: ItemsLandingComponents(
-                                        itemModel:
-                                            ConstantLists.itemModelList[index],
-                                        onChangedFunction: (val) {},
-                                        value: false,
-                                        optionOnPressed: () {
-                                          Get.to(
-                                            () => const ItemOptionsScreen(),
-                                            transition: Transition.downToUp,
-                                          );
-                                        },
-                                        valueKey: index,
-                                        shareFunction: (context) {},
-                                        editFunction: (context) {},
-                                        deleteFunction: (context) {
-                                          showDialog(
-                                            context: context,
-                                            builder: (context) => DeleteDialog(
-                                              onPressedFunction: () {
-                                                Get.back();
-                                              },
-                                              isForItem: true,
-                                            ),
-                                          );
-                                        },
-                                      ),
+                          child: ListView.separated(
+                            shrinkWrap: true,
+                            itemCount: ConstantLists.itemModelList.length,
+                            separatorBuilder: (context, index) => 1.ph,
+                            itemBuilder: (BuildContext context, int index) {
+                              return AnimationConfiguration.staggeredList(
+                                position: index,
+                                duration: const Duration(milliseconds: 375),
+                                child: SlideAnimation(
+                                  verticalOffset: 50.0,
+                                  child: FadeInAnimation(
+                                    child: ItemsLandingComponents(
+                                      itemModel:
+                                          ConstantLists.itemModelList[index],
+                                      onChangedFunction: (val) {},
+                                      value: false,
+                                      optionOnPressed: () {
+                                        Get.to(
+                                          () => const ItemOptionsScreen(),
+                                          transition: Transition.downToUp,
+                                        );
+                                      },
+                                      valueKey: index,
+                                      shareFunction: (context) {},
+                                      editFunction: (context) {},
+                                      deleteFunction: (context) {
+                                        showDialog(
+                                          context: context,
+                                          builder: (context) => DeleteDialog(
+                                            onPressedFunction: () {
+                                              Get.back();
+                                            },
+                                            isForItem: true,
+                                          ),
+                                        );
+                                      },
                                     ),
                                   ),
-                                );
-                              },
-                            ),
+                                ),
+                              );
+                            },
                           ),
                         )
                       : Expanded(

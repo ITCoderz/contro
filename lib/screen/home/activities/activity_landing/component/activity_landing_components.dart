@@ -107,13 +107,10 @@ class ActivityComponent extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              const Text(
-                                "Remarks",
-                                style: CustomTextStyles.darkGreyTwoColor412,
-                              ),
+                              2.ph,
                               const Text(
                                 "350 x 350 x 120, T180/T180, BF",
-                                style: CustomTextStyles.darkGreyTwoColor412,
+                                style: CustomTextStyles.blueThreeColor412,
                               ),
                               2.ph,
                               Row(

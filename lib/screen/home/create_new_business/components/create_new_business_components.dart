@@ -1,7 +1,11 @@
+import 'dart:io';
+
+import 'package:contro/utils/alignment/widget_alignment.dart';
 import 'package:contro/utils/gaps/gaps.dart';
 import 'package:contro/utils/text_styles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 import '../../../../utils/colors/app_colors.dart';
 
@@ -11,6 +15,7 @@ class WhiteContainerTitleBackground extends StatelessWidget {
 
   final Widget childWidget;
   final double radius;
+
   const WhiteContainerTitleBackground(
       {super.key,
       required this.titleString,
@@ -139,6 +144,58 @@ class SelectionTileComponent extends StatelessWidget {
               ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class ImagePreviewComponent extends StatelessWidget {
+  final File image;
+  final Function()? removeFunction;
+
+  const ImagePreviewComponent(
+      {super.key, required this.image, required this.removeFunction});
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(12),
+      child: SizedBox(
+        height: 150,
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: Image.file(
+                image,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Container(
+              height: 20,
+              width: 20,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: CColors.whiteColor,
+              ),
+              child: IconButton(
+                onPressed: removeFunction,
+                padding: EdgeInsets.zero,
+                icon: const Icon(
+                  Icons.close_rounded,
+                  color: CColors.blackColor,
+                  size: 15,
+                ),
+              ),
+            )
+                .paddingOnly(
+                  top: 10,
+                  right: 10,
+                )
+                .alignWidget(
+                  alignment: Alignment.topRight,
+                ),
+          ],
         ),
       ),
     );

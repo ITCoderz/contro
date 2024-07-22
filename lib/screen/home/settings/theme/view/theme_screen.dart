@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:contro/reusable_widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:contro/screen/home/settings/theme/controller/theme_controller.dart';
 import 'package:contro/utils/alignment/widget_alignment.dart';
@@ -51,150 +52,171 @@ class ThemeScreen extends StatelessWidget {
                               title: "Themes.",
                             ),
                             20.ph,
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10),
-                              child: Container(
-                                width: context.width,
-                                height: 500,
-                                decoration: BoxDecoration(
-                                  color: CColors.whiteColor,
-                                  borderRadius: BorderRadius.circular(6),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                      offset: Offset(4, 4),
-                                      blurRadius: 8,
-                                      color: CColors.greyTwoColor,
-                                    ),
-                                  ],
-                                ),
-                                child: Stack(
-                                  children: [
-                                    Image.asset(Assets.imagesThemeBackground)
-                                        .alignWidget(
-                                      alignment: Alignment.topCenter,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                        top: 15,
-                                        right: 15,
-                                      ),
-                                      child: Container(
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 4,
-                                          vertical: 4,
+                            CarouselSlider.builder(
+                              itemCount: 3,
+                              carouselController:
+                                  themController.carouselController,
+                              itemBuilder: (context, index, realIndex) {
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 10,
+                                    vertical: 15,
+                                  ),
+                                  child: Container(
+                                    width: context.width,
+                                    height: 500,
+                                    decoration: BoxDecoration(
+                                      color: CColors.whiteColor,
+                                      borderRadius: BorderRadius.circular(6),
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          offset: Offset(4, 4),
+                                          blurRadius: 8,
+                                          color: CColors.greyTwoColor,
                                         ),
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(6),
-                                          color: CColors.darkGreyColor
-                                              .withOpacity(0.45),
-                                        ),
-                                        child: const Text(
-                                          "Selected",
-                                          style:
-                                              CustomTextStyles.darkGreyColor412,
-                                        ),
-                                      ),
-                                    ).alignWidget(
-                                      alignment: Alignment.topRight,
+                                      ],
                                     ),
-                                    Container(
-                                      height: 330,
-                                      padding: const EdgeInsets.only(
-                                        left: 12,
-                                        right: 12,
-                                        bottom: 12,
-                                      ),
-                                      width: context.width,
-                                      decoration: const BoxDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage(
-                                            Assets.imagesThemeWhiteBackground,
+                                    child: Stack(
+                                      children: [
+                                        Image.asset(
+                                                Assets.imagesThemeBackground)
+                                            .alignWidget(
+                                          alignment: Alignment.topCenter,
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                            top: 15,
+                                            right: 15,
                                           ),
-                                        ),
-                                      ),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          65.ph,
-                                          const Text(
-                                            "Extrabread\nDigital Print Box",
-                                            style: CustomTextStyles
-                                                .darkGreyColor614,
+                                          child: Container(
+                                            padding: const EdgeInsets.symmetric(
+                                              horizontal: 4,
+                                              vertical: 4,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(6),
+                                              color: CColors.darkGreyColor
+                                                  .withOpacity(0.45),
+                                            ),
+                                            child: const Text(
+                                              "Selected",
+                                              style: CustomTextStyles
+                                                  .darkGreyColor412,
+                                            ),
                                           ),
-                                          1.ph,
-                                          const Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Text(
-                                                "Super Mailer Box",
-                                                style: CustomTextStyles
-                                                    .pinkAccentColor412,
+                                        ).alignWidget(
+                                          alignment: Alignment.topRight,
+                                        ),
+                                        Container(
+                                          height: 310,
+                                          padding: const EdgeInsets.only(
+                                            left: 12,
+                                            right: 12,
+                                            bottom: 12,
+                                          ),
+                                          width: context.width,
+                                          decoration: const BoxDecoration(
+                                            image: DecorationImage(
+                                              image: AssetImage(
+                                                Assets
+                                                    .imagesThemeWhiteBackground,
                                               ),
-                                              Text(
-                                                "RM 0.00",
-                                                style: CustomTextStyles
-                                                    .greyTwoColor514,
-                                              ),
-                                            ],
+                                            ),
                                           ),
-                                          5.ph,
-                                          const Text(
-                                            "Description",
-                                            style: CustomTextStyles
-                                                .greyTwoColor410,
-                                          ),
-                                          2.ph,
-                                          const Text(
-                                            "The description text goes here and to make it looks good, please write description for around 300 words. the text goes on and we not sure what do write but we keep writing and fgo on and go on and go on.",
-                                            style: CustomTextStyles
-                                                .darkGreyColor410,
-                                          ),
-                                          10.ph,
-                                          Row(
-                                            mainAxisSize: MainAxisSize.min,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              Container(
-                                                width: 34,
-                                                height: 34,
-                                                alignment: Alignment.center,
-                                                decoration: const BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  color: CColors.greyThreeColor,
-                                                ),
-                                                child: IconButton(
-                                                  onPressed: () {},
-                                                  padding: EdgeInsets.zero,
-                                                  icon: SvgPicture.asset(
-                                                    Assets.iconsCartIcon,
-                                                    height: 20,
+                                              65.ph,
+                                              const Text(
+                                                "Extrabread\nDigital Print Box",
+                                                style: CustomTextStyles
+                                                    .darkGreyColor614,
+                                              ),
+                                              1.ph,
+                                              const Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Text(
+                                                    "Super Mailer Box",
+                                                    style: CustomTextStyles
+                                                        .pinkAccentColor412,
                                                   ),
-                                                ),
+                                                  Text(
+                                                    "RM 0.00",
+                                                    style: CustomTextStyles
+                                                        .greyTwoColor514,
+                                                  ),
+                                                ],
                                               ),
-                                              10.pw,
-                                              Expanded(
-                                                child: CustomElevatedButton(
-                                                  onPressedFunction: () {},
-                                                  buttonText: "Buy Now",
-                                                  width: context.width,
-                                                  height: 34,
-                                                  needShadow: false,
-                                                  backgroundColor:
-                                                      CColors.pinkAccentColor,
-                                                ),
+                                              20.ph,
+                                              const Text(
+                                                "Description",
+                                                style: CustomTextStyles
+                                                    .greyTwoColor410,
+                                              ),
+                                              2.ph,
+                                              const Text(
+                                                "The description text goes here and to make it looks good, please write description for around 300 words. the text goes on and we not sure what do write but we keep writing and fgo on and go on and go on.",
+                                                style: CustomTextStyles
+                                                    .darkGreyColor410,
+                                              ),
+                                              10.ph,
+                                              Row(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  Container(
+                                                    width: 34,
+                                                    height: 34,
+                                                    alignment: Alignment.center,
+                                                    decoration:
+                                                        const BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      color: CColors
+                                                          .greyThreeColor,
+                                                    ),
+                                                    child: IconButton(
+                                                      onPressed: () {},
+                                                      padding: EdgeInsets.zero,
+                                                      icon: SvgPicture.asset(
+                                                        Assets.iconsCartIcon,
+                                                        height: 20,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  10.pw,
+                                                  Expanded(
+                                                    child: CustomElevatedButton(
+                                                      onPressedFunction: () {},
+                                                      buttonText: "Buy Now",
+                                                      width: context.width,
+                                                      height: 34,
+                                                      needShadow: false,
+                                                      backgroundColor: CColors
+                                                          .pinkAccentColor,
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
                                             ],
                                           ),
-                                        ],
-                                      ),
-                                    ).alignWidget(
-                                      alignment: Alignment.bottomCenter,
+                                        ).alignWidget(
+                                          alignment: Alignment.bottomCenter,
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                );
+                              },
+                              options: CarouselOptions(
+                                initialPage: 0,
+                                viewportFraction: 1,
+                                height: 520,
+                                enableInfiniteScroll: false,
+                                onPageChanged: (index, val) {},
                               ),
                             ),
                             20.ph,
